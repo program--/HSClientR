@@ -19,8 +19,8 @@ knitr::opts_chunk$set(
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Build Status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
 [![Codecov test coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 [![R-CMD-check](https://github.com/program--/HSClientR/workflows/R-CMD-check/badge.svg)](https://github.com/program--/HSClientR/actions)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 <!-- badges: end -->
 
 HSClientR is an API wrapper for the [HydroShare](https://www.hydroshare.org) API. Using HSClientR, you can access resources from HydroShare directly in your R environment. 

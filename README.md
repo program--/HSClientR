@@ -5,14 +5,11 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Build
-Status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
-[![Codecov test
-coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
-<!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Build Status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
+[![Codecov test coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
 [![R-CMD-check](https://github.com/program--/HSClientR/workflows/R-CMD-check/badge.svg)](https://github.com/program--/HSClientR/actions)
+<!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 <!-- badges: end -->
 
 HSClientR is an API wrapper for the
