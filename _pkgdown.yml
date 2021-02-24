@@ -4,20 +4,30 @@ template:
   params:
     bootswatch: cosmo
 reference:
+  - title: R6 HydroShare Client
+    contents:
+      - '`HSClient`'
   - title: HydroShare API Status
     contents:
       - '`hs_status`'
-  - title: HydroShare API `GET` Requests
+  - title: HydroShare API Requests
     contents:
       - '`hs_resource`'
       - '`hs_content_types`'
       - '`hs_search`'
       - '`hs_types`'
       - '`hs_user`'
-      - '`hs_userDetails`'
+      - '`hs_user_details`'
   - title: HydroShare Discover API
     contents:
       - '`hs_discover`'
+  - title: Internal Functions
+    contents:
+      - '`hsapi`'
+      - '`hs_agent`'
+      - '`hs_auth`'
+      - '`hsapi_request`'
+      - '`handle_null`'
 navbar:
   left:
     - icon: fa-home

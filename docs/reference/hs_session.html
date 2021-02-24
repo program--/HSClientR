@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Search HydroShare Resources using solr conventions. — hs_search • HSClientR</title>
+<title>Helper function to POST authentication
+and pass along session. — hs_session • HSClientR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +47,9 @@
 
 
 
-<meta property="og:title" content="Search HydroShare Resources using solr conventions. — hs_search" />
-<meta property="og:description" content="Search HydroShare Resources using solr conventions." />
+<meta property="og:title" content="Helper function to POST authentication
+and pass along session. — hs_session" />
+<meta property="og:description" content="" />
 <meta property="og:image" content="https://github.com/program--/HSClientR/logo.png" />
 
 
@@ -120,129 +122,18 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Search HydroShare Resources using solr conventions.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/program--/HSClientR/blob/master/R/hsapi_GET.R'><code>R/hsapi_GET.R</code></a></small>
-    <div class="hidden name"><code>hs_search.Rd</code></div>
+    <h1>Helper function to <a href='https://httr.r-lib.org/reference/POST.html'>POST</a> authentication
+and pass along session.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/program--/HSClientR/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
+    <div class="hidden name"><code>hs_session.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Search HydroShare Resources using solr conventions.</p>
+    <p><a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a></p>
     </div>
 
-    <pre class="usage"><span class='fu'>hs_search</span><span class='op'>(</span>
-  page <span class='op'>=</span> <span class='cn'>NULL</span>,
-  count <span class='op'>=</span> <span class='cn'>NULL</span>,
-  text <span class='op'>=</span> <span class='cn'>NULL</span>,
-  author <span class='op'>=</span> <span class='cn'>NULL</span>,
-  contributor <span class='op'>=</span> <span class='cn'>NULL</span>,
-  subject <span class='op'>=</span> <span class='cn'>NULL</span>,
-  abstract <span class='op'>=</span> <span class='cn'>NULL</span>,
-  resource_type <span class='op'>=</span> <span class='cn'>NULL</span>,
-  content_type <span class='op'>=</span> <span class='cn'>NULL</span>,
-  coverage_type <span class='op'>=</span> <span class='cn'>NULL</span>,
-  availability <span class='op'>=</span> <span class='cn'>NULL</span>,
-  created <span class='op'>=</span> <span class='cn'>NULL</span>,
-  modified <span class='op'>=</span> <span class='cn'>NULL</span>,
-  start_date <span class='op'>=</span> <span class='cn'>NULL</span>,
-  end_date <span class='op'>=</span> <span class='cn'>NULL</span>,
-  east <span class='op'>=</span> <span class='cn'>NULL</span>,
-  north <span class='op'>=</span> <span class='cn'>NULL</span>,
-  eastlimit <span class='op'>=</span> <span class='cn'>NULL</span>,
-  westlimit <span class='op'>=</span> <span class='cn'>NULL</span>,
-  northlimit <span class='op'>=</span> <span class='cn'>NULL</span>,
-  southlimit <span class='op'>=</span> <span class='cn'>NULL</span>
-<span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>hs_session</span><span class='op'>(</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>page</th>
-      <td><p>(<code>integer</code>) A page number within the paginated result set.</p></td>
-    </tr>
-    <tr>
-      <th>count</th>
-      <td><p>(<code>integer</code>) Number of results to return per page.</p></td>
-    </tr>
-    <tr>
-      <th>text</th>
-      <td><p>(<code>character</code>) Search across all Resource Fields</p></td>
-    </tr>
-    <tr>
-      <th>author</th>
-      <td><p>(<code>character</code>) Search by author</p></td>
-    </tr>
-    <tr>
-      <th>contributor</th>
-      <td><p>*Search by contributor</p></td>
-    </tr>
-    <tr>
-      <th>subject</th>
-      <td><p>(<code>character vector</code>) Search within subject keywords</p></td>
-    </tr>
-    <tr>
-      <th>abstract</th>
-      <td><p>(<code>character</code>) Search within the abstract</p></td>
-    </tr>
-    <tr>
-      <th>resource_type</th>
-      <td><p>(<code>character</code>) Search by resource type</p></td>
-    </tr>
-    <tr>
-      <th>content_type</th>
-      <td><p>(<code>character vector</code>) Search by content type</p></td>
-    </tr>
-    <tr>
-      <th>coverage_type</th>
-      <td><p>(<code>character vector</code>) Search by coverage type
-(point, box, period)</p></td>
-    </tr>
-    <tr>
-      <th>availability</th>
-      <td><p>(<code>character vector</code>) Search by availability
-(discoverable, public, published)</p></td>
-    </tr>
-    <tr>
-      <th>created</th>
-      <td><p>(<code>Date</code>) Search by created date</p></td>
-    </tr>
-    <tr>
-      <th>modified</th>
-      <td><p>(<code>Date</code>) Search by modified date</p></td>
-    </tr>
-    <tr>
-      <th>start_date</th>
-      <td><p>(<code>Date</code>) Search by start date</p></td>
-    </tr>
-    <tr>
-      <th>end_date</th>
-      <td><p>(<code>Date</code>) Search by end date</p></td>
-    </tr>
-    <tr>
-      <th>east</th>
-      <td><p>(<code>numeric</code>) Search by location or box center east longitude</p></td>
-    </tr>
-    <tr>
-      <th>north</th>
-      <td><p>(<code>numeric</code>) Search by location or box center north latitude</p></td>
-    </tr>
-    <tr>
-      <th>eastlimit</th>
-      <td><p>(<code>numeric</code>) Search by east limit longitude</p></td>
-    </tr>
-    <tr>
-      <th>westlimit</th>
-      <td><p>(<code>numeric</code>) Search by west limit longitude</p></td>
-    </tr>
-    <tr>
-      <th>northlimit</th>
-      <td><p>(<code>numeric</code>) Search by north limit latitude</p></td>
-    </tr>
-    <tr>
-      <th>southlimit</th>
-      <td><p>(<code>numeric</code>) Search by south limit latitude</p></td>
-    </tr>
-    </table>
 
 
   </div>

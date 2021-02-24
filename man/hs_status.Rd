@@ -6,6 +6,10 @@
 \usage{
 hs_status()
 }
+\value{
+Output indicating API status
+}
 \description{
-Get HydroShare API Status
+This function calls upon the API base URL to return a status code 200.
+If a code other than 200 is returned, the function will stop.
 }

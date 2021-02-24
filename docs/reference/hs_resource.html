@@ -233,7 +233,30 @@ form of (north, south, east, west)</p></td>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a></p>
+    <p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a> with columns:</p><ul>
+<li><p><code>resource_title</code> - Title of the resource</p></li>
+<li><p><code>resource_type</code> - Resource type</p></li>
+<li><p><code>resource_id</code> -  ID of the resource</p></li>
+<li><p><code>abstract</code> - Resource abstract</p></li>
+<li><p><code>authors</code> - Authors of resource</p></li>
+<li><p><code>creator</code> - Creator of resource</p></li>
+<li><p><code>doi</code> - Resource DOI ID</p></li>
+<li><p><code>public</code> - Indicates if resource if public</p></li>
+<li><p><code>discoverable</code> - Indicates if resource is discoverable</p></li>
+<li><p><code>shareable</code> - Indicates if resource is shareable</p></li>
+<li><p><code>immutable</code> - Indicates if resource is immutable</p></li>
+<li><p><code>published</code> - Indicates if resource is published</p></li>
+<li><p><code>date_created</code> - Date resource was created</p></li>
+<li><p><code>date_last_updated</code> - Date resource was last updated</p></li>
+<li><p><code>bag_url</code> - URL to resource download,
+can be passed to <code><a href='https://rdrr.io/r/utils/download.file.html'>download.file</a></code></p></li>
+<li><p><code>science_metadata_url</code> - URL to science metadata</p></li>
+<li><p><code>resource_map_url</code> - URL to resource map</p></li>
+<li><p><code>resource_url</code> - URL to resource</p></li>
+<li><p><code>content_types</code> - Resource content types,
+see <code><a href='hs_content_types.html'>hs_content_types</a></code></p></li>
+</ul>
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Available resource types for <strong>type</strong>:</p><ul>

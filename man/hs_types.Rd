@@ -6,6 +6,25 @@
 \usage{
 hs_types()
 }
+\value{
+A character vector containing the elements:
+\itemize{
+\item \code{GenericResource}
+\item \code{RasterResource}
+\item \code{RefTimeSeriesResource}
+\item \code{TimeSeriesResource}
+\item \code{NetcdfResource}
+\item \code{ModelProgramResource}
+\item \code{ModelInstanceResource}
+\item \code{ToolResource}
+\item \code{SWATModelInstanceResource}
+\item \code{GeographicFeatureResource}
+\item \code{ScriptResource}
+\item \code{CollectionResource}
+\item \code{MODFLOWModelInstanceResource}
+\item \code{CompositeResource}
+}
+}
 \description{
 List Resource Types
 }

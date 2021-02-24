@@ -69,7 +69,30 @@ form of (north, south, east, west)}
 \item{include_obselete}{(\code{logical}) Include replaced resources?}
 }
 \value{
-a \link[tibble:tibble-package]{tibble}
+A \link[tibble:tibble-package]{tibble} with columns:
+\itemize{
+\item \code{resource_title} - Title of the resource
+\item \code{resource_type} - Resource type
+\item \code{resource_id} -  ID of the resource
+\item \code{abstract} - Resource abstract
+\item \code{authors} - Authors of resource
+\item \code{creator} - Creator of resource
+\item \code{doi} - Resource DOI ID
+\item \code{public} - Indicates if resource if public
+\item \code{discoverable} - Indicates if resource is discoverable
+\item \code{shareable} - Indicates if resource is shareable
+\item \code{immutable} - Indicates if resource is immutable
+\item \code{published} - Indicates if resource is published
+\item \code{date_created} - Date resource was created
+\item \code{date_last_updated} - Date resource was last updated
+\item \code{bag_url} - URL to resource download,
+can be passed to \code{\link{download.file}}
+\item \code{science_metadata_url} - URL to science metadata
+\item \code{resource_map_url} - URL to resource map
+\item \code{resource_url} - URL to resource
+\item \code{content_types} - Resource content types,
+see \code{\link{hs_content_types}}
+}
 }
 \description{
 List resources

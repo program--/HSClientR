@@ -83,7 +83,7 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>HSClientR is an API wrapper for the <a href="https://www.hydroshare.org">HydroShare</a> API. Using HSClientR, you can access resources from HydroShare directly in your R environment.</p>
+<p>HSClientR is an API wrapper for the <a href="https://www.hydroshare.org">HydroShare</a> API. Using HSClientR, you can access resources from HydroShare directly in your R environment, either by the package functions or the developmental <a href="https://r6.r-lib.org/reference/R6Class.html"><code>R6 Class</code></a>.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -92,29 +92,35 @@
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
 <span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"program--/HSClientR"</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="example" class="section level2">
+<div id="example-using-package-functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<a href="#example-using-package-functions" class="anchor"></a>Example Using Package Functions</h2>
 <p>This is a basic example which shows you how to access a resource. We’ll access the resource <a href="https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/">Hydrologic Terrain Analysis Using Web Based Tools</a>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(HSClientR)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Set your HydroShare username and password for API auth</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">HSCLIENT_USER =</span> <span class="st">"hydroshare-user"</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">HSCLIENT_PASS =</span> <span class="st">"hydroshare-pass"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hs_resource</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_text_search =</span> <span class="st">"Hydrologic Terrain Analysis Using Web Based Tools"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">author =</span> <span class="st">"David Tarboton"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # A tibble: 1 x 19</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   resource_title resource_type resource_id abstract authors creator doi   public</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt; &lt;lgl&gt; </span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1 Hydrologic Te… CompositeRes… e1d4f2aff7… "Digita… David … David … NA    TRUE  </span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; # … with 11 more variables: discoverable &lt;lgl&gt;, shareable &lt;lgl&gt;, immutable &lt;lgl&gt;,</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   published &lt;lgl&gt;, date_created &lt;chr&gt;, date_last_updated &lt;chr&gt;, bag_url &lt;chr&gt;,</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   science_metadata_url &lt;chr&gt;, resource_map_url &lt;chr&gt;, resource_url &lt;chr&gt;,</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; #   content_types &lt;chr&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/program--/HSClientR">HSClientR</a></span><span class="op">)</span>
+
+<span class="co"># Set your HydroShare username and password for API auth</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>HSCLIENT_USER <span class="op">=</span> <span class="st">"hydroshare-user"</span>,
+           HSCLIENT_PASS <span class="op">=</span> <span class="st">"hydroshare-pass"</span><span class="op">)</span>
+
+<span class="fu"><a href="reference/hs_resource.html">hs_resource</a></span><span class="op">(</span>
+    full_text_search <span class="op">=</span> <span class="st">"Hydrologic Terrain Analysis Using Web Based Tools"</span>,
+    author <span class="op">=</span> <span class="st">"David Tarboton"</span>
+<span class="op">)</span>
+
+<span class="co">#&gt; # A tibble: 1 x 19</span>
+<span class="co">#&gt;   resource_title resource_type resource_id abstract authors creator doi   public</span>
+<span class="co">#&gt;   &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;   &lt;lgl&gt; &lt;lgl&gt; </span>
+<span class="co">#&gt; 1 Hydrologic Te… CompositeRes… e1d4f2aff7… "Digita… David … David … NA    TRUE  </span>
+<span class="co">#&gt; # … with 11 more variables: discoverable &lt;lgl&gt;, shareable &lt;lgl&gt;, immutable &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   published &lt;lgl&gt;, date_created &lt;chr&gt;, date_last_updated &lt;chr&gt;, bag_url &lt;chr&gt;,</span>
+<span class="co">#&gt; #   science_metadata_url &lt;chr&gt;, resource_map_url &lt;chr&gt;, resource_url &lt;chr&gt;,</span>
+<span class="co">#&gt; #   content_types &lt;chr&gt;</span></code></pre></div>
+</div>
+<div id="example-using-r6-hydroshare-client-class" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-using-r6-hydroshare-client-class" class="anchor"></a>Example Using R6 HydroShare Client Class</h2>
+<p><em>In development…</em></p>
 </div>
 </div>
   </div>

@@ -5,28 +5,73 @@
 \title{Search HydroShare Resources using solr conventions.}
 \usage{
 hs_search(
-  page,
-  count,
-  text,
-  author,
-  contributor,
-  subject,
-  abstract,
-  resource_type,
-  content_type,
-  coverage_type,
-  availability,
-  created,
-  modified,
-  start_date,
-  end_date,
-  east,
-  north,
-  eastlimit,
-  westlimit,
-  northlimit,
-  southlimit
+  page = NULL,
+  count = NULL,
+  text = NULL,
+  author = NULL,
+  contributor = NULL,
+  subject = NULL,
+  abstract = NULL,
+  resource_type = NULL,
+  content_type = NULL,
+  coverage_type = NULL,
+  availability = NULL,
+  created = NULL,
+  modified = NULL,
+  start_date = NULL,
+  end_date = NULL,
+  east = NULL,
+  north = NULL,
+  eastlimit = NULL,
+  westlimit = NULL,
+  northlimit = NULL,
+  southlimit = NULL
 )
+}
+\arguments{
+\item{page}{(\code{integer}) A page number within the paginated result set.}
+
+\item{count}{(\code{integer}) Number of results to return per page.}
+
+\item{text}{(\code{character}) Search across all Resource Fields}
+
+\item{author}{(\code{character}) Search by author}
+
+\item{contributor}{*Search by contributor}
+
+\item{subject}{(\verb{character vector}) Search within subject keywords}
+
+\item{abstract}{(\code{character}) Search within the abstract}
+
+\item{resource_type}{(\code{character}) Search by resource type}
+
+\item{content_type}{(\verb{character vector}) Search by content type}
+
+\item{coverage_type}{(\verb{character vector}) Search by coverage type
+(point, box, period)}
+
+\item{availability}{(\verb{character vector}) Search by availability
+(discoverable, public, published)}
+
+\item{created}{(\code{Date}) Search by created date}
+
+\item{modified}{(\code{Date}) Search by modified date}
+
+\item{start_date}{(\code{Date}) Search by start date}
+
+\item{end_date}{(\code{Date}) Search by end date}
+
+\item{east}{(\code{numeric}) Search by location or box center east longitude}
+
+\item{north}{(\code{numeric}) Search by location or box center north latitude}
+
+\item{eastlimit}{(\code{numeric}) Search by east limit longitude}
+
+\item{westlimit}{(\code{numeric}) Search by west limit longitude}
+
+\item{northlimit}{(\code{numeric}) Search by north limit latitude}
+
+\item{southlimit}{(\code{numeric}) Search by south limit latitude}
 }
 \description{
 Search HydroShare Resources using solr conventions.

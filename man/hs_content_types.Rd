@@ -6,6 +6,20 @@
 \usage{
 hs_content_types()
 }
+\value{
+A character vector of content types.
+
+As of 2/24/2021, the types returned will be:
+\itemize{
+\item \code{GenericLogicalFile}
+\item \code{GeoRasterLogicalFile}
+\item \code{NetCDFLogicalFile}
+\item \code{GeoFeatureLogicalFile}
+\item \code{RefTimeseriesLogicalFile}
+\item \code{TimeSeriesLogicalFile}
+\item \code{FileSetLogicalFile}
+}
+}
 \description{
 List Content Types
 }

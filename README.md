@@ -5,16 +5,21 @@
 
 <!-- badges: start -->
 
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
-[![Codecov test coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
+[![Codecov test
+coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
 [![R-CMD-check](https://github.com/program--/HSClientR/workflows/R-CMD-check/badge.svg)](https://github.com/program--/HSClientR/actions)
 <!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 <!-- badges: end -->
 
 HSClientR is an API wrapper for the
 [HydroShare](https://www.hydroshare.org) API. Using HSClientR, you can
-access resources from HydroShare directly in your R environment.
+access resources from HydroShare directly in your R environment, either
+by the package functions or the developmental
+[`R6 Class`](https://r6.r-lib.org/reference/R6Class.html).
 
 ## Installation
 
@@ -25,7 +30,7 @@ You can install the developmental version of HSClientR with:
 remotes::install_github("program--/HSClientR")
 ```
 
-## Example
+## Example Using Package Functions
 
 This is a basic example which shows you how to access a resource. We’ll
 access the resource [Hydrologic Terrain Analysis Using Web Based
@@ -35,7 +40,7 @@ Tools](https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/):
 library(HSClientR)
 
 # Set your HydroShare username and password for API auth
-Sys.setenv(HSCLIENT_USER = "hydroshare-user"
+Sys.setenv(HSCLIENT_USER = "hydroshare-user",
            HSCLIENT_PASS = "hydroshare-pass")
 
 hs_resource(
@@ -52,3 +57,7 @@ hs_resource(
 #> #   science_metadata_url <chr>, resource_map_url <chr>, resource_url <chr>,
 #> #   content_types <chr>
 ```
+
+## Example Using R6 HydroShare Client Class
+
+*In development…*

@@ -25,5 +25,6 @@ Imports:
     dplyr,
     magrittr,
     lifecycle,
-    jsonlite
+    jsonlite,
+    crayon
 RdMacros: lifecycle
