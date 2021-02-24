@@ -26,5 +26,6 @@ Imports:
     magrittr,
     lifecycle,
     jsonlite,
-    crayon
+    crayon,
+    R6
 RdMacros: lifecycle
