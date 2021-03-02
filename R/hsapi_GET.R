@@ -192,6 +192,7 @@ hs_content_types <- function() {
 #' @param westlimit (`numeric`) Search by west limit longitude
 #' @param northlimit (`numeric`) Search by north limit latitude
 #' @param southlimit (`numeric`) Search by south limit latitude
+#' @return A [tibble][tibble::tibble-package]
 #' @export
 hs_search <- function(page          = NULL,
                       count         = NULL,
@@ -302,19 +303,10 @@ hs_types <- function() {
     content
 }
 
-# TODO: hs_user documentation
 #' @title List Authenticated User Information
-#' 
-#' @description `r lifecycle::badge("experimental")`
-#' 
-#' @details
-#' Currently, lifecycle is experimental due to requiring
-#' OAuth2 authentication. There is currently limited
-#' documentation on OAuth2 authentication for HydroShare.
+#' @return A [tibble][tibble::tibble-package] of *your* user details.
 #' @export
 hs_user <- function() {
-    # // hs_session()
-
     request <- hsapi_request("user/")
 
     httr::stop_for_status(request)
@@ -325,34 +317,42 @@ hs_user <- function() {
     content
 }
 
-# TODO: hs_user_details documentation
 #' @title List User Details for Some User
-#' 
-#' @description `r lifecycle::badge("experimental")`
-#' 
 #' @param user_identifier HydroShare User Identifier
-#' @details
-#' Currently, lifecycle is experimental due to requiring
-#' OAuth2 authentication. There is currently limited
-#' documentation on OAuth2 authentication for HydroShare.
+#' @return A [tibble][tibble::tibble-package] of user details.
 #' @export
 hs_user_details <- function(user_identifier) {
     if (missing(user_identifier)) {
         stop("(hs_user_details) user_identifer required.")
     }
 
-    # // hs_session()
-
     request <- hsapi_request(
-        path = paste0("userDetails/", user_identifier)
+        path = paste0(
+            "userDetails/",
+            user_identifier,
+            "/"
+        )
     )
 
     httr::stop_for_status(request)
 
     content <- httr::content(request) %>%
-               tibble::as_tibble()
+               lapply(FUN = function(attribute) {
+                   if (identical(attribute, ""))
+                       NA
+                   else
+                       attribute
+               })
 
-    content
+    tibble::tibble(
+        Name         = content$name,
+        Email        = content$email,
+        Profile_URL  = content$url,
+        Phone_Number = content$phone,
+        Address      = content$address,
+        Organization = content$organization,
+        Website      = content$website
+    )
 }
 
 # TODO: hs_by_id

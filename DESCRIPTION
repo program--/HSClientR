@@ -1,6 +1,6 @@
 Package: HSClientR
 Title: A HydroShare API client for R
-Version: 0.1
+Version: 0.2
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
@@ -23,9 +23,11 @@ Imports:
     httr,
     tibble,
     dplyr,
+    tidyr,
     magrittr,
     lifecycle,
     jsonlite,
     crayon,
+    rlang,
     R6
 RdMacros: lifecycle

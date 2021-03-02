@@ -4,14 +4,12 @@
 \alias{hs_auth}
 \title{Helper for \link[httr:authenticate]{authentication}.}
 \usage{
-hs_auth(oauth = FALSE, client_id = NULL, client_secret = NULL)
+hs_auth(set_header = FALSE)
 }
-\arguments{
-\item{oauth}{Authenticate with OAuth2? \ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}}
-
-\item{client_id}{OAuth2 Client ID (Key), required if \code{oauth = TRUE}}
-
-\item{client_secret}{OAuth2 Client Secret (Secret), required if \code{oauth = TRUE}}
+\value{
+A \link[httr:Token-class]{Token} if \code{set_header = FALSE},
+otherwise an access token set in global config
+to be included in all requests.
 }
 \description{
 Helper for \link[httr:authenticate]{authentication}.

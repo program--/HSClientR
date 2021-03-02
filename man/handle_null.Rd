@@ -8,7 +8,8 @@ values returned from API calls.}
 handle_null(content, is_list = FALSE)
 }
 \arguments{
-\item{content}{Content returned from element of \link[httr:content]{httr::content}}
+\item{content}{Content returned from element of
+\link[httr:content]{httr::content}}
 
 \item{is_list}{Is \code{content} a list?}
 }

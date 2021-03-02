@@ -47,7 +47,7 @@
 
 
 <meta property="og:title" content="HydroShare Discover API — hs_discover" />
-<meta property="og:description" content="HydroShare Discover API" />
+<meta property="og:description" content="Query the HydroShare Discover Page" />
 <meta property="og:image" content="https://github.com/program--/HSClientR/logo.png" />
 
 
@@ -80,7 +80,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">HSClientR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -126,10 +126,67 @@
     </div>
 
     <div class="ref-description">
-    <p>HydroShare Discover API</p>
+    <p>Query the HydroShare Discover Page</p>
     </div>
 
     <pre class="usage"><span class='fu'>hs_discover</span><span class='op'>(</span><span class='op'>)</span></pre>
+
+
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a> of the first 40 results from
+HydroShare's <a href='https://www.hydroshare.org/search/'>Discover Page</a>. See
+details for <code>tibble</code> description.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Main <code>tibble</code></h3>
+
+
+<p>The returned <code>tibble</code> contains the following columns:</p><ul>
+<li><p><code>title</code>: The title of the resource.</p></li>
+<li><p><code>link</code>: A link to the corresponding resource.</p></li>
+<li><p><code>author</code>: The primary author of the resource.</p></li>
+<li><p><code>abstract</code>: The abstract of the resource.</p></li>
+<li><p><code>metadata</code>: Metadata <code>tibble</code> associated with the resource. (see below)</p></li>
+<li><p><code>geodata</code>: Geodata <code>tibble</code> associated with the resource. (see below)</p></li>
+</ul>
+
+
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Metadata</h3>
+
+
+<p>The metadata <code>tibble</code> can be accessed via <code>$metadata</code>,
+and contains the columns:</p><ul>
+<li><p><code>authors</code>: All authors of the resource.</p></li>
+<li><p><code>contributor</code>: All contributors for the resource.</p></li>
+<li><p><code>author_link</code>: A URL (if it exists) to the
+primary author's HydroShare profile.</p></li>
+<li><p><code>owner</code>: The owner(s) of the resource.</p></li>
+<li><p><code>subject</code>: The subject tags of the resource.</p></li>
+<li><p><code>created</code>: The date the resource was created.</p></li>
+<li><p><code>modified</code>: The laste data the resource was modified.</p></li>
+<li><p><code>availability</code>: The availability tags of the resource.</p></li>
+<li><p><code>type</code>: The resource type.</p></li>
+</ul>
+
+
+<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Geodata</h3>
+
+
+<p>The geodata <code>tibble</code> can be accessed via <code>$geodata</code>,
+and contains the columns:</p><ul>
+<li><p><code>short_id</code>: The HydroShare DOI Short ID</p></li>
+<li><p><code>geo_title</code>: Title of resource (same as <code>title</code>)</p></li>
+<li><p><code>coverage_type</code>: The resource's feature type
+on the coverage map</p></li>
+<li><p><code>north</code>: The latitude midpoint</p></li>
+<li><p><code>east</code>: The longitude midpoint</p></li>
+<li><p><code>northlimit</code>: Coverage map north latitude</p></li>
+<li><p><code>southlimit</code>: Coverage map south latitude</p></li>
+<li><p><code>eastlimit</code>: Coverage map east longitude</p></li>
+<li><p><code>westlimit</code>: Coverage map west longitude</p></li>
+</ul>
 
 
 

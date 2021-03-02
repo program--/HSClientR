@@ -6,6 +6,61 @@
 \usage{
 hs_discover()
 }
+\value{
+A \link[tibble:tibble-package]{tibble} of the first 40 results from
+HydroShare's \href{https://www.hydroshare.org/search/}{Discover Page}. See
+details for \code{tibble} description.
+}
 \description{
-HydroShare Discover API
+Query the HydroShare Discover Page
+}
+\details{
+\subsection{Main \code{tibble}}{
+
+The returned \code{tibble} contains the following columns:
+\itemize{
+\item \code{title}: The title of the resource.
+\item \code{link}: A link to the corresponding resource.
+\item \code{author}: The primary author of the resource.
+\item \code{abstract}: The abstract of the resource.
+\item \code{metadata}: Metadata \code{tibble} associated with the resource. (see below)
+\item \code{geodata}: Geodata \code{tibble} associated with the resource. (see below)
+}
+}
+
+\subsection{Metadata}{
+
+The metadata \code{tibble} can be accessed via \verb{$metadata},
+and contains the columns:
+\itemize{
+\item \code{authors}: All authors of the resource.
+\item \code{contributor}: All contributors for the resource.
+\item \code{author_link}: A URL (if it exists) to the
+primary author's HydroShare profile.
+\item \code{owner}: The owner(s) of the resource.
+\item \code{subject}: The subject tags of the resource.
+\item \code{created}: The date the resource was created.
+\item \code{modified}: The laste data the resource was modified.
+\item \code{availability}: The availability tags of the resource.
+\item \code{type}: The resource type.
+}
+}
+
+\subsection{Geodata}{
+
+The geodata \code{tibble} can be accessed via \verb{$geodata},
+and contains the columns:
+\itemize{
+\item \code{short_id}: The HydroShare DOI Short ID
+\item \code{geo_title}: Title of resource (same as \code{title})
+\item \code{coverage_type}: The resource's feature type
+on the coverage map
+\item \code{north}: The latitude midpoint
+\item \code{east}: The longitude midpoint
+\item \code{northlimit}: Coverage map north latitude
+\item \code{southlimit}: Coverage map south latitude
+\item \code{eastlimit}: Coverage map east longitude
+\item \code{westlimit}: Coverage map west longitude
+}
+}
 }

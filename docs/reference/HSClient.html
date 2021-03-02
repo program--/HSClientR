@@ -81,7 +81,7 @@ In development" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">HSClientR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -127,7 +127,7 @@ In development" />
     </div>
 
     <div class="ref-description">
-    <p><a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a></p>
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a></p>
 <p><em>In development</em></p>
     </div>
 
@@ -141,6 +141,10 @@ In development" />
 <ul>
 <li><p><a href='#method-new'><code>HSClient$new()</code></a></p></li>
 <li><p><a href='#method-print'><code>HSClient$print()</code></a></p></li>
+<li><p><a href='#method-authenticate'><code>HSClient$authenticate()</code></a></p></li>
+<li><p><a href='#method-query'><code>HSClient$query()</code></a></p></li>
+<li><p><a href='#method-get_next'><code>HSClient$get_next()</code></a></p></li>
+<li><p><a href='#method-get_prev'><code>HSClient$get_prev()</code></a></p></li>
 <li><p><a href='#method-clone'><code>HSClient$clone()</code></a></p></li>
 </ul>
 <p><hr>
@@ -150,6 +154,8 @@ In development" />
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
 <p>A new <code>HSClient</code> object.</p>
+<p><em>Note: A message will be issued
+since R6-object is still in development.</em></p>
 <p><hr>
 <a id="method-print"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code><a href='https://rdrr.io/r/base/print.html'>print()</a></code></h3>
 <p>Print HSClient object</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
@@ -157,6 +163,45 @@ In development" />
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
 <p><code>HSClient</code> output</p>
+<p><hr>
+<a id="method-authenticate"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>authenticate()</code></h3>
+<p>Perform OAuth2 Authentication
+with HydroShare.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>authenticate</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Details</h4>
+<p>Note, the access token will be set
+as a header automatically if <code>.token</code>
+is <code>NULL</code>.</p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A <a href='https://httr.r-lib.org/reference/Token-class.html'>Token</a> object.</p>
+<p><hr>
+<a id="method-query"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>query()</code></h3>
+<p>Query/Search HydroShare</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>query</span><span class='op'>(</span><span class='va'>...</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
+<p><div class="arguments"></p><dl>
+<dt><code>...</code></dt><dd><p>Query parameters. See <a href='hs_search.html'>hs_search</a> parameters.</p></dd>
+
+</dl><p></div></p>
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a></p>
+<p><hr>
+<a id="method-get_next"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>get_next()</code></h3>
+<p>Get next resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>get_next</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A <code>resource</code> object</p>
+<p><hr>
+<a id="method-get_prev"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>get_prev()</code></h3>
+<p>Get previous resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>get_prev</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A <code>resource</code> object</p>
 <p><hr>
 <a id="method-clone"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clone()</code></h3>
 <p>The objects of this class are cloneable with this method.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>

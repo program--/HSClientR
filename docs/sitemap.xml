@@ -7,6 +7,9 @@
     <loc>https://github.com/program--/HSClientR/reference/HSClient.html</loc>
   </url>
   <url>
+    <loc>https://github.com/program--/HSClientR/reference/HSClientR-package.html</loc>
+  </url>
+  <url>
     <loc>https://github.com/program--/HSClientR/reference/handle_null.html</loc>
   </url>
   <url>
@@ -26,9 +29,6 @@
   </url>
   <url>
     <loc>https://github.com/program--/HSClientR/reference/hs_search.html</loc>
-  </url>
-  <url>
-    <loc>https://github.com/program--/HSClientR/reference/hs_session.html</loc>
   </url>
   <url>
     <loc>https://github.com/program--/HSClientR/reference/hs_status.html</loc>

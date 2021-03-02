@@ -9,11 +9,9 @@ hs_user_details(user_identifier)
 \arguments{
 \item{user_identifier}{HydroShare User Identifier}
 }
-\description{
-\ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}
+\value{
+A \link[tibble:tibble-package]{tibble} of user details.
 }
-\details{
-Currently, lifecycle is experimental due to requiring
-OAuth2 authentication. There is currently limited
-documentation on OAuth2 authentication for HydroShare.
+\description{
+List User Details for Some User
 }

@@ -6,6 +6,7 @@ template:
 reference:
   - title: R6 HydroShare Client
     contents:
+      - '`HSClientR-package`'
       - '`HSClient`'
   - title: HydroShare API Status
     contents:

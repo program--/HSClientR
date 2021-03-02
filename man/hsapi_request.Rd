@@ -6,18 +6,14 @@
 \link[httr:GET]{GET}, \link[httr:POST]{POST},
 \link[httr:PUT]{PUT}, and \link[httr:DELETE]{DELETE} requests.}
 \usage{
-hsapi_request(path, type, query = NULL, auth = TRUE, oauth = TRUE)
+hsapi_request(path, type, ...)
 }
 \arguments{
 \item{path}{API Request Path}
 
 \item{type}{Request Type (GET, POST, PUT, or DELETE)}
 
-\item{query}{API Query Parameters}
-
-\item{auth}{Use basic HTTPS authentication}
-
-\item{oauth}{Use OAuth2 authentication \ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}}
+\item{...}{Parameters passed onto a \code{httr} request}
 }
 \description{
 Helper function for:

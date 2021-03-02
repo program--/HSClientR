@@ -73,6 +73,9 @@ hs_search(
 
 \item{southlimit}{(\code{numeric}) Search by south limit latitude}
 }
+\value{
+A \link[tibble:tibble-package]{tibble}
+}
 \description{
 Search HydroShare Resources using solr conventions.
 }

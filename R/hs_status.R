@@ -37,7 +37,7 @@ hs_status <- function() {
         crayon::cyan("https://github.com/program--/HSClientR"), "\n",
         crayon::silver("Making Data Accessible."),
         " With ", crayon::red("\u2665"), " from ",
-        crayon::bold("HSClientR"), ".",
+        crayon::bold("HSClientR"), ".\n",
         sep = ""
     )
 }

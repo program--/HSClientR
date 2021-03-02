@@ -86,7 +86,7 @@ PUT, and DELETE requests." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">HSClientR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2</span>
       </span>
     </div>
 
@@ -139,7 +139,7 @@ PUT, and DELETE requests." />
 <a href='https://httr.r-lib.org/reference/PUT.html'>PUT</a>, and <a href='https://httr.r-lib.org/reference/DELETE.html'>DELETE</a> requests.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>hsapi_request</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>type</span>, query <span class='op'>=</span> <span class='cn'>NULL</span>, auth <span class='op'>=</span> <span class='cn'>TRUE</span>, oauth <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>hsapi_request</span><span class='op'>(</span><span class='va'>path</span>, <span class='va'>type</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,16 +153,8 @@ PUT, and DELETE requests." />
       <td><p>Request Type (GET, POST, PUT, or DELETE)</p></td>
     </tr>
     <tr>
-      <th>query</th>
-      <td><p>API Query Parameters</p></td>
-    </tr>
-    <tr>
-      <th>auth</th>
-      <td><p>Use basic HTTPS authentication</p></td>
-    </tr>
-    <tr>
-      <th>oauth</th>
-      <td><p>Use OAuth2 authentication <a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a></p></td>
+      <th>...</th>
+      <td><p>Parameters passed onto a <code>httr</code> request</p></td>
     </tr>
     </table>
 

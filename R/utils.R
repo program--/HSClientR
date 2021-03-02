@@ -10,6 +10,16 @@
 #' @usage lhs \%>\% rhs
 NULL
 
+## usethis namespace: start
+#' @importFrom tibble tibble
+## usethis namespace: end
+NULL
+
+## usethis namespace: start
+#' @importFrom graphics title
+## usethis namespace: end
+NULL
+
 #' @title Helper for [httr::handle][httr::handle].
 #' @keywords internal
 #' @export
@@ -25,76 +35,52 @@ hs_agent <- function() {
 }
 
 #' @title Helper for [authentication][httr::authenticate].
-#' @param oauth Authenticate with OAuth2? `r lifecycle::badge("experimental")`
-#' @param client_id OAuth2 Client ID (Key), required if `oauth = TRUE`
-#' @param client_secret OAuth2 Client Secret (Secret), required if `oauth = TRUE`
+#' @return A [Token][httr::Token] if `set_header = FALSE`,
+#'         otherwise an access token set in global config
+#'         to be included in all requests.
 #' @keywords internal
 #' @export
-hs_auth <- function(oauth = FALSE, client_id = NULL, client_secret = NULL) {
-    username <- Sys.getenv("HSCLIENT_USER")
-    password <- Sys.getenv("HSCLIENT_PASS")
+hs_auth <- function(set_header = FALSE) {
 
-    if (identical(username, "") & identical(password, "")) {
-        stop("(HSClientR) Both HSCLIENT_USER and HSCLIENT_PASS not set.\n",
-            "Please set env vars to your HydroShare ",
-            "username and password, respectively.",
-            call. = FALSE)
-    }
+    client_id <- "50cgkHLnpyBIXgr7i8DnXrJsr8CSO64gws0EptKO"
+    client_secret <- paste0("SSq2Rrln8BLL9K5P58pl4r3r7dGXwP1u",
+                            "ArT382i4gFev7llmSkWGblFfu28BUVOd",
+                            "845dFufTiF27Grgfm7iVWCWhtLQdKrZh",
+                            "FdcYZgRfYLw2tHP4wvcPRdCOijjTei5Q")
 
-    if (identical(username, "")) {
-        stop("(HSClientR) HSCLIENT_USER not set.\n",
-            "Please set env var to your HydroShare username.",
-            call. = FALSE)
-    }
+    app <- httr::oauth_app(
+        appname = "hydroshare",
+        key     = client_id,
+        secret  = client_secret
+    )
 
-    if (identical(password, "")) {
-        stop("(HSClientR) HSCLIENT_PASS not set.\n",
-            "Please set env var to your HydroShare password.",
-            call. = FALSE)
-    }
+    endpoint <- httr::oauth_endpoint(
+        authorize = "https://www.hydroshare.org/o/authorize/",
+        access    = "https://www.hydroshare.org/o/token/"
+    )
 
-    if (oauth & !is.null(client_id) & !is.null(client_secret)) {
-        app <- httr::oauth_app(
-            appname = "hydroshare",
-            key     = client_id,
-            secret  = client_secret
-        )
+    token <- httr::oauth2.0_token(
+        endpoint = endpoint,
+        app      = app,
+        type     = "application/x-www-form-urlencoded",
+        cache    = TRUE
+    )
 
-        endpoint <- httr::oauth_endpoint(
-            authorize = "authorize",
-            access    = "token",
-            base_url  = "https://www.hydroshare.org/o"
-        )
+    if (set_header) {
+        # Get access token
+        creds <- token$credentials %>%
+                names() %>%
+                jsonlite::fromJSON()
 
-        httr::oauth2.0_token(
-            endpoint = endpoint,
-            app = app,
-            client_credentials = TRUE
+        # Apply to all subsequent requests
+        httr::set_config(
+            config = httr::add_headers(
+                Authorization = paste("Bearer", creds$access_token)
+            )
         )
     } else {
-        httr::authenticate(username, password)
+        token
     }
-}
-
-#' @title Helper function to [POST][httr::POST] authentication
-#'        and pass along session.
-#' @description `r lifecycle::badge("experimental")`
-#' @keywords internal
-#' @export
-hs_session <- function() {
-    csrf <- hsapi_request("", type = "GET")$cookies$csrftoken
-
-    httr::POST(
-        "hydroshare.org/accounts/login/?next=/hsapi/",
-        httr::set_cookies(csrftoken = csrf),
-        body = list(
-            csrfmiddlewaretoken = csrf,
-            username = I(Sys.getenv("HSCLIENT_USER")),
-            password = I(Sys.getenv("HSCLIENT_PASS")),
-            "next" = "/hsapi/"
-        ),
-        encode = "form"
-    )
 }
 
 #' @title Helper function for:
@@ -102,39 +88,26 @@ hs_session <- function() {
 #'        [PUT][httr::PUT], and [DELETE][httr::DELETE] requests.
 #' @param path API Request Path
 #' @param type Request Type (GET, POST, PUT, or DELETE)
-#' @param query API Query Parameters
-#' @param auth Use basic HTTPS authentication
-#' @param oauth Use OAuth2 authentication `r lifecycle::badge("experimental")`
+#' @param ... Parameters passed onto a `httr` request
 #' @keywords internal
 #' @export
-hsapi_request <- function(path, type, query = NULL, auth = TRUE, oauth = TRUE) {
+hsapi_request <- function(path, type, ...) {
     if (missing(type)) type <- "GET"
 
     if (identical(type, "GET")) {
-        if (auth) {
-            auth <- hs_auth()
-
-            httr::GET(
-                handle = hsapi(),
-                path   = paste0("hsapi/", path),
-                query  = query,
-                auth   = ifelse(identical(class(auth), "request", NULL, auth)),
-                agent  = hs_agent()
-            )
-        } else {
-            httr::GET(
-                handle = hsapi(),
-                path   = paste0("hsapi/", path),
-                query  = query,
-                agent  = hs_agent()
-            )
-        }
+        httr::GET(
+            handle = hsapi(),
+            path   = paste0("hsapi/", path),
+            agent  = hs_agent(),
+            ...
+        )
     }
 }
 
 #' @title Helper function for handling \code{NULL}
 #'        values returned from API calls.
-#' @param content Content returned from element of [httr::content][httr::content]
+#' @param content Content returned from element of
+#'                [httr::content][httr::content]
 #' @param is_list Is `content` a list?
 #' @keywords internal
 #' @export

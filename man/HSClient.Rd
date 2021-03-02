@@ -4,7 +4,7 @@
 \alias{HSClient}
 \title{R6 Class representing a HydroShare Client}
 \description{
-\ifelse{html}{\out{<a href='https://www.tidyverse.org/lifecycle/#experimental'><img src='figures/lifecycle-experimental.svg' alt='Experimental lifecycle'></a>}}{\strong{Experimental}}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 
 \emph{In development}
 }
@@ -13,6 +13,10 @@
 \itemize{
 \item \href{#method-new}{\code{HSClient$new()}}
 \item \href{#method-print}{\code{HSClient$print()}}
+\item \href{#method-authenticate}{\code{HSClient$authenticate()}}
+\item \href{#method-query}{\code{HSClient$query()}}
+\item \href{#method-get_next}{\code{HSClient$get_next()}}
+\item \href{#method-get_prev}{\code{HSClient$get_prev()}}
 \item \href{#method-clone}{\code{HSClient$clone()}}
 }
 }
@@ -27,6 +31,9 @@ Initialize a HydroShare Client
 
 \subsection{Returns}{
 A new \code{HSClient} object.
+
+\emph{Note: A message will be issued
+since R6-object is still in development.}
 }
 }
 \if{html}{\out{<hr>}}
@@ -40,6 +47,72 @@ Print HSClient object
 
 \subsection{Returns}{
 \code{HSClient} output
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-authenticate"></a>}}
+\if{latex}{\out{\hypertarget{method-authenticate}{}}}
+\subsection{Method \code{authenticate()}}{
+Perform OAuth2 Authentication
+with HydroShare.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$authenticate()}\if{html}{\out{</div>}}
+}
+
+\subsection{Details}{
+Note, the access token will be set
+as a header automatically if \code{.token}
+is \code{NULL}.
+}
+
+\subsection{Returns}{
+A \link[httr:Token-class]{Token} object.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-query"></a>}}
+\if{latex}{\out{\hypertarget{method-query}{}}}
+\subsection{Method \code{query()}}{
+Query/Search HydroShare
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$query(...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{Query parameters. See \link{hs_search} parameters.}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+A \link[tibble:tibble-package]{tibble}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-get_next"></a>}}
+\if{latex}{\out{\hypertarget{method-get_next}{}}}
+\subsection{Method \code{get_next()}}{
+Get next resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$get_next()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+A \code{resource} object
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-get_prev"></a>}}
+\if{latex}{\out{\hypertarget{method-get_prev}{}}}
+\subsection{Method \code{get_prev()}}{
+Get previous resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$get_prev()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+A \code{resource} object
 }
 }
 \if{html}{\out{<hr>}}
