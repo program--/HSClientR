@@ -99,10 +99,10 @@
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/program--/HSClientR">HSClientR</a></span><span class="op">)</span>
 
-<span class="co"># Set your HydroShare username and password for API auth</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span>HSCLIENT_USER <span class="op">=</span> <span class="st">"hydroshare-user"</span>,
-           HSCLIENT_PASS <span class="op">=</span> <span class="st">"hydroshare-pass"</span><span class="op">)</span>
+<span class="co"># To set auth headers</span>
+<span class="fu"><a href="reference/hs_auth.html">hs_auth</a></span><span class="op">(</span>set_headers <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 
+<span class="co"># Get resource</span>
 <span class="fu"><a href="reference/hs_resource.html">hs_resource</a></span><span class="op">(</span>
     full_text_search <span class="op">=</span> <span class="st">"Hydrologic Terrain Analysis Using Web Based Tools"</span>,
     author <span class="op">=</span> <span class="st">"David Tarboton"</span>
@@ -115,12 +115,121 @@
 <span class="co">#&gt; # … with 11 more variables: discoverable &lt;lgl&gt;, shareable &lt;lgl&gt;, immutable &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   published &lt;lgl&gt;, date_created &lt;chr&gt;, date_last_updated &lt;chr&gt;, bag_url &lt;chr&gt;,</span>
 <span class="co">#&gt; #   science_metadata_url &lt;chr&gt;, resource_map_url &lt;chr&gt;, resource_url &lt;chr&gt;,</span>
-<span class="co">#&gt; #   content_types &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt; #   content_types &lt;chr&gt;</span>
+
+<span class="co"># Alternatively, HydroShare has a `search` endpoint that</span>
+<span class="co"># can be used as well</span>
+
+<span class="fu"><a href="reference/hs_search.html">hs_search</a></span><span class="op">(</span>
+    text <span class="op">=</span> <span class="st">"Hydrologic Terrain Analysis Using Web Based Tools"</span>,
+    author <span class="op">=</span> <span class="st">"David Tarboton"</span>
+<span class="op">)</span>
+
+<span class="co">#&gt; # A tibble: 5 x 18</span>
+<span class="co">#&gt;   text      author  abstract    contributor subject  availability created modified</span>
+<span class="co">#&gt;   &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;   </span>
+<span class="co">#&gt; 1 " \n c1b… Tarbot… "Can your … ""          #gisDay… public       2015-1… 2015-11…</span>
+<span class="co">#&gt; 2 " \n 130… Tarbot… "Can your … ""          AGU2015  public       2015-1… 2015-12…</span>
+<span class="co">#&gt; 3 " \n e1d… Tarbot… "Digital E… ""          TauDEM,… public       2018-0… 2018-04…</span>
+<span class="co">#&gt; 4 " \n 66f… Tarbot… "Material … ""          Worksho… public       2016-0… 2016-07…</span>
+<span class="co">#&gt; 5 " \n d75… Tarbot… "Model My … ""          present… public       2018-0… 2018-04…</span>
+<span class="co">#&gt; # … with 10 more variables: coverage_type &lt;chr&gt;, east &lt;lgl&gt;, northlimit &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   eastlimit &lt;lgl&gt;, southlimit &lt;lgl&gt;, westlimit &lt;lgl&gt;, start_date &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   end_date &lt;lgl&gt;, resource_type &lt;chr&gt;, content_type &lt;chr&gt;</span>
+
+<span class="co"># Another way of finding resources is via the Discover API.</span>
+<span class="co"># This is equivalent to accessing the "Discover" page directly</span>
+<span class="co"># on the HydroShare website. It returns the first 40 results.</span>
+
+<span class="fu"><a href="reference/hs_discover.html">hs_discover</a></span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">#&gt; # A tibble: 40 x 6</span>
+<span class="co">#&gt;    title          link          author       abstract          short_id   metadata</span>
+<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;         &lt;chr&gt;        &lt;chr&gt;             &lt;chr&gt;      &lt;list&gt;  </span>
+<span class="co">#&gt;  1 SUMMA Simulat… https://hydr… Choi, Young… "These are examp… 03dc01d36… &lt;tibble…</span>
+<span class="co">#&gt;  2 SUMMA Simulat… https://hydr… Choi, Young… "These are examp… ac54c8046… &lt;tibble…</span>
+<span class="co">#&gt;  3 NLDAS Forcing… https://hydr… Choi, Young… "This resource w… a28685d2d… &lt;tibble…</span>
+<span class="co">#&gt;  4 SHAW model in… https://hydr… Marshall, A… "This dataset su… 5a355d673… &lt;tibble…</span>
+<span class="co">#&gt;  5 Application o… https://hydr… Pedrazas, M… "Fluvio-deltaic … cf3c26339… &lt;tibble…</span>
+<span class="co">#&gt;  6 ModelMyWaters… https://hydr… Ensign, Sco… "A watershed mul… a10bfc16d… &lt;tibble…</span>
+<span class="co">#&gt;  7 Wasatch Envir… https://hydr… University … "This dataset co… 5057577e8… &lt;tibble…</span>
+<span class="co">#&gt;  8 Wasatch Envir… https://hydr… University … "This dataset co… 252980b3b… &lt;tibble…</span>
+<span class="co">#&gt;  9 Wasatch Envir… https://hydr… University … "This dataset co… 6445418c7… &lt;tibble…</span>
+<span class="co">#&gt; 10 Wasatch Envir… https://hydr… University … "This dataset co… 74dc57ed7… &lt;tibble…</span>
+<span class="co">#&gt; # … with 30 more rows</span></code></pre></div>
 </div>
 <div id="example-using-r6-hydroshare-client-class" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example-using-r6-hydroshare-client-class" class="anchor"></a>Example Using R6 HydroShare Client Class</h2>
-<p><em>In development…</em></p>
+<blockquote>
+<p>Note: functionality for queries and discover traversal still need to be implemented. The example below may change as the object matures.</p>
+</blockquote>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># Create new HSClient object</span>
+<span class="va">hs_client</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/HSClient.html">HSClient</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">#&gt; R6-based client still in-development.</span>
+<span class="co">#&gt; Full functionality may not exist.</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; HSClientR - R6 Client</span>
+<span class="co">#&gt; =======================================</span>
+<span class="co">#&gt; Thanks for using HSClientR! ♥</span>
+<span class="co">#&gt; You can start a query with $query()</span>
+<span class="co">#&gt; Make sure to authenticate with $authenticate()</span>
+<span class="co">#&gt; =======================================</span>
+
+<span class="va">hs_client</span><span class="op">$</span><span class="fu">print</span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">#&gt; Authenticated as:</span>
+<span class="co">#&gt; Justin Singh-Mohudpur</span>
+<span class="co">#&gt; User: jsinghm</span>
+<span class="co">#&gt; ID:   8409</span>
+<span class="co">#&gt; Org:  University of California, Santa Barbara</span>
+<span class="co">#&gt; =======================================</span>
+<span class="co">#&gt; Last Query ($query):</span>
+<span class="co">#&gt; Query Results:</span>
+
+<span class="co"># Begin authentication</span>
+<span class="va">hs_client</span><span class="op">$</span><span class="fu">authenticate</span><span class="op">(</span><span class="op">)</span>
+
+<span class="co"># OAuth2 Dance will begin and a web browser</span>
+<span class="co"># will open to HydroShare's login/authorization</span>
+<span class="co"># page. Once you login, an access token will be</span>
+<span class="co"># sent back to a local httpuv web server for</span>
+<span class="co"># your R session.</span>
+
+<span class="co"># Search for a resource</span>
+<span class="va">hs_client</span><span class="op">$</span><span class="fu">query</span><span class="op">(</span>text <span class="op">=</span> <span class="st">"NHDPlus VAA"</span><span class="op">)</span>
+
+<span class="co">#&gt; # A tibble: 2 x 18</span>
+<span class="co">#&gt;   text     author  abstract    contributor subject   availability created modified</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;   </span>
+<span class="co">#&gt; 1 " \n ba… Rea, A… "The NHDPl… ""          NHDPlus,… public       2019-0… 2019-08…</span>
+<span class="co">#&gt; 2 " \n 60… Johnso… "These fil… ""          roughnes… public       2020-1… 2021-02…</span>
+<span class="co">#&gt; # … with 10 more variables: coverage_type &lt;chr&gt;, east &lt;dbl&gt;, northlimit &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   eastlimit &lt;dbl&gt;, southlimit &lt;dbl&gt;, westlimit &lt;dbl&gt;, start_date &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   end_date &lt;lgl&gt;, resource_type &lt;chr&gt;, content_type &lt;chr&gt;</span>
+
+<span class="co"># $query uses hs_search() to perform the query,</span>
+<span class="co"># and while a tibble is outputted, the object returns</span>
+<span class="co"># itself invisibly. Once the query is performed, we can</span>
+<span class="co"># print our object to see our last query and its results:</span>
+
+<span class="va">hs_client</span><span class="op">$</span><span class="fu">print</span><span class="op">(</span><span class="op">)</span>
+
+<span class="co">#&gt; Authenticated as:</span>
+<span class="co">#&gt; Justin Singh-Mohudpur</span>
+<span class="co">#&gt; User: jsinghm</span>
+<span class="co">#&gt; ID:   8409</span>
+<span class="co">#&gt; Org:  University of California, Santa Barbara</span>
+<span class="co">#&gt; =======================================</span>
+<span class="co">#&gt; Last Query ($query): text = "NHDPlus VAA"</span>
+<span class="co">#&gt; Query Results:</span>
+<span class="co">#&gt;  </span>
+<span class="co">#&gt;  6092c8a62fac45be97a09bfd0b0bf726  </span>
+<span class="co">#&gt;  </span>
+<span class="co">#&gt;  NHDPlus Value Added Attributes - no geometries  </span>
+<span class="co">#&gt;  These files contain a curated set ...</span></code></pre></div>
 </div>
 </div>
   </div>

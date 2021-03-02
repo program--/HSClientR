@@ -39,10 +39,10 @@ Tools](https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/):
 ``` r
 library(HSClientR)
 
-# Set your HydroShare username and password for API auth
-Sys.setenv(HSCLIENT_USER = "hydroshare-user",
-           HSCLIENT_PASS = "hydroshare-pass")
+# To set auth headers
+hs_auth(set_headers = TRUE)
 
+# Get resource
 hs_resource(
     full_text_search = "Hydrologic Terrain Analysis Using Web Based Tools",
     author = "David Tarboton"
@@ -56,8 +56,118 @@ hs_resource(
 #> #   published <lgl>, date_created <chr>, date_last_updated <chr>, bag_url <chr>,
 #> #   science_metadata_url <chr>, resource_map_url <chr>, resource_url <chr>,
 #> #   content_types <chr>
+
+# Alternatively, HydroShare has a `search` endpoint that
+# can be used as well
+
+hs_search(
+    text = "Hydrologic Terrain Analysis Using Web Based Tools",
+    author = "David Tarboton"
+)
+
+#> # A tibble: 5 x 18
+#>   text      author  abstract    contributor subject  availability created modified
+#>   <chr>     <chr>   <chr>       <chr>       <chr>    <chr>        <chr>   <chr>   
+#> 1 " \n c1b… Tarbot… "Can your … ""          #gisDay… public       2015-1… 2015-11…
+#> 2 " \n 130… Tarbot… "Can your … ""          AGU2015  public       2015-1… 2015-12…
+#> 3 " \n e1d… Tarbot… "Digital E… ""          TauDEM,… public       2018-0… 2018-04…
+#> 4 " \n 66f… Tarbot… "Material … ""          Worksho… public       2016-0… 2016-07…
+#> 5 " \n d75… Tarbot… "Model My … ""          present… public       2018-0… 2018-04…
+#> # … with 10 more variables: coverage_type <chr>, east <lgl>, northlimit <lgl>,
+#> #   eastlimit <lgl>, southlimit <lgl>, westlimit <lgl>, start_date <lgl>,
+#> #   end_date <lgl>, resource_type <chr>, content_type <chr>
+
+# Another way of finding resources is via the Discover API.
+# This is equivalent to accessing the "Discover" page directly
+# on the HydroShare website. It returns the first 40 results.
+
+hs_discover()
+
+#> # A tibble: 40 x 6
+#>    title          link          author       abstract          short_id   metadata
+#>    <chr>          <chr>         <chr>        <chr>             <chr>      <list>  
+#>  1 SUMMA Simulat… https://hydr… Choi, Young… "These are examp… 03dc01d36… <tibble…
+#>  2 SUMMA Simulat… https://hydr… Choi, Young… "These are examp… ac54c8046… <tibble…
+#>  3 NLDAS Forcing… https://hydr… Choi, Young… "This resource w… a28685d2d… <tibble…
+#>  4 SHAW model in… https://hydr… Marshall, A… "This dataset su… 5a355d673… <tibble…
+#>  5 Application o… https://hydr… Pedrazas, M… "Fluvio-deltaic … cf3c26339… <tibble…
+#>  6 ModelMyWaters… https://hydr… Ensign, Sco… "A watershed mul… a10bfc16d… <tibble…
+#>  7 Wasatch Envir… https://hydr… University … "This dataset co… 5057577e8… <tibble…
+#>  8 Wasatch Envir… https://hydr… University … "This dataset co… 252980b3b… <tibble…
+#>  9 Wasatch Envir… https://hydr… University … "This dataset co… 6445418c7… <tibble…
+#> 10 Wasatch Envir… https://hydr… University … "This dataset co… 74dc57ed7… <tibble…
+#> # … with 30 more rows
 ```
 
 ## Example Using R6 HydroShare Client Class
 
-*In development…*
+> Note: functionality for queries and discover traversal still need to
+> be implemented. The example below may change as the object matures.
+
+``` r
+# Create new HSClient object
+hs_client <- HSClient$new()
+
+#> R6-based client still in-development.
+#> Full functionality may not exist.
+#> 
+#> HSClientR - R6 Client
+#> =======================================
+#> Thanks for using HSClientR! ♥
+#> You can start a query with $query()
+#> Make sure to authenticate with $authenticate()
+#> =======================================
+
+hs_client$print()
+
+#> Authenticated as:
+#> Justin Singh-Mohudpur
+#> User: jsinghm
+#> ID:   8409
+#> Org:  University of California, Santa Barbara
+#> =======================================
+#> Last Query ($query):
+#> Query Results:
+
+# Begin authentication
+hs_client$authenticate()
+
+# OAuth2 Dance will begin and a web browser
+# will open to HydroShare's login/authorization
+# page. Once you login, an access token will be
+# sent back to a local httpuv web server for
+# your R session.
+
+# Search for a resource
+hs_client$query(text = "NHDPlus VAA")
+
+#> # A tibble: 2 x 18
+#>   text     author  abstract    contributor subject   availability created modified
+#>   <chr>    <chr>   <chr>       <chr>       <chr>     <chr>        <chr>   <chr>   
+#> 1 " \n ba… Rea, A… "The NHDPl… ""          NHDPlus,… public       2019-0… 2019-08…
+#> 2 " \n 60… Johnso… "These fil… ""          roughnes… public       2020-1… 2021-02…
+#> # … with 10 more variables: coverage_type <chr>, east <dbl>, northlimit <dbl>,
+#> #   eastlimit <dbl>, southlimit <dbl>, westlimit <dbl>, start_date <lgl>,
+#> #   end_date <lgl>, resource_type <chr>, content_type <chr>
+
+# $query uses hs_search() to perform the query,
+# and while a tibble is outputted, the object returns
+# itself invisibly. Once the query is performed, we can
+# print our object to see our last query and its results:
+
+hs_client$print()
+
+#> Authenticated as:
+#> Justin Singh-Mohudpur
+#> User: jsinghm
+#> ID:   8409
+#> Org:  University of California, Santa Barbara
+#> =======================================
+#> Last Query ($query): text = "NHDPlus VAA"
+#> Query Results:
+#>  
+#>  6092c8a62fac45be97a09bfd0b0bf726  
+#>  
+#>  NHDPlus Value Added Attributes - no geometries  
+#>  These files contain a curated set ...
+```

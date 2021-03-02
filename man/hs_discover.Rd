@@ -24,7 +24,6 @@ The returned \code{tibble} contains the following columns:
 \item \code{author}: The primary author of the resource.
 \item \code{abstract}: The abstract of the resource.
 \item \code{metadata}: Metadata \code{tibble} associated with the resource. (see below)
-\item \code{geodata}: Geodata \code{tibble} associated with the resource. (see below)
 }
 }
 
@@ -43,24 +42,6 @@ primary author's HydroShare profile.
 \item \code{modified}: The laste data the resource was modified.
 \item \code{availability}: The availability tags of the resource.
 \item \code{type}: The resource type.
-}
-}
-
-\subsection{Geodata}{
-
-The geodata \code{tibble} can be accessed via \verb{$geodata},
-and contains the columns:
-\itemize{
-\item \code{short_id}: The HydroShare DOI Short ID
-\item \code{geo_title}: Title of resource (same as \code{title})
-\item \code{coverage_type}: The resource's feature type
-on the coverage map
-\item \code{north}: The latitude midpoint
-\item \code{east}: The longitude midpoint
-\item \code{northlimit}: Coverage map north latitude
-\item \code{southlimit}: Coverage map south latitude
-\item \code{eastlimit}: Coverage map east longitude
-\item \code{westlimit}: Coverage map west longitude
 }
 }
 }

@@ -149,7 +149,6 @@ details for <code>tibble</code> description.</p>
 <li><p><code>author</code>: The primary author of the resource.</p></li>
 <li><p><code>abstract</code>: The abstract of the resource.</p></li>
 <li><p><code>metadata</code>: Metadata <code>tibble</code> associated with the resource. (see below)</p></li>
-<li><p><code>geodata</code>: Geodata <code>tibble</code> associated with the resource. (see below)</p></li>
 </ul>
 
 
@@ -168,24 +167,6 @@ primary author's HydroShare profile.</p></li>
 <li><p><code>modified</code>: The laste data the resource was modified.</p></li>
 <li><p><code>availability</code>: The availability tags of the resource.</p></li>
 <li><p><code>type</code>: The resource type.</p></li>
-</ul>
-
-
-<h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Geodata</h3>
-
-
-<p>The geodata <code>tibble</code> can be accessed via <code>$geodata</code>,
-and contains the columns:</p><ul>
-<li><p><code>short_id</code>: The HydroShare DOI Short ID</p></li>
-<li><p><code>geo_title</code>: Title of resource (same as <code>title</code>)</p></li>
-<li><p><code>coverage_type</code>: The resource's feature type
-on the coverage map</p></li>
-<li><p><code>north</code>: The latitude midpoint</p></li>
-<li><p><code>east</code>: The longitude midpoint</p></li>
-<li><p><code>northlimit</code>: Coverage map north latitude</p></li>
-<li><p><code>southlimit</code>: Coverage map south latitude</p></li>
-<li><p><code>eastlimit</code>: Coverage map east longitude</p></li>
-<li><p><code>westlimit</code>: Coverage map west longitude</p></li>
 </ul>
 
 
