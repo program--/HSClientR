@@ -126,14 +126,9 @@ hs_client <- HSClient$new()
 
 hs_client$print()
 
-#> Authenticated as:
-#> Justin Singh-Mohudpur
-#> User: jsinghm
-#> ID:   8409
-#> Org:  University of California, Santa Barbara
-#> =======================================
-#> Last Query ($query):
-#> Query Results:
+#> It looks like you haven't authenticated yet...
+#> Please call $authenticate() on this object to get
+#> OAuth2 authentication set up with HydroShare! :)
 
 # Begin authentication
 hs_client$authenticate()
