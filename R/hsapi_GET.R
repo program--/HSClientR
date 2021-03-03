@@ -115,7 +115,7 @@ hs_resource <- function(page             = NULL,
 
     content <- httr::content(request)
 
-    content$results %>%
+    tidy_content <- content$results %>%
         lapply(FUN = function(item) {
             tibble::tibble(
                 resource_title       = handle_null(item$resource_title),
@@ -140,6 +140,13 @@ hs_resource <- function(page             = NULL,
             )
         }) %>%
         dplyr::bind_rows()
+
+    response <- list()
+    response$".next" <- handle_null(content$"next")
+    response$".prev" <- handle_null(content$"previous")
+    response$results <- tidy_content
+
+    response
 }
 
 #' @title List Content Types
@@ -247,7 +254,7 @@ hs_search <- function(page          = NULL,
 
     content <- httr::content(request)
 
-    content$results %>%
+    tidy_content <- content$results %>%
         lapply(FUN = function(item) {
             tibble::tibble(
                 text          = handle_null(item$text),
@@ -271,6 +278,13 @@ hs_search <- function(page          = NULL,
             )
         }) %>%
         dplyr::bind_rows()
+
+    response <- list()
+    response$".next" <- handle_null(content$"next")
+    response$".prev" <- handle_null(content$"previous")
+    response$results <- tidy_content
+
+    response
 }
 
 #' @title List Resource Types

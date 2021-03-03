@@ -15,8 +15,11 @@
 \item \href{#method-print}{\code{HSClient$print()}}
 \item \href{#method-authenticate}{\code{HSClient$authenticate()}}
 \item \href{#method-query}{\code{HSClient$query()}}
-\item \href{#method-get_next}{\code{HSClient$get_next()}}
-\item \href{#method-get_prev}{\code{HSClient$get_prev()}}
+\item \href{#method-get_res}{\code{HSClient$get_res()}}
+\item \href{#method-next_res}{\code{HSClient$next_res()}}
+\item \href{#method-prev_res}{\code{HSClient$prev_res()}}
+\item \href{#method-next_page}{\code{HSClient$next_page()}}
+\item \href{#method-prev_page}{\code{HSClient$prev_page()}}
 \item \href{#method-clone}{\code{HSClient$clone()}}
 }
 }
@@ -86,33 +89,72 @@ Query/Search HydroShare
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A \link[tibble:tibble-package]{tibble}
+R6 object
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_next"></a>}}
-\if{latex}{\out{\hypertarget{method-get_next}{}}}
-\subsection{Method \code{get_next()}}{
+\if{html}{\out{<a id="method-get_res"></a>}}
+\if{latex}{\out{\hypertarget{method-get_res}{}}}
+\subsection{Method \code{get_res()}}{
+Get current resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$get_res()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+A \link[tibble:tibble-package]{tibble} of the current resource
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-next_res"></a>}}
+\if{latex}{\out{\hypertarget{method-next_res}{}}}
+\subsection{Method \code{next_res()}}{
 Get next resource
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HSClient$get_next()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$next_res()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
-A \code{resource} object
+R6 object, use \link{get_res} to get the resource tibble.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get_prev"></a>}}
-\if{latex}{\out{\hypertarget{method-get_prev}{}}}
-\subsection{Method \code{get_prev()}}{
+\if{html}{\out{<a id="method-prev_res"></a>}}
+\if{latex}{\out{\hypertarget{method-prev_res}{}}}
+\subsection{Method \code{prev_res()}}{
 Get previous resource
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{HSClient$get_prev()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$prev_res()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
-A \code{resource} object
+R6 object, use \link{get_res} to get the resource tibble.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-next_page"></a>}}
+\if{latex}{\out{\hypertarget{method-next_page}{}}}
+\subsection{Method \code{next_page()}}{
+Get next search page
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$next_page()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+R6 object
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-prev_page"></a>}}
+\if{latex}{\out{\hypertarget{method-prev_page}{}}}
+\subsection{Method \code{prev_page()}}{
+Get previous resource
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{HSClient$prev_page()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+R6 object
 }
 }
 \if{html}{\out{<hr>}}

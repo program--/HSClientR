@@ -73,14 +73,8 @@ HSClient <- R6::R6Class("HSClient",
                     crayon::bold("Last Query ($query): "),
                     private$.query, "\n",
                     crayon::bold("Query Results:\n"),
-                    paste0(
-                        stringr::str_trunc(
-                            private$.query_results$text,
-                            width = 128,
-                            side = "right"
-                        ),
-                        "\n"
-                    )
+                    "\tCount: ", nrow(private$.query_results),
+                    "\n"
                 )
 
                 msg <- paste0(
@@ -140,42 +134,102 @@ HSClient <- R6::R6Class("HSClient",
         #' @description
         #' Query/Search HydroShare
         #' @param ... Query parameters. See \link{hs_search} parameters.
-        #' @return A [tibble][tibble::tibble-package]
+        #' @return R6 object
         query = function(...) {
-            parameters <-lapply(sys.call()[-1], deparse)
+            parameters <- lapply(sys.call()[-1], deparse)
             
+            if (identical(parameters, "")) parameters <- "NONE"
+
             private$.query <- paste0(
                 ifelse(nchar(names(parameters)) > 0, paste0(names(parameters), " = "), ""),
                 unlist(parameters),
                 collapse=", "
             )
 
-            private$.query_results <- hs_search(...)
+            temp_results <- hs_search(...)
+
+            private$.next_page     <- temp_results$".next"
+            private$.prev_page     <- temp_results$.prev
+            private$.query_results <- temp_results$results
+            private$.current_resource <- 1
+
             print(private$.query_results)
+
             invisible(self)
         },
 
         #' @description
+        #' Get current resource
+        #' @return A [tibble][tibble::tibble-package] of the current resource
+        get_res = function() {
+            if (is.null(private$.current_resource)) {
+                rlang::abort("There is no current resource. Use $query()")
+            } else {
+                private$.query_results[private$.current_resource, ]
+            }
+        },
+
+        #' @description
         #' Get next resource
-        #' @return A `resource` object
-        get_next = function() {
-            rlang::abort("`get_next` not implemented.")
+        #' @return R6 object, use \link{get_res} to get the resource tibble.
+        next_res = function() {
+            if (private$.current_resource == nrow(private$.query_results)) {
+                rlang::abort("There is no next resource.")
+            } else {
+                private$.current_resource <- private$.current_resource + 1
+                self$get_res()
+            }
+
             invisible(self)
         },
 
         #' @description
         #' Get previous resource
-        #' @return A `resource` object
-        get_prev = function() {
-            rlang::abort("`get_prev` not implemented.")
+        #' @return R6 object, use \link{get_res} to get the resource tibble.
+        prev_res = function() {
+            if (private$.current_resource == 1) {
+                rlang::abort("There is no previous resource.")
+            } else {
+                private$.current_resource <- private$.current_resource - 1
+                self$get_res()
+            }
+
+            invisible(self)
+        },
+
+        #' @description
+        #' Get next search page
+        #' @return R6 object
+        next_page = function() {
+            if (is.null(private$.next_page) | is.na(private$.next_page)) {
+                rlang::abort("There is no next page.")
+            } else {
+                do.call(self$query, urltools::param_get(private$.next_page))
+            }
+
+            invisible(self)
+        },
+
+        #' @description
+        #' Get previous resource
+        #' @return R6 object
+        prev_page = function() {
+            if (is.null(private$.prev_page) | is.na(private$.prev_page)) {
+                rlang::abort("There is no previous page.")
+            } else {
+                do.call(self$query, urltools::param_get(private$.prev_page))
+            }
+
             invisible(self)
         }
     ),
     private = list(
         .user_details = NULL,
         .current_resource = NULL,
-        .next  = NULL,
-        .prev  = NULL,
+        .next_res  = NULL,
+        .prev_res  = NULL,
+        .next_page = NULL,
+        .prev_page = NULL,
         .query = NULL,
         .query_results = NULL,
         .token = NULL

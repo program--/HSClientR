@@ -29,5 +29,6 @@ Imports:
     jsonlite,
     crayon,
     rlang,
+    urltools,
     R6
 RdMacros: lifecycle

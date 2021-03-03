@@ -143,8 +143,11 @@ In development" />
 <li><p><a href='#method-print'><code>HSClient$print()</code></a></p></li>
 <li><p><a href='#method-authenticate'><code>HSClient$authenticate()</code></a></p></li>
 <li><p><a href='#method-query'><code>HSClient$query()</code></a></p></li>
-<li><p><a href='#method-get_next'><code>HSClient$get_next()</code></a></p></li>
-<li><p><a href='#method-get_prev'><code>HSClient$get_prev()</code></a></p></li>
+<li><p><a href='#method-get_res'><code>HSClient$get_res()</code></a></p></li>
+<li><p><a href='#method-next_res'><code>HSClient$next_res()</code></a></p></li>
+<li><p><a href='#method-prev_res'><code>HSClient$prev_res()</code></a></p></li>
+<li><p><a href='#method-next_page'><code>HSClient$next_page()</code></a></p></li>
+<li><p><a href='#method-prev_page'><code>HSClient$prev_page()</code></a></p></li>
 <li><p><a href='#method-clone'><code>HSClient$clone()</code></a></p></li>
 </ul>
 <p><hr>
@@ -187,21 +190,42 @@ is <code>NULL</code>.</p>
 
 </dl><p></div></p>
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a></p>
+<p>R6 object</p>
 <p><hr>
-<a id="method-get_next"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>get_next()</code></h3>
+<a id="method-get_res"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>get_res()</code></h3>
+<p>Get current resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>get_res</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>A <a href='https://tibble.tidyverse.org/reference/tibble-package.html'>tibble</a> of the current resource</p>
+<p><hr>
+<a id="method-next_res"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>next_res()</code></h3>
 <p>Get next resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
-<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>get_next</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>next_res</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>A <code>resource</code> object</p>
+<p>R6 object, use get_res to get the resource tibble.</p>
 <p><hr>
-<a id="method-get_prev"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>get_prev()</code></h3>
+<a id="method-prev_res"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>prev_res()</code></h3>
 <p>Get previous resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
-<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>get_prev</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>prev_res</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>A <code>resource</code> object</p>
+<p>R6 object, use get_res to get the resource tibble.</p>
+<p><hr>
+<a id="method-next_page"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>next_page()</code></h3>
+<p>Get next search page</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>next_page</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>R6 object</p>
+<p><hr>
+<a id="method-prev_page"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>prev_page()</code></h3>
+<p>Get previous resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>prev_page</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
+
+<h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
+<p>R6 object</p>
 <p><hr>
 <a id="method-clone"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clone()</code></h3>
 <p>The objects of this class are cloneable with this method.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
