@@ -3,6 +3,9 @@
 #' `r lifecycle::badge("experimental")`
 #' 
 #' *In development*
+#' @importFrom R6 R6Class
+#' @importFrom urltools param_get
+#' @importFrom lifecycle badge
 #' @export
 HSClient <- R6::R6Class("HSClient",
     public = list(
@@ -171,7 +174,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get next resource
-        #' @return R6 object, use \link{get_res} to get the resource tibble.
+        #' @return R6 object, use `$get_res()` to get the resource tibble.
         next_res = function() {
             if (private$.current_resource == nrow(private$.query_results)) {
                 rlang::abort("There is no next resource.")
@@ -185,7 +188,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get previous resource
-        #' @return R6 object, use \link{get_res} to get the resource tibble.
+        #' @return R6 object, use `$get_res()` to get the resource tibble.
         prev_res = function() {
             if (private$.current_resource == 1) {
                 rlang::abort("There is no previous resource.")

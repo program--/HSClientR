@@ -115,7 +115,7 @@ Get next resource
 }
 
 \subsection{Returns}{
-R6 object, use \link{get_res} to get the resource tibble.
+R6 object, use \verb{$get_res()} to get the resource tibble.
 }
 }
 \if{html}{\out{<hr>}}
@@ -128,7 +128,7 @@ Get previous resource
 }
 
 \subsection{Returns}{
-R6 object, use \link{get_res} to get the resource tibble.
+R6 object, use \verb{$get_res()} to get the resource tibble.
 }
 }
 \if{html}{\out{<hr>}}

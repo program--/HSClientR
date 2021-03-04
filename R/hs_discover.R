@@ -26,6 +26,7 @@
 #' - `availability`: The availability tags of the resource.
 #' - `type`: The resource type.
 #' @importFrom tidyr nest
+#' @importFrom rlang .data
 #' @export
 hs_discover <- function() {
     request <- httr::GET(
@@ -34,31 +35,38 @@ hs_discover <- function() {
         agent = hs_agent()
     )
 
-    content <- httr::content(request)
-
+    content  <- httr::content(request)
     response <- jsonlite::fromJSON(content$resources) %>%
                 tibble::as_tibble()
 
     response %>%
         dplyr::mutate(
-            link = paste0("https://hydroshare.org", link),
-            availability = paste(availability, collapse = ", "),
-            authors = paste(authors, collapse = ", "),
-            author_link = ifelse(
-                is.na(author_link),
+            link         = paste0("https://hydroshare.org", .data$link),
+            availability = paste(.data$availability, collapse = ", "),
+            authors      = paste(.data$authors, collapse = ", "),
+            author_link  = ifelse(
+                is.na(.data$author_link),
                 NA,
-                paste("https://hydroshare.org", author_link)
+                paste("https://hydroshare.org", .data$author_link)
             ),
-            owner = paste(owner, collapse = ", "),
-            subject = paste(subject, collapse = "; "),
-            contributor = paste(contributor, collapse = ", "),
-            created = as.Date(created, "%Y-%m-%dT%H:%M:%S"),
-            modified = as.Date(modified, "%Y-%m-%dT%H:%M:%S")
+            owner        = paste(.data$owner, collapse = ", "),
+            subject      = paste(.data$subject, collapse = "; "),
+            contributor  = paste(.data$contributor, collapse = ", "),
+            created      = as.Date(.data$created, "%Y-%m-%dT%H:%M:%S"),
+            modified     = as.Date(.data$modified, "%Y-%m-%dT%H:%M:%S")
         ) %>%
-        dplyr::select(-availabilityurl, -geo) %>%
+        dplyr::select(-.data$availabilityurl, -.data$geo) %>%
         tidyr::nest(
-            metadata = c(authors, contributor, author_link,
-                         owner, subject, created,
-                         modified, availability, type),
+            metadata = c(
+                .data$authors,
+                .data$contributor,
+                .data$author_link,
+                .data$owner,
+                .data$subject,
+                .data$created,
+                .data$modified,
+                .data$availability,
+                .data$type
+            )
         )
 }
