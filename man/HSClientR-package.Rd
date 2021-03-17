@@ -7,7 +7,7 @@
 \description{
 This package provides a \code{R6}-based client and set of functions
 for accessing the \href{https://hydroshare.org}{HydroShare} API.
-This client is modeled after the Python-equivalent
+This client is originally modeled after the Python-equivalent
 \href{https://github.com/hydroshare/hs_restclient}{hs_restclient}.
 }
 \author{

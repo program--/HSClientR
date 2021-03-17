@@ -1,6 +1,6 @@
 Package: HSClientR
 Title: A HydroShare API client for R
-Version: 0.2
+Version: 0.3.0.9000
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
@@ -20,15 +20,17 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
-    httr,
-    tibble,
-    dplyr,
-    tidyr,
-    magrittr,
-    lifecycle,
-    jsonlite,
     crayon,
+    dplyr,
+    httr,
+    jsonlite,
+    lifecycle,
+    magrittr,
+    R6,
     rlang,
+    stringr,
+    tibble,
+    tidyr,
     urltools,
-    R6
+    xml2
 RdMacros: lifecycle

@@ -17,6 +17,11 @@ reference:
       - '`hs_content_types`'
       - '`hs_search`'
       - '`hs_types`'
+      - '`hs_access`'
+      - '`hs_files`'
+      - '`hs_folder`'
+      - '`hs_scimeta`'
+      - '`hs_sysmeta`'
       - '`hs_user`'
       - '`hs_user_details`'
   - title: HydroShare Discover API
@@ -29,6 +34,8 @@ reference:
       - '`hs_auth`'
       - '`hsapi_request`'
       - '`handle_null`'
+      - '`handle_params`'
+      - '`download_request`'
 navbar:
   left:
     - icon: fa-home

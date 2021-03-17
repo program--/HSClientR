@@ -34,7 +34,8 @@ remotes::install_github("program--/HSClientR")
 
 This is a basic example which shows you how to access a resource. We’ll
 access the resource [Hydrologic Terrain Analysis Using Web Based
-Tools](https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/):
+Tools](https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/),
+as well as some additional functionality:
 
 ``` r
 library(HSClientR)
@@ -42,40 +43,31 @@ library(HSClientR)
 # To set auth headers
 hs_auth(set_headers = TRUE)
 
-# Get resource
+# Search for resources
 hs_resource(
-    full_text_search = "Hydrologic Terrain Analysis Using Web Based Tools",
-    author = "David Tarboton"
-)
-
-#> # A tibble: 1 x 19
-#>   resource_title resource_type resource_id abstract authors creator doi   public
-#>   <chr>          <chr>         <chr>       <chr>    <chr>   <chr>   <lgl> <lgl> 
-#> 1 Hydrologic Te… CompositeRes… e1d4f2aff7… "Digita… David … David … NA    TRUE  
-#> # … with 11 more variables: discoverable <lgl>, shareable <lgl>, immutable <lgl>,
-#> #   published <lgl>, date_created <chr>, date_last_updated <chr>, bag_url <chr>,
-#> #   science_metadata_url <chr>, resource_map_url <chr>, resource_url <chr>,
-#> #   content_types <chr>
-
-# Alternatively, HydroShare has a `search` endpoint that
-# can be used as well
-
-hs_search(
     text = "Hydrologic Terrain Analysis Using Web Based Tools",
     author = "David Tarboton"
 )
 
-#> # A tibble: 5 x 18
-#>   text      author  abstract    contributor subject  availability created modified
-#>   <chr>     <chr>   <chr>       <chr>       <chr>    <chr>        <chr>   <chr>   
-#> 1 " \n c1b… Tarbot… "Can your … ""          #gisDay… public       2015-1… 2015-11…
-#> 2 " \n 130… Tarbot… "Can your … ""          AGU2015  public       2015-1… 2015-12…
-#> 3 " \n e1d… Tarbot… "Digital E… ""          TauDEM,… public       2018-0… 2018-04…
-#> 4 " \n 66f… Tarbot… "Material … ""          Worksho… public       2016-0… 2016-07…
-#> 5 " \n d75… Tarbot… "Model My … ""          present… public       2018-0… 2018-04…
-#> # … with 10 more variables: coverage_type <chr>, east <lgl>, northlimit <lgl>,
-#> #   eastlimit <lgl>, southlimit <lgl>, westlimit <lgl>, start_date <lgl>,
-#> #   end_date <lgl>, resource_type <chr>, content_type <chr>
+# Alternatively, if you want to use specific functions,
+# you can call hs_search() with the same parameters
+
+#> $.next
+#> [1] NA
+#> 
+#> $.prev
+#> [1] NA
+#> 
+#> $results
+#> # A tibble: 5 x 10
+#>   id     title    author abstract   contributor subject  availability content_type
+#>   <chr>  <chr>    <chr>  <chr>      <chr>       <chr>    <chr>        <chr>       
+#> 1 c1be8… Clearin… Tarbo… "Can your… ""          #gisDay… public       Composite, …
+#> 2 1302d… Clearin… Tarbo… "Can your… ""          AGU2015  public       Composite, …
+#> 3 e1d4f… Hydrolo… Tarbo… "Digital … ""          TauDEM,… public       Presentatio…
+#> 4 66fd9… Materia… Tarbo… "Material… ""          Worksho… public       Presentatio…
+#> 5 d752e… The Mod… Tarbo… "Model My… ""          present… public       Presentatio…
+#> # … with 2 more variables: metadata <list>, geodata <list>
 
 # Another way of finding resources is via the Discover API.
 # This is equivalent to accessing the "Discover" page directly
@@ -97,6 +89,44 @@ hs_discover()
 #>  9 Wasatch Envir… https://hydr… University … "This dataset co… 6445418c7… <tibble…
 #> 10 Wasatch Envir… https://hydr… University … "This dataset co… 74dc57ed7… <tibble…
 #> # … with 30 more rows
+
+# You can also call hs_resource() with no parameters to do basic pagination searches.
+# This is usually preferred over hs_discover().
+hs_resource()
+
+#> $.next
+#> [1] "https://www.hydroshare.org/hsapi/resource/search?page=2"
+#> 
+#> $.prev
+#> [1] NA
+#> 
+#> $results
+#> # A tibble: 100 x 10
+#>    id     title  author  abstract  contributor subject  availability content_type 
+#>    <chr>  <chr>  <chr>   <chr>     <chr>       <chr>    <chr>        <chr>        
+#>  1 73aae… 00_Ze… Arscot… "Stroud … ""          mmw, mo… public       Geographic F…
+#>  2 73ad4… 00_Ze… Gisond… "Second … ""          osi, mo… public       Geographic F…
+#>  3 ea93a… 00_Ze… Gisond… "Part of… ""          osi, mo… public       Geographic F…
+#>  4 a2a5c… 01_Pe… Gish, … "Aggrega… ""          cbf, mm… public       Geographic F…
+#>  5 5002f… 01_Ze… Gisond… "Part of… ""          osi, mo… public       Geographic F…
+#>  6 1048d… 02_Ma… Gish, … "Aggrega… ""          cbf, mm… public       Geographic F…
+#>  7 b4b3c… 02_Ze… Gisond… "Second … ""          osi, mo… public       Geographic F…
+#>  8 fb70e… 02_Ze… Gisond… "Part of… ""          osi, mo… public       Geographic F…
+#>  9 74704… 03_Cl… Gish, … "Aggrega… ""          cbf, mm… public       Geographic F…
+#> 10 737cf… 03_Mo… Gisond… "Second … ""          osi, mo… public       Geographic F…
+#> # … with 90 more rows, and 2 more variables: metadata <list>, geodata <list>
+
+# You can also find resources by HS alphanumeric IDs:
+hs_resource(id = "e1d4f2aff7d84f79b901595f6ea48368")
+
+#> # A tibble: 1 x 19
+#>   resource_title  resource_type  resource_id abstract authors creator doi   public
+#>   <chr>           <chr>          <chr>       <chr>    <chr>   <chr>   <lgl> <lgl> 
+#> 1 Hydrologic Ter… CompositeReso… e1d4f2aff7… "Digita… David … David … NA    TRUE  
+#> # … with 11 more variables: discoverable <lgl>, shareable <lgl>, immutable <lgl>,
+#> #   published <lgl>, date_created <chr>, date_last_updated <chr>, bag_url <chr>,
+#> #   science_metadata_url <chr>, resource_map_url <chr>, resource_url <chr>,
+#> #   content_types <list>
 ```
 
 ## Example Using R6 HydroShare Client Class
