@@ -115,7 +115,7 @@ Get next resource
 }
 
 \subsection{Returns}{
-Resource tibble. See \link{get_res}.
+Resource tibble. See \verb{$get_res}.
 }
 }
 \if{html}{\out{<hr>}}
@@ -128,7 +128,7 @@ Get previous resource
 }
 
 \subsection{Returns}{
-Resource tibble. See \link{get_res}.
+Resource tibble. See \verb{$get_res}.
 }
 }
 \if{html}{\out{<hr>}}
@@ -141,7 +141,7 @@ Get next search page
 }
 
 \subsection{Returns}{
-Query tibble. See \link{query}.
+Query tibble. See \verb{$query}.
 }
 }
 \if{html}{\out{<hr>}}
@@ -154,7 +154,7 @@ Get previous search page
 }
 
 \subsection{Returns}{
-Query tibble. See \link{query}.
+Query tibble. See \verb{$query}.
 }
 }
 \if{html}{\out{<hr>}}

@@ -175,7 +175,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get next resource
-        #' @return Resource tibble. See \link{get_res}.
+        #' @return Resource tibble. See `$get_res`.
         next_res = function() {
             if (private$.current_resource == nrow(private$.query_results)) {
                 rlang::abort("There is no next resource.")
@@ -187,7 +187,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get previous resource
-        #' @return Resource tibble. See \link{get_res}.
+        #' @return Resource tibble. See `$get_res`.
         prev_res = function() {
             if (private$.current_resource == 1) {
                 rlang::abort("There is no previous resource.")
@@ -199,7 +199,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get next search page
-        #' @return Query tibble. See \link{query}.
+        #' @return Query tibble. See `$query`.
         next_page = function() {
             if (is.null(private$.next_page) | is.na(private$.next_page)) {
                 rlang::abort("There is no next page.")
@@ -210,7 +210,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get previous search page
-        #' @return Query tibble. See \link{query}.
+        #' @return Query tibble. See `$query`.
         prev_page = function() {
             if (is.null(private$.prev_page) | is.na(private$.prev_page)) {
                 rlang::abort("There is no previous page.")
