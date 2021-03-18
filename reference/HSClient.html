@@ -178,7 +178,7 @@ as a header automatically if <code>.token</code>
 is <code>NULL</code>.</p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>A <a href='https://httr.r-lib.org/reference/Token-class.html'>Token</a> object.</p>
+<p>self, invisibly.</p>
 <p><hr>
 <a id="method-query"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>query()</code></h3>
 <p>Query/Search HydroShare</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
@@ -186,7 +186,7 @@ is <code>NULL</code>.</p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Arguments</h4>
 <p><div class="arguments"></p><dl>
-<dt><code>...</code></dt><dd><p>Query parameters. See <a href='hs_search.html'>hs_search</a> parameters.</p></dd>
+<dt><code>...</code></dt><dd><p>Query parameters. See <a href='hs_resource.html'>hs_resource</a> parameters.</p></dd>
 
 </dl><p></div></p>
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
@@ -204,28 +204,28 @@ is <code>NULL</code>.</p>
 <p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>next_res</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>R6 object, use <code>$get_res()</code> to get the resource tibble.</p>
+<p>Resource tibble. See get_res.</p>
 <p><hr>
 <a id="method-prev_res"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>prev_res()</code></h3>
 <p>Get previous resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>prev_res</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>R6 object, use <code>$get_res()</code> to get the resource tibble.</p>
+<p>Resource tibble. See get_res.</p>
 <p><hr>
 <a id="method-next_page"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>next_page()</code></h3>
 <p>Get next search page</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>next_page</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>R6 object</p>
+<p>Query tibble. See query.</p>
 <p><hr>
 <a id="method-prev_page"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>prev_page()</code></h3>
-<p>Get previous resource</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
+<p>Get previous search page</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
 <p><div class="r"></p><pre><span class='va'>HSClient</span><span class='op'>$</span><span class='fu'>prev_page</span><span class='op'>(</span><span class='op'>)</span></pre><p></div></p>
 
 <h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Returns</h4>
-<p>R6 object</p>
+<p>Query tibble. See query.</p>
 <p><hr>
 <a id="method-clone"></a></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Method <code>clone()</code></h3>
 <p>The objects of this class are cloneable with this method.</p><h4 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Usage</h4>
