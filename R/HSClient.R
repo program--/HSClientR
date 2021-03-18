@@ -56,7 +56,6 @@ HSClient <- R6::R6Class("HSClient",
         #' Print HSClient object
         #' @return `HSClient` output
         print = function() {
-
             if (!is.null(private$.token)) {
                 private$.user_details <- hs_user()
 
@@ -98,21 +97,19 @@ HSClient <- R6::R6Class("HSClient",
             }
 
             cat(msg)
-
-            invisible(self)
         },
 
         #' @description
         #' Perform OAuth2 Authentication
         #' with HydroShare.
-        #' @return A [Token][httr::Token] object.
+        #' @return self, invisibly.
         #' @details
         #' Note, the access token will be set
         #' as a header automatically if `.token`
         #' is `NULL`.
         authenticate = function() {
             if (!is.null(private$.token)) {
-                private$.token
+                rlang::inform("You are authenticated :)")
             } else {
                 private$.token <- hs_auth()
 
@@ -128,7 +125,13 @@ HSClient <- R6::R6Class("HSClient",
                     )
                 )
 
-                private$.token
+                if (!is.null(private$.token)) {
+                    private$.authenticated <- TRUE
+                    rlang::inform("Authenticated! :)")
+                } else {
+                    private$.authenticated <- FALSE
+                    rlang::warn("Authentication Failed :(")
+                }
             }
 
             invisible(self)
@@ -136,10 +139,10 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Query/Search HydroShare
-        #' @param ... Query parameters. See \link{hs_search} parameters.
+        #' @param ... Query parameters. See \link{hs_resource} parameters.
         #' @return R6 object
         query = function(...) {
-            parameters <- lapply(sys.call()[-1], deparse)
+            parameters <- list(...)
             
             if (identical(parameters, "")) parameters <- "NONE"
 
@@ -149,16 +152,14 @@ HSClient <- R6::R6Class("HSClient",
                 collapse=", "
             )
 
-            temp_results <- hs_search(...)
+            temp_results <- hs_resource(...)
 
             private$.next_page     <- temp_results$".next"
-            private$.prev_page     <- temp_results$.prev
+            private$.prev_page     <- temp_results$".prev"
             private$.query_results <- temp_results$results
             private$.current_resource <- 1
 
-            print(private$.query_results)
-
-            invisible(self)
+            private$.query_results
         },
 
         #' @description
@@ -174,7 +175,7 @@ HSClient <- R6::R6Class("HSClient",
 
         #' @description
         #' Get next resource
-        #' @return R6 object, use `$get_res()` to get the resource tibble.
+        #' @return Resource tibble. See \link{get_res}.
         next_res = function() {
             if (private$.current_resource == nrow(private$.query_results)) {
                 rlang::abort("There is no next resource.")
@@ -182,13 +183,11 @@ HSClient <- R6::R6Class("HSClient",
                 private$.current_resource <- private$.current_resource + 1
                 self$get_res()
             }
-
-            invisible(self)
         },
 
         #' @description
         #' Get previous resource
-        #' @return R6 object, use `$get_res()` to get the resource tibble.
+        #' @return Resource tibble. See \link{get_res}.
         prev_res = function() {
             if (private$.current_resource == 1) {
                 rlang::abort("There is no previous resource.")
@@ -196,34 +195,28 @@ HSClient <- R6::R6Class("HSClient",
                 private$.current_resource <- private$.current_resource - 1
                 self$get_res()
             }
-
-            invisible(self)
         },
 
         #' @description
         #' Get next search page
-        #' @return R6 object
+        #' @return Query tibble. See \link{query}.
         next_page = function() {
             if (is.null(private$.next_page) | is.na(private$.next_page)) {
                 rlang::abort("There is no next page.")
             } else {
                 do.call(self$query, urltools::param_get(private$.next_page))
             }
-
-            invisible(self)
         },
 
         #' @description
-        #' Get previous resource
-        #' @return R6 object
+        #' Get previous search page
+        #' @return Query tibble. See \link{query}.
         prev_page = function() {
             if (is.null(private$.prev_page) | is.na(private$.prev_page)) {
                 rlang::abort("There is no previous page.")
             } else {
                 do.call(self$query, urltools::param_get(private$.prev_page))
             }
-
-            invisible(self)
         }
     ),
     private = list(
@@ -235,6 +228,7 @@ HSClient <- R6::R6Class("HSClient",
         .prev_page = NULL,
         .query = NULL,
         .query_results = NULL,
-        .token = NULL
+        .token = NULL,
+        .authenticated = NULL
     )
 )

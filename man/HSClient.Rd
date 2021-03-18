@@ -69,7 +69,7 @@ is \code{NULL}.
 }
 
 \subsection{Returns}{
-A \link[httr:Token-class]{Token} object.
+self, invisibly.
 }
 }
 \if{html}{\out{<hr>}}
@@ -84,7 +84,7 @@ Query/Search HydroShare
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{...}}{Query parameters. See \link{hs_search} parameters.}
+\item{\code{...}}{Query parameters. See \link{hs_resource} parameters.}
 }
 \if{html}{\out{</div>}}
 }
@@ -115,7 +115,7 @@ Get next resource
 }
 
 \subsection{Returns}{
-R6 object, use \verb{$get_res()} to get the resource tibble.
+Resource tibble. See \link{get_res}.
 }
 }
 \if{html}{\out{<hr>}}
@@ -128,7 +128,7 @@ Get previous resource
 }
 
 \subsection{Returns}{
-R6 object, use \verb{$get_res()} to get the resource tibble.
+Resource tibble. See \link{get_res}.
 }
 }
 \if{html}{\out{<hr>}}
@@ -141,20 +141,20 @@ Get next search page
 }
 
 \subsection{Returns}{
-R6 object
+Query tibble. See \link{query}.
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-prev_page"></a>}}
 \if{latex}{\out{\hypertarget{method-prev_page}{}}}
 \subsection{Method \code{prev_page()}}{
-Get previous resource
+Get previous search page
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{HSClient$prev_page()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
-R6 object
+Query tibble. See \link{query}.
 }
 }
 \if{html}{\out{<hr>}}

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# HSClientR <a href='https://github.com/program--/HSClientR'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# HSClientR - A [HydroShare](https://www.hydroshare.org) API Client for R <a href='https://github.com/program--/HSClientR'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -15,8 +15,8 @@ coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.sv
 <!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 <!-- badges: end -->
 
-HSClientR is an API wrapper for the
-[HydroShare](https://www.hydroshare.org) API. Using HSClientR, you can
+HSClientR is an API wrapper for
+[HydroShare](https://www.hydroshare.org). Using HSClientR, you can
 access resources from HydroShare directly in your R environment, either
 by the package functions or the developmental
 [`R6 Class`](https://r6.r-lib.org/reference/R6Class.html).

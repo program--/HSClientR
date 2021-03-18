@@ -35,6 +35,7 @@ reference:
       - '`hsapi_request`'
       - '`handle_null`'
       - '`handle_params`'
+      - '`handle_ssl`'
       - '`download_request`'
 navbar:
   left:
