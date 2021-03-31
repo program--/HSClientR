@@ -1,13 +1,14 @@
 Package: HSClientR
 Title: A HydroShare API client for R
 Version: 0.3.1.9000
+Maintainer: Justin Singh-Mohudpur <justin@justinsingh.me>
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
            role = c("aut", "cre"),
            email = "justin@justinsingh.me",
            comment = c(ORCID = "0000-0002-5233-5799"))
-Description: A RESTful API wrapper for accessing HydroShare data in R.
+Description: A RESTful API wrapper for accessing <https://hydroshare.org> data in R.
 URL: https://github.com/program--/HSClientR
 BugReports: https://github.com/program--/HSClientR/issues
 License: MIT + file LICENSE

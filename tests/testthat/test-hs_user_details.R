@@ -17,6 +17,7 @@ vcr::use_cassette("hs_user_details_3", {
     httr::reset_config()
 
     test_that("hs_user_details() returns correctly", {
+        skip_if_not(interactive())
         skip_on_cran()
         skip_on_ci()
         hs_auth(set_header = TRUE)

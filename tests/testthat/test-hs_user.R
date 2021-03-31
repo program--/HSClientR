@@ -8,6 +8,7 @@ vcr::use_cassette("hs_user_1", {
 
 vcr::use_cassette("hs_user_2", {
     test_that("hs_user() returns a tibble", {
+        skip_if_not(interactive())
         skip_on_cran()
         skip_on_ci()
         hs_auth(set_header = TRUE)
@@ -22,6 +23,7 @@ vcr::use_cassette("hs_user_2", {
     })
 
     test_that("hs_user() returns own user information", {
+        skip_if_not(interactive())
         skip_on_cran()
         skip_on_ci()
         hs_auth(set_header = TRUE)
