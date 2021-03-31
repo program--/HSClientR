@@ -1,0 +1,1120 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/discoverapi/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:00 GMT
+      content-type: application/json
+      content-length: '86921'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+      set-cookie: sessionid=bx77b60nzr67f824n0lsaoz8k3prl3kx; HttpOnly; Path=/
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"resources": "[{\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: 1300 East Aquatic (RB_1300E_A) Quality Controlled Data\", \"link\":
+        \"/resource/5057577e8573433d8045b59db91b2550/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality controlled
+        data for select variables measured at the aquatic monitoring site in Red Butte
+        Canyon at 1300E (RB_1300E_A). Each file contains all of the data for a single
+        quality controlled variable.  These files are updated as quality control is
+        performed. The data values were collected by a variety of sensors at 15 minute
+        intervals. The file header contains detailed metadata for the site and the
+        variable and method associated with each column. This site is currently operated
+        as part of the Wasatch Environmental Observatory. Prior to 2018 this site
+        was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"1300E\",
+        \"QC1\", \"GAMUT\", \"Aquatic Station\", \"WEO\", \"Red Butte Canyon\", \"Quality
+        Controlled\", \"QC\", \"University of Utah\", \"Red Butte\", \"Water Quality\",
+        \"1300E Aquatic\", \"1300E_AA\", \"iUTAH\"], \"created\": \"2017-01-12T22:52:28\",
+        \"modified\": \"2021-03-31T12:50:34\", \"short_id\": \"5057577e8573433d8045b59db91b2550\",
+        \"geo\": {\"short_id\": \"5057577e8573433d8045b59db91b2550\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: 1300 East Aquatic (RB_1300E_A)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 40.744995,
+        \"east\": -111.85444}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Raw Data at Fort Douglas Storm Drain (RB_FortD_SD)\", \"link\":
+        \"/resource/252980b3bff94a1fa2a2ce1de24323d2/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains raw data for
+        all of the variables measured for the storm drain monitoring site in Red Butte
+        Canyon at Fort Douglas (RB_FD_SD). Each file contains a calendar year of data.
+        The file for the current year is updated on a daily basis. The data values
+        were collected by a variety of sensors at 15 minute intervals. The file header
+        contains detailed metadata for the site and the variable and method associated
+        with each column. This site is currently operated as part of the Wasatch Environmental
+        Observatory. Prior to 2018 this site was operated as part of the iUTAH GAMUT
+        Network.\\nNote: This site was decommissioned in Feb 2018.  \\n\\nData collected
+        at this site is largely unreliable due to challenging monitoring conditions
+        and low flows.\", \"subject\": [\"GAMUT\", \"Fort Douglas Storm Drain\", \"WEO\",
+        \"Raw Data\", \"Red Butte Canyon\", \"Storm Drain\", \"University of Utah\",
+        \"Red Butte\", \"Fort Douglas\", \"Water Quality\", \"RB_FortD_SD\", \"iUTAH\",
+        \"FortD_SD\"], \"created\": \"2017-05-15T22:34:47\", \"modified\": \"2021-03-31T12:49:17\",
+        \"short_id\": \"252980b3bff94a1fa2a2ce1de24323d2\", \"geo\": {\"short_id\":
+        \"252980b3bff94a1fa2a2ce1de24323d2\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Fort Douglas Storm Drain (RB_FortD_SD)\", \"coverage_type\":
+        \"point\", \"north\": 40.75901, \"east\": -111.83144}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Above Red Butte Reservoir Climate
+        (RB_ARBR_C) Quality Controlled Data\", \"link\": \"/resource/6445418c7c0e426d8cb1568d296c02d1/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Eiriksson,
+        Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality
+        controlled data for select variables measured at the climate monitoring site
+        in Red Butte Canyon Above Red Butte Reservoir (RB_ARBR_C). Each file contains
+        all of the data for a single quality controlled variable.  These files are
+        updated as quality control is performed. The data values were collected by
+        a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"Red Butte Reservoir\", \"QC1\", \"GAMUT\", \"Climate Station\",
+        \"ARBR_C\", \"WEO\", \"Red Butte Canyon\", \"Quality Controlled\", \"QC\",
+        \"University of Utah\", \"Red Butte\", \"Weather Station\", \"Above Red Butte
+        Reservoir\", \"iUTAH\", \"Above Red Butte Reservoir Climate\"], \"created\":
+        \"2017-01-12T23:15:25\", \"modified\": \"2021-03-31T12:48:28\", \"short_id\":
+        \"6445418c7c0e426d8cb1568d296c02d1\", \"geo\": {\"short_id\": \"6445418c7c0e426d8cb1568d296c02d1\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Above Red
+        Butte Reservoir Climate (RB_ARBR_C) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.780567, \"east\": -111.80722}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Knowlton Fork Climate
+        (RB_KF_C)\", \"link\": \"/resource/74dc57ed714e4cd3882edc16d50e197a/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah -- Wasatch Environemental Observatory\",
+        \"authors\": \"University of Utah -- Wasatch Environemental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains raw data for
+        all of the variables measured at the Knowlton Fork Climate Station located
+        in Red Butte Canyon (RB_KF_C). Each file contains a calendar year of data.
+        The file for the current year is updated on a daily basis. The data values
+        were collected by a variety of sensors at 15 minute intervals. The file header
+        contains detailed metadata for the site and the variable and method associated
+        with each column. This site is currently operated as part of the Wasatch Environmental
+        Observatory. Prior to 2018 this site was operated as part of the iUTAH GAMUT
+        Network.\", \"subject\": [\"RB_KF_C\", \"GAMUT\", \"Climate Station\", \"Knowlton
+        Fork\", \"WEO\", \"Raw Data\", \"Red Butte Canyon\", \"University of Utah\",
+        \"Red Butte\", \"Weather Station\", \"KF_C\", \"iUTAH\", \"Knowlton Fork Climate\"],
+        \"created\": \"2017-05-15T22:34:31\", \"modified\": \"2021-03-31T12:46:19\",
+        \"short_id\": \"74dc57ed714e4cd3882edc16d50e197a\", \"geo\": {\"short_id\":
+        \"74dc57ed714e4cd3882edc16d50e197a\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Knowlton Fork Climate (RB_KF_C)\", \"coverage_type\":
+        \"point\", \"north\": 40.810123, \"east\": -111.76695}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data Above Red Butte Reservoir
+        Climate Site (RB_ARBR_C)\", \"link\": \"/resource/916041be57be47a1b19c63f328fb086c/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the climate
+        monitoring site in Red Butte Canyon at Above Red Butte Reservoir (RB_ARBR_C).
+        Each file contains a calendar year of data. The file for the current year
+        is updated on a daily basis. The data values were collected by a variety of
+        sensors at 15 minute intervals. The file header contains detailed metadata
+        for the site and the variable and method associated with each column. This
+        site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"Red Butte Reservoir\", \"GAMUT\", \"Climate Station\", \"WEO\",
+        \"RB_ARBR_C\", \"Raw Data\", \"Red Butte Canyon\", \"ARBR_C\", \"University
+        of Utah\", \"Red Butte\", \"Weather Station\", \"Above Red Butte Reservoir\",
+        \"iUTAH\", \"Above Red Butte Reservoir Climate\"], \"created\": \"2016-07-19T23:50:46\",
+        \"modified\": \"2021-03-31T12:44:14\", \"short_id\": \"916041be57be47a1b19c63f328fb086c\",
+        \"geo\": {\"short_id\": \"916041be57be47a1b19c63f328fb086c\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data Above Red Butte Reservoir
+        Climate Site (RB_ARBR_C)\", \"coverage_type\": \"point\", \"north\": 40.780567,
+        \"east\": -111.80722}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Raw Data at Dentistry Building Storm Drain (RB_Dent_SD)\",
+        \"link\": \"/resource/c3ac533a5fe648abaa00473d9bbbf507/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains raw data for
+        all of the variables measured for the storm drain monitoring site in Red Butte
+        Canyon at Dentistry (RB_Dent_SD). Each file contains a calendar year of data.
+        The file for the current year is updated on a daily basis. The data values
+        were collected by a variety of sensors at 15 minute intervals. The file header
+        contains detailed metadata for the site and the variable and method associated
+        with each column. This site is currently operated as part of the Wasatch Environmental
+        Observatory. Prior to 2018 this site was operated as part of the iUTAH GAMUT
+        Network.\", \"subject\": [\"GAMUT\", \"RB_Dent_SD\", \"Dentistry\", \"WEO\",
+        \"Raw Data\", \"Red Butte Canyon\", \"Storm Drain\", \"University of Utah\",
+        \"Red Butte\", \"Dentistry Storm Drain\", \"Water Quality\", \"Dent_SD\",
+        \"iUTAH\"], \"created\": \"2017-05-15T22:34:42\", \"modified\": \"2021-03-31T12:42:23\",
+        \"short_id\": \"c3ac533a5fe648abaa00473d9bbbf507\", \"geo\": {\"short_id\":
+        \"c3ac533a5fe648abaa00473d9bbbf507\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Dentistry Building Storm Drain (RB_Dent_SD)\",
+        \"coverage_type\": \"point\", \"north\": 40.757988, \"east\": -111.832085}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Cottams Grove Basic Aquatic (RB_CG_BA)\", \"link\": \"/resource/e3a4958fcb6d4807b272d956185f8a83/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\"], \"abstract\": \"This dataset contains raw data
+        for all of the variables measured for the Aquatic monitoring site in Red Butte
+        Canyon at Cottam''s Grove (RB_CG_BA). Each file contains a calendar year of
+        data. The file for the current year is updated on a daily basis. The data
+        values were collected by a variety of sensors at 15 minute intervals. The
+        file header contains detailed metadata for the site and the variable and method
+        associated with each column. This site is currently operated as part of the
+        Wasatch Environmental Observatory. Prior to 2018 this site was operated as
+        part of the iUTAH GAMUT Network.\", \"subject\": [\"Cottam''s Grove\", \"GAMUT\",
+        \"Aquatic Station\", \"RB_CG_BA\", \"WEO\", \"Cottam''s Grove Aquatic\", \"Raw
+        Data\", \"Red Butte Canyon\", \"CG_BA\", \"University of Utah\", \"Red Butte\",
+        \"Water Quality\", \"Red Butte Creek\", \"iUTAH\"], \"created\": \"2019-12-10T18:20:50\",
+        \"modified\": \"2021-03-31T12:40:43\", \"short_id\": \"e3a4958fcb6d4807b272d956185f8a83\",
+        \"geo\": {\"short_id\": \"e3a4958fcb6d4807b272d956185f8a83\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Cottams Grove Basic
+        Aquatic (RB_CG_BA)\", \"coverage_type\": \"point\", \"north\": 40.763958,
+        \"east\": -111.828285}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Raw Data at Red Butte Creek near 900 W (1300 South) Basic Aquatic
+        Site (RB_900W_BA)\", \"link\": \"/resource/1846b79a648a4088aad987cc7241656f/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the Aquatic
+        monitoring site in Red Butte Canyon at 900W Aquatic (RB_900W_A). Each file
+        contains a calendar year of data. The file for the current year is updated
+        on a daily basis. The data values were collected by a variety of sensors at
+        15 minute intervals. The file header contains detailed metadata for the site
+        and the variable and method associated with each column. This site is currently
+        operated as part of the Wasatch Environmental Observatory. Prior to 2018 this
+        site was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\",
+        \"Aquatic Station\", \"WEO\", \"Raw Data\", \"Red Butte Canyon\", \"900W\",
+        \"University of Utah\", \"Red Butte\", \"900W_A\", \"RB_900W_A\", \"Water
+        Quality\", \"900W Aquatic\", \"Red Butte Creek\", \"iUTAH\"], \"created\":
+        \"2016-08-04T00:48:05\", \"modified\": \"2021-03-31T12:39:02\", \"short_id\":
+        \"1846b79a648a4088aad987cc7241656f\", \"geo\": {\"short_id\": \"1846b79a648a4088aad987cc7241656f\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Red Butte Creek near 900 W (1300 South) Basic Aquatic Site (RB_900W_BA)\",
+        \"coverage_type\": \"point\", \"north\": 40.7416, \"east\": -111.9176}}, {\"title\":
+        \"Wasatch Environmental Observatory Red Butte Network: Raw Data at Red Butte
+        Creek near Foothill Drive Advanced Aquatic (RB_FD_AA)\", \"link\": \"/resource/45189d152d78400b99bf636588a7bf55/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\"], \"abstract\": \"This dataset contains raw data
+        for all of the variables measured for the Aquatic monitoring site in Red Butte
+        Canyon at Foothill Drive (RB_FD_AA). Each file contains a calendar year of
+        data. The file for the current year is updated on a daily basis. The data
+        values were collected by a variety of sensors at 15 minute intervals. The
+        file header contains detailed metadata for the site and the variable and method
+        associated with each column. This site is currently operated as part of the
+        Wasatch Environmental Observatory. Prior to 2018 this site was operated as
+        part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"FD_AA\", \"Aquatic
+        Station\", \"WEO\", \"Foothill Drive\", \"Raw Data\", \"Red Butte Canyon\",
+        \"University of Utah\", \"Red Butte\", \"RB_FD_AA\", \"Water Quality\", \"Red
+        Butte Creek\", \"Foothill Drive Aquatic\", \"iUTAH\"], \"created\": \"2019-12-10T17:48:20\",
+        \"modified\": \"2021-03-31T12:38:14\", \"short_id\": \"45189d152d78400b99bf636588a7bf55\",
+        \"geo\": {\"short_id\": \"45189d152d78400b99bf636588a7bf55\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Red Butte Creek near
+        Foothill Drive Advanced Aquatic (RB_FD_AA)\", \"coverage_type\": \"point\",
+        \"north\": 40.757225, \"east\": -111.833725}}, {\"title\": \"Wasatch Environmental
+        Observatory Red Butte Network: Cottam''s Grove Basic Aquatic (RB_CG_BA) Quality
+        Controlled Data\", \"link\": \"/resource/4659632bae8a440698b1c6b0f4d3558a/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains quality controlled data for select variables measured at
+        the aquatic monitoring site in Red Butte Canyon at Cottam''s Grove(RB_CG_BA).
+        Each file contains all of the data for a single quality controlled variable.  These
+        files are updated as quality control is performed. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"QC1\", \"GAMUT\", \"Aquatic Station\", \"CG\", \"Cottam\\u2019s
+        Grove\", \"WEO\", \"Red Butte Canyon\", \"Quality Controlled\", \"QC\", \"University
+        of Utah\", \"Red Butte\", \"Water Quality\", \"CG_BA\", \"Cottam\\u2019s Grove
+        Aquatic\", \"iUTAH\"], \"created\": \"2017-01-12T23:14:07\", \"modified\":
+        \"2021-03-31T12:38:09\", \"short_id\": \"4659632bae8a440698b1c6b0f4d3558a\",
+        \"geo\": {\"short_id\": \"4659632bae8a440698b1c6b0f4d3558a\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Cottam''s Grove Basic Aquatic
+        (RB_CG_BA) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        40.763958, \"east\": -111.828285}}, {\"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at GIRF Storm Drain (RB_GIRF_SD)\", \"link\":
+        \"/resource/b78304af040f41afaf2a5a3cd73eaa35/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains raw data for
+        all of the variables measured for the storm drain monitoring site in Red Butte
+        Canyon at GIRF (RB_GIRF_SD). Each file contains a calendar year of data. The
+        file for the current year is updated on a daily basis. The data values were
+        collected by a variety of sensors at 15 minute intervals. The file header
+        contains detailed metadata for the site and the variable and method associated
+        with each column. This site is currently operated as part of the Wasatch Environmental
+        Observatory. Prior to 2018 this site was operated as part of the iUTAH GAMUT
+        Network.\\n\\nNote: This site was decommissioned in Feb 2018.  Data collected
+        at this site is largely unreliable due to challenging monitoring conditions
+        and low flows.\", \"subject\": [\"GAMUT\", \"WEO\", \"GIRF_SD\", \"Raw Data\",
+        \"Red Butte Canyon\", \"GIRF\", \"Storm Drain\", \"University of Utah\", \"Red
+        Butte\", \"GIRF Storm Drain\", \"Water Quality\", \"RB_GIRF_SD\", \"iUTAH\"],
+        \"created\": \"2017-05-17T19:46:19\", \"modified\": \"2021-03-31T12:38:06\",
+        \"short_id\": \"b78304af040f41afaf2a5a3cd73eaa35\", \"geo\": {\"short_id\":
+        \"b78304af040f41afaf2a5a3cd73eaa35\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at GIRF Storm Drain (RB_GIRF_SD)\", \"coverage_type\":
+        \"point\", \"north\": 40.760914, \"east\": -111.8297}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Lower Knowlton Fork
+        Aquatic (RB_LKF_A)\", \"link\": \"/resource/058d173af80a4784b471d29aa9ad7257/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the Aquatic
+        monitoring site in Red Butte Canyon at Lower Knowlton Fork (RB_LKF_A). Each
+        file contains a calendar year of data. The file for the current year is updated
+        on a daily basis. The data values were collected by a variety of sensors at
+        15 minute intervals. The file header contains detailed metadata for the site
+        and the variable and method associated with each column. This site is currently
+        operated as part of the Wasatch Environmental Observatory. Prior to 2018 this
+        site was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\",
+        \"Aquatic Station\", \"Lower Knowlton Fork\", \"WEO\", \"Raw Data\", \"Red
+        Butte Canyon\", \"Lower Knowlton Fork Aquatic\", \"University of Utah\", \"Red
+        Butte\", \"Water Quality\", \"Red Butte Creek\", \"iUTAH\", \"RB_LKF_A\",
+        \"LKF_A\"], \"created\": \"2017-05-16T02:44:07\", \"modified\": \"2021-03-31T12:37:10\",
+        \"short_id\": \"058d173af80a4784b471d29aa9ad7257\", \"geo\": {\"short_id\":
+        \"058d173af80a4784b471d29aa9ad7257\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Lower Knowlton Fork Aquatic (RB_LKF_A)\", \"coverage_type\":
+        \"point\", \"north\": 40.80555, \"east\": -111.76546}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Connor Road Storm
+        Drain (RB_CR_SD)\", \"link\": \"/resource/bb680a794080450ab7148f0f2e61e9d5/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the storm
+        drain monitoring site in Red Butte Canyon at Connor Road (RB_CR_SD). Each
+        file contains a calendar year of data. The file for the current year is updated
+        on a daily basis. The data values were collected by a variety of sensors at
+        15 minute intervals. The file header contains detailed metadata for the site
+        and the variable and method associated with each column. This site is currently
+        operated as part of the Wasatch Environmental Observatory. Prior to 2018 this
+        site was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\",
+        \"CR_SD\", \"WEO\", \"Raw Data\", \"Red Butte Canyon\", \"Storm Drain\", \"University
+        of Utah\", \"Red Butte\", \"Connor Road\", \"Water Quality\", \"Connor Road
+        Storm Drain\", \"iUTAH\", \"RB_CR_SD\"], \"created\": \"2017-05-17T00:48:31\",
+        \"modified\": \"2021-03-31T12:35:45\", \"short_id\": \"bb680a794080450ab7148f0f2e61e9d5\",
+        \"geo\": {\"short_id\": \"bb680a794080450ab7148f0f2e61e9d5\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Connor Road Storm
+        Drain (RB_CR_SD)\", \"coverage_type\": \"point\", \"north\": 40.762524, \"east\":
+        -111.82844}}, {\"title\": \"Wasatch Environmental Observatory Red Butte Network:  Knowlton
+        Fork Climate (RB_KF_C) Quality Controlled Data\", \"link\": \"/resource/cde532b5d39141db9c2b22122774afae/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains quality controlled data for select variables measured at
+        the climate monitoring site in Red Butte Canyon at Knowlton Fork (RB_KF_C).
+        Each file contains all of the data for a single quality controlled variable
+        and are updated as quality control is performed. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"RB_KF_C\", \"QC1\", \"GAMUT\", \"Climate Station\", \"Knowlton
+        Fork\", \"WEO\", \"Red Butte Canyon\", \"Quality Controlled\", \"QC\", \"University
+        of Utah\", \"Red Butte\", \"Weather Station\", \"KF_C\", \"iUTAH\", \"Knowlton
+        Fork Climate\"], \"created\": \"2017-01-12T22:52:18\", \"modified\": \"2021-03-31T12:34:50\",
+        \"short_id\": \"cde532b5d39141db9c2b22122774afae\", \"geo\": {\"short_id\":
+        \"cde532b5d39141db9c2b22122774afae\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network:  Knowlton Fork Climate (RB_KF_C) Quality Controlled Data\",
+        \"coverage_type\": \"point\", \"north\": 40.810123, \"east\": -111.76695}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Red Butte Gate Basic Aquatic Site (RB_RBG_BA)\", \"link\": \"/resource/40655b4fc21142d090a5a4b835c14220/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the Aquatic
+        monitoring site in Red Butte Canyon at Red Butte Gate (RB_RBG_BA). Each file
+        contains a calendar year of data. The file for the current year is updated
+        on a daily basis. The data values were collected by a variety of sensors at
+        15 minute intervals. The file header contains detailed metadata for the site
+        and the variable and method associated with each column. This site is currently
+        operated as part of the Wasatch Environmental Observatory. Prior to 2018 this
+        site was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"Red
+        Butte Gate Aquatic\", \"GAMUT\", \"Aquatic Station\", \"Red Butte Gate\",
+        \"WEO\", \"Raw Data\", \"Red Butte Canyon\", \"University of Utah\", \"Red
+        Butte\", \"Water Quality\", \"Red Butte Creek\", \"RB_RBG_BA\", \"iUTAH\",
+        \"RBG_BA\"], \"created\": \"2016-07-25T17:16:30\", \"modified\": \"2021-03-31T12:34:36\",
+        \"short_id\": \"40655b4fc21142d090a5a4b835c14220\", \"geo\": {\"short_id\":
+        \"40655b4fc21142d090a5a4b835c14220\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Red Butte Gate Basic Aquatic Site (RB_RBG_BA)\",
+        \"coverage_type\": \"point\", \"north\": 40.774227, \"east\": -111.817024}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Lower Knowlton
+        Fork Aquatic (RB_LKF_A) Quality Controlled Data\", \"link\": \"/resource/bb41efc853134d0a90fa1da0041367f5/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains quality controlled data for select variables measured at
+        the aquatic monitoring site in Red Butte Canyon at Lower Knowlton Fork (RB_LKF_A).
+        Each file contains all of the data for a single quality controlled variable.  These
+        files are updated as quality control is performed. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"QC1\", \"GAMUT\", \"Aquatic Station\", \"LKF\", \"Lower Knowlton
+        Fork\", \"WEO\", \"Lower Knowlton Fork Aquatic\", \"Red Butte Canyon\", \"Quality
+        Controlled\", \"QC\", \"University of Utah\", \"Red Butte\", \"Water Quality\",
+        \"iUTAH\", \"LKF_A\"], \"created\": \"2017-01-12T22:52:24\", \"modified\":
+        \"2021-03-31T12:33:07\", \"short_id\": \"bb41efc853134d0a90fa1da0041367f5\",
+        \"geo\": {\"short_id\": \"bb41efc853134d0a90fa1da0041367f5\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Lower Knowlton Fork Aquatic (RB_LKF_A)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 40.80555,
+        \"east\": -111.76546}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Red Butte Gate Basic Aquatic (RB_RBG_BA) Quality Controlled
+        Data\", \"link\": \"/resource/c0acde2d26a14a0a8a9000304a1b685a/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality control
+        level 1 (QC1) data for all of the variables measured for the iUTAH GAMUT Network
+        Red Butte Gate Basic Aquatic (RB_RBG_BA). Each file contains all available
+        QC1 data for a specific variable. Files will be updated as new data become
+        available, but no more than once daily. These data have passed QA/QC procedures
+        such as sensor calibration and visual inspection and removal of obvious errors.
+        These data are approved by Technicians as the best available version of the
+        data. See published script for correction steps specific to this data series.
+        Each file header contains detailed metadata for site information, variable
+        and method information, source information, and qualifiers referenced in the
+        data.\", \"subject\": [\"Red Butte Gate Aquatic\", \"QC1\", \"GAMUT\", \"Aquatic
+        Station\", \"Red Butte Gate\", \"WEO\", \"Red Butte Canyon\", \"Quality Controlled\",
+        \"QC\", \"University of Utah\", \"Red Butte\", \"Water Quality\", \"RBG\",
+        \"iUTAH\", \"RBG_BA\"], \"created\": \"2017-01-12T22:52:16\", \"modified\":
+        \"2021-03-31T12:30:14\", \"short_id\": \"c0acde2d26a14a0a8a9000304a1b685a\",
+        \"geo\": {\"short_id\": \"c0acde2d26a14a0a8a9000304a1b685a\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Red Butte Gate Basic Aquatic
+        (RB_RBG_BA) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        40.774227, \"east\": -111.817024}}, {\"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Green Infrastructure Climate (RB_GIRF_C) Quality Controlled
+        Data\", \"link\": \"/resource/e5935762e9054fc49570f02d1a28ed8a/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality controlled
+        data for select variables measured at the climate monitoring site in Red Butte
+        Canyon at The Green Infrastructure Research Facility (RB_GIRF_C). Each file
+        contains all of the data for a single quality controlled variable.  These
+        files are updated as quality control is performed. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"QC1\", \"GAMUT\", \"GIRF Climate\", \"Climate Station\", \"GIRF_C\",
+        \"WEO\", \"Green Infrastructure Research Facility\", \"Red Butte Canyon\",
+        \"GIRF\", \"Quality Controlled\", \"QC\", \"University of Utah\", \"Red Butte\",
+        \"Weather Station\", \"iUTAH\"], \"created\": \"2017-01-12T23:13:56\", \"modified\":
+        \"2021-03-31T12:28:25\", \"short_id\": \"e5935762e9054fc49570f02d1a28ed8a\",
+        \"geo\": {\"short_id\": \"e5935762e9054fc49570f02d1a28ed8a\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Green Infrastructure Climate
+        (RB_GIRF_C) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        40.7608, \"east\": -111.830475}}, {\"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: 900 W (1300 South) Basic Aquatic (RB_900W_BA) Quality Controlled
+        Data\", \"link\": \"/resource/9392dbf30acc4133959ae77103ffd5c2/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality controlled
+        data for select variables measured at the aquatic monitoring site in Red Butte
+        Canyon at 900W (RB_900W_A). Each file contains all of the data for a single
+        quality controlled variable.  These files are updated as quality control is
+        performed. The data values were collected by a variety of sensors at 15 minute
+        intervals. The file header contains detailed metadata for the site and the
+        variable and method associated with each column. This site is currently operated
+        as part of the Wasatch Environmental Observatory. Prior to 2018 this site
+        was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"QC1\",
+        \"GAMUT\", \"Aquatic Station\", \"900W_BA\", \"WEO\", \"Red Butte Canyon\",
+        \"900W\", \"Quality Controlled\", \"QC\", \"University of Utah\", \"Red Butte\",
+        \"Water Quality\", \"900W Aquatic\", \"iUTAH\"], \"created\": \"2017-01-12T23:13:59\",
+        \"modified\": \"2021-03-31T12:25:31\", \"short_id\": \"9392dbf30acc4133959ae77103ffd5c2\",
+        \"geo\": {\"short_id\": \"9392dbf30acc4133959ae77103ffd5c2\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: 900 W (1300 South) Basic Aquatic
+        (RB_900W_BA) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        40.7416, \"east\": -111.9176}}, {\"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Todd''s Meadow Climate (RB_TM_C)\", \"link\": \"/resource/aff4e6dfc09a4070ac15a6ec0741fd02/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the climate
+        monitoring site in Red Butte Canyon at Todd''s Meadow (RB_TM_C). Each file
+        contains a calendar year of data. The file for the current year is updated
+        on a daily basis. The data values were collected by a variety of sensors at
+        15 minute intervals. The file header contains detailed metadata for the site
+        and the variable and method associated with each column. This site is currently
+        operated as part of the Wasatch Environmental Observatory. Prior to 2018 this
+        site was operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\",
+        \"RB_TM_C\", \"Climate Station\", \"Knowlton Fork\", \"WEO\", \"Raw Data\",
+        \"Red Butte Canyon\", \"TM_C\", \"University of Utah\", \"Red Butte\", \"Weather
+        Station\", \"iUTAH\", \"Knowlton Fork Climate\"], \"created\": \"2016-07-19T19:24:13\",
+        \"modified\": \"2021-03-31T12:23:47\", \"short_id\": \"aff4e6dfc09a4070ac15a6ec0741fd02\",
+        \"geo\": {\"short_id\": \"aff4e6dfc09a4070ac15a6ec0741fd02\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Todd''s Meadow Climate (RB_TM_C)\",
+        \"coverage_type\": \"point\", \"north\": 40.789055, \"east\": -111.79642}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Todds Meadow
+        Climate (RB_TM_C) Quality Controlled Data\", \"link\": \"/resource/79ae0f0efe2447fe9a5ab5c15427b2d8/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains quality controlled data for select variables measured at
+        the climate monitoring site in Red Butte Canyon at Todd''s Meadow (RB_TM_C).
+        Each file contains all of the data for a single quality controlled variable.
+        These files are updated as quality control is performed. The data values were
+        collected by a variety of sensors at 15 minute intervals. The file header
+        contains detailed metadata for the site and the variable and method associated
+        with each column. This site is currently operated as part of the Wasatch Environmental
+        Observatory. Prior to 2018 this site was operated as part of the iUTAH GAMUT
+        Network.\", \"subject\": [\"QC1\", \"GAMUT\", \"Todd\\u2019s Meadow Climate\",
+        \"Climate Station\", \"RB_TM_C\", \"WEO\", \"Red Butte Canyon\", \"Quality
+        Controlled\", \"QC\", \"University of Utah\", \"Red Butte\", \"Weather Station\",
+        \"iUTAH\", \"TM_C\", \"Todd\\u2019s Meadow\"], \"created\": \"2017-01-12T22:52:33\",
+        \"modified\": \"2021-03-31T12:21:54\", \"short_id\": \"79ae0f0efe2447fe9a5ab5c15427b2d8\",
+        \"geo\": {\"short_id\": \"79ae0f0efe2447fe9a5ab5c15427b2d8\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Todds Meadow Climate (RB_TM_C)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 40.789055,
+        \"east\": -111.79642}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Foothill Drive Advanced Aquatic (RB_FD_AA) Quality Controlled
+        Data\", \"link\": \"/resource/47244f7407e14529944fe38333fe7612/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality controlled
+        data for select variables measured at the aquatic monitoring site in Red Butte
+        Canyon at Foothill Drive (RB_FD_AA). Each file contains all of the data for
+        a single quality controlled variable.  These files are updated as quality
+        control is performed. The data values were collected by a variety of sensors
+        at 15 minute intervals. The file header contains detailed metadata for the
+        site and the variable and method associated with each column. This site is
+        currently operated as part of the Wasatch Environmental Observatory. Prior
+        to 2018 this site was operated as part of the iUTAH GAMUT Network.\", \"subject\":
+        [\"QC1\", \"GAMUT\", \"FD_AA\", \"Aquatic Station\", \"WEO\", \"Foothill Drive\",
+        \"Red Butte Canyon\", \"Quality Controlled\", \"QC\", \"University of Utah\",
+        \"Red Butte\", \"Water Quality\", \"FD\", \"Foothill Drive Aquatic\", \"iUTAH\"],
+        \"created\": \"2017-01-12T23:13:54\", \"modified\": \"2021-03-31T12:20:16\",
+        \"short_id\": \"47244f7407e14529944fe38333fe7612\", \"geo\": {\"short_id\":
+        \"47244f7407e14529944fe38333fe7612\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Foothill Drive Advanced Aquatic (RB_FD_AA) Quality Controlled
+        Data\", \"coverage_type\": \"point\", \"north\": 40.757225, \"east\": -111.833725}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Dentistry
+        Building Storm Drain (RB_Dent_SD) Quality Controlled Data\", \"link\": \"/resource/da03b8e6edf240b483eb84ee256a17d3/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\"], \"abstract\": \"This dataset contains quality
+        controlled data for select variables measured for the storm drain monitoring
+        site in Red Butte Canyon at Dentistry (RB_Dent_SD). Each file contains all
+        of the data for a single quality controlled variable.  These files are updated
+        as quality control is performed. The data values were collected by a variety
+        of sensors at 15 minute intervals. The file header contains detailed metadata
+        for the site and the variable and method associated with each column. This
+        site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network\",
+        \"subject\": [\"QC1\", \"GAMUT\", \"RB_Dent_SD\", \"Water Quality\", \"WEO\",
+        \"QC\", \"Red Butte Canyon\", \"Quality Controlled\", \"Storm Drain\", \"University
+        of Utah\", \"Red Butte\", \"Dentistry Storm Drain\", \"Dentistry\", \"Dent_SD\",
+        \"iUTAH\"], \"created\": \"2020-01-10T18:08:39\", \"modified\": \"2021-03-31T12:18:18\",
+        \"short_id\": \"da03b8e6edf240b483eb84ee256a17d3\", \"geo\": {\"short_id\":
+        \"da03b8e6edf240b483eb84ee256a17d3\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Dentistry Building Storm Drain (RB_Dent_SD) Quality Controlled
+        Data\", \"coverage_type\": \"point\", \"north\": 40.757988, \"east\": -111.832085}},
+        {\"title\": \"Wasatch Environmental Observatory Red Butte Network: Above Red
+        Butte Reservoir Advanced Aquatic (RB_ARBR_AA) Quality Controlled Data\", \"link\":
+        \"/resource/f83c4a6ddaec4085bd152dd261a1a89c/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains quality control
+        level 1 (QC1) data for all of the variables measured for the iUTAH GAMUT Network
+        Above Red Butte Reservoir Advanced Aquatic (RB_ARBR_AA). Each file contains
+        all available QC1 data for a specific variable. Files will be updated as new
+        data become available, but no more than once daily. These data have passed
+        QA/QC procedures such as sensor calibration and visual inspection and removal
+        of obvious errors. These data are approved by Technicians as the best available
+        version of the data. See published script for correction steps specific to
+        this data series. Each file header contains detailed metadata for site information,
+        variable and method information, source information, and qualifiers referenced
+        in the data.\", \"subject\": [\"Red Butte Reservoir\", \"QC1\", \"GAMUT\",
+        \"ARBR_AA\", \"ARBR\", \"Aquatic Station\", \"Above Red Butte Reservoir Aquatic\",
+        \"WEO\", \"Red Butte Canyon\", \"Quality Controlled\", \"QC\", \"University
+        of Utah\", \"Red Butte\", \"Water Quality\", \"Above Red Butte Reservoir\",
+        \"iUTAH\"], \"created\": \"2017-01-12T23:14:03\", \"modified\": \"2021-03-31T12:17:53\",
+        \"short_id\": \"f83c4a6ddaec4085bd152dd261a1a89c\", \"geo\": {\"short_id\":
+        \"f83c4a6ddaec4085bd152dd261a1a89c\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Above Red Butte Reservoir Advanced Aquatic (RB_ARBR_AA)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 40.779602,
+        \"east\": -111.80667}}, {\"title\": \"Wasatch Environmental Observatory Red
+        Butte Network: Raw Data at Above Red Butte Reservoir Advanced Aquatic (RB_ARBR_AA)\",
+        \"link\": \"/resource/e2043ae155514391b6d7f04af226f221/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\",
+        \"iUTAH Data Manager\"], \"abstract\": \"This dataset contains raw data for
+        all of the variables measured for the Aquatic monitoring site in Red Butte
+        Canyon at Above Red Butte Reservoir (RB_ARBR_AA). Each file contains a calendar
+        year of data. The file for the current year is updated on a daily basis. The
+        data values were collected by a variety of sensors at 15 minute intervals.
+        The file header contains detailed metadata for the site and the variable and
+        method associated with each column. This site is currently operated as part
+        of the Wasatch Environmental Observatory. Prior to 2018 this site was operated
+        as part of the iUTAH GAMUT Network.\", \"subject\": [\"Red Butte Reservoir\",
+        \"GAMUT\", \"ARBR_AA\", \"Aquatic Station\", \"RB_ARBR_AA\", \"Above Red Butte
+        Reservoir Aquatic\", \"ARBR_A\", \"WEO\", \"Raw Data\", \"Red Butte Canyon\",
+        \"University of Utah\", \"Red Butte\", \"Water Quality\", \"Above Red Butte
+        Reservoir\", \"Red Butte Creek\", \"RB_ARBR_A\", \"iUTAH\"], \"created\":
+        \"2016-07-20T19:46:09\", \"modified\": \"2021-03-31T12:15:53\", \"short_id\":
+        \"e2043ae155514391b6d7f04af226f221\", \"geo\": {\"short_id\": \"e2043ae155514391b6d7f04af226f221\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Above Red Butte Reservoir Advanced Aquatic (RB_ARBR_AA)\", \"coverage_type\":
+        \"point\", \"north\": 40.779602, \"east\": -111.80667}}, {\"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Green Infrastructure
+        Climate (RB_GIRF_C)\", \"link\": \"/resource/4f7ce821b0a54cac9ced1edd423e2c06/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"authors\": \"University of Utah  -- Wasatch
+        Environmental Observatory\", \"contributor\": [\"Jamison, Logan\", \"Brooks,
+        Paul\", \"Eiriksson, Dave\"], \"author_link\": null, \"owner\": [\"Jamison,
+        Logan\", \"Eiriksson, Dave\", \"iUTAH Data Manager\"], \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the climate
+        monitoring site in Red Butte Canyon at The Green Infrastructure Research Facility
+        (RB_GIRF_C). Each file contains a calendar year of data. The file for the
+        current year is updated on a daily basis. The data values were collected by
+        a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method associated with each column.
+        This site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"Green Infrastructure Research Facility\", \"GAMUT\", \"RB_GIRF_C\",
+        \"GIRF Climate\", \"Climate Station\", \"GIRF_C\", \"WEO\", \"Raw Data\",
+        \"Red Butte Canyon\", \"GIRF\", \"University of Utah\", \"Red Butte\", \"Weather
+        Station\", \"Green Infrastructure\", \"iUTAH\"], \"created\": \"2017-05-22T20:22:31\",
+        \"modified\": \"2021-03-31T12:15:06\", \"short_id\": \"4f7ce821b0a54cac9ced1edd423e2c06\",
+        \"geo\": {\"short_id\": \"4f7ce821b0a54cac9ced1edd423e2c06\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Green Infrastructure
+        Climate (RB_GIRF_C)\", \"coverage_type\": \"point\", \"north\": 40.7608, \"east\":
+        -111.830475}}, {\"title\": \"Wasatch Environmental Observatory Red Butte Network:
+        Raw Data at Red Butte Creek at 1300 East Aquatic (RB_1300E_A)\", \"link\":
+        \"/resource/de0968f18b034e9c8ad0bbc91e593c83/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"authors\": \"University of Utah  -- Wasatch Environmental Observatory\",
+        \"contributor\": [\"Jamison, Logan\", \"Brooks, Paul\", \"Eiriksson, Dave\"],
+        \"author_link\": null, \"owner\": [\"Jamison, Logan\", \"Eiriksson, Dave\"],
+        \"abstract\": \"This dataset contains raw data for all of the variables measured
+        for the Aquatic monitoring site in Red Butte Canyon at 1300E (RB_1300E_A).
+        Each file contains a calendar year of data. The file for the current year
+        is updated on a daily basis. The data values were collected by a variety of
+        sensors at 15 minute intervals. The file header contains detailed metadata
+        for the site and the variable and method associated with each column. This
+        site is currently operated as part of the Wasatch Environmental Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"1300E\", \"GAMUT\", \"Aquatic Station\", \"RB_1300E_A\", \"WEO\",
+        \"Raw Data\", \"Red Butte Canyon\", \"University of Utah\", \"Red Butte\",
+        \"1300E_A\", \"Water Quality\", \"1300E Aquatic\", \"Red Butte Creek\", \"iUTAH\"],
+        \"created\": \"2019-12-10T18:28:09\", \"modified\": \"2021-03-31T12:13:10\",
+        \"short_id\": \"de0968f18b034e9c8ad0bbc91e593c83\", \"geo\": {\"short_id\":
+        \"de0968f18b034e9c8ad0bbc91e593c83\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Red Butte Creek at 1300 East Aquatic (RB_1300E_A)\",
+        \"coverage_type\": \"point\", \"north\": 40.744995, \"east\": -111.85444}},
+        {\"title\": \"Logan River Observatory: Golf Course Climate Site (LR_GC_C)
+        Raw Data\", \"link\": \"/resource/96310f82dd5247ba8201955750093923/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"Logan River Observatory\", \"authors\": \"Logan
+        River Observatory\", \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber
+        Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"], \"author_link\":
+        null, \"owner\": \"None\", \"abstract\": \"This dataset contains raw data
+        for all of the variables measured for the climate site near the Logan River
+        Golf Course (LR_GC_C). Each file contains a calendar year of data. The file
+        for the current year is updated on a daily basis. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method of each column. This site
+        is currently operated as part of the Logan River Observatory. Prior to 2018
+        this site was operated as part of the iUTAH GAMUT Network.\", \"subject\":
+        [\"climate\", \"GAMUT\", \"soil\", \"iUTAH\", \"snow\", \"raw data\", \"time
+        series\", \"LRO\", \"Logan River\", \"precipitation\", \"Logan River Observatory\"],
+        \"created\": \"2016-07-22T18:38:00\", \"modified\": \"2021-03-31T10:10:37\",
+        \"short_id\": \"96310f82dd5247ba8201955750093923\", \"geo\": {\"short_id\":
+        \"96310f82dd5247ba8201955750093923\", \"title\": \"Logan River Observatory:
+        Golf Course Climate Site (LR_GC_C) Raw Data\", \"coverage_type\": \"point\",
+        \"north\": 41.705643, \"east\": -111.85427}}, {\"title\": \"Logan River Observatory:
+        Dewitt Springs above confluence with Logan River Aquatic Site (DS_CONF_A)
+        Quality Controlled Data\", \"link\": \"/resource/460f2d0089af46bab89ec073710bf93a/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
+        dataset contains quality control level 1 (QC1) data for all of the variables
+        measured for the aquatic site on Dewitt Springs above confluence with Logan
+        River (DS_CONF_A). Each file contains all available QC1 data for a specific
+        variable. Files will be updated as new data become available, but no more
+        than once daily. These data have passed QA/QC procedures such as sensor calibration
+        and visual inspection and removal of obvious errors. These data are approved
+        by Technicians as the best available version of the data. See published script
+        for correction steps specific to this data series. Each file header contains
+        detailed metadata for site information, variable and method information, source
+        information, and qualifiers referenced in the data. This site is currently
+        operated as part of the Logan River Observatory. Prior to 2018 this site was
+        operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"time
+        series\", \"raw data\", \"LRO\", \"water quality\", \"Logan River\", \"iUTAH\",
+        \"Logan River Observatory\"], \"created\": \"2021-03-04T04:53:00\", \"modified\":
+        \"2021-03-31T10:09:04\", \"short_id\": \"460f2d0089af46bab89ec073710bf93a\",
+        \"geo\": {\"short_id\": \"460f2d0089af46bab89ec073710bf93a\", \"title\": \"Logan
+        River Observatory: Dewitt Springs above confluence with Logan River Aquatic
+        Site (DS_CONF_A) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 41.759434, \"east\": -111.70775}}, {\"title\": \"Logan River Observatory:
+        Beaver Creek above confluence with Logan River Aquatic Site (BC_CONF_A) Raw
+        Data\", \"link\": \"/resource/229b0bf891f44ebca5a8e4db0778c9b1/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"Logan River Observatory\", \"authors\": \"Logan
+        River Observatory\", \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber
+        Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"], \"author_link\":
+        \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This dataset contains
+        raw data for all of the variables measured for the aquatic site on Beaver
+        Creek above confluence with Logan River (BC_CONF_A). Each file contains a
+        calendar year of data. The file for the current year is updated on a daily
+        basis. The data values were collected by a variety of sensors at 15 minute
+        intervals. The file header contains detailed metadata for the site and the
+        variable and method of each column. This site is currently operated as part
+        of the Logan River Observatory. Prior to 2018 this site was operated as part
+        of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"time series\", \"raw
+        data\", \"LRO\", \"water quality\", \"Logan River\", \"iUTAH\", \"Logan River
+        Observatory\"], \"created\": \"2021-03-03T21:58:16\", \"modified\": \"2021-03-31T10:08:40\",
+        \"short_id\": \"229b0bf891f44ebca5a8e4db0778c9b1\", \"geo\": {\"short_id\":
+        \"229b0bf891f44ebca5a8e4db0778c9b1\", \"title\": \"Logan River Observatory:
+        Beaver Creek above confluence with Logan River Aquatic Site (BC_CONF_A) Raw
+        Data\", \"coverage_type\": \"point\", \"north\": 41.93055, \"east\": -111.5619}},
+        {\"title\": \"Logan River Observatory: Ricks Spring above confluence with
+        Logan River Aquatic Site (RS_CONF_A) Quality Controlled Data\", \"link\":
+        \"/resource/c7296ecc6e53483587f6caa735f4e5c1/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"Logan River Observatory\", \"authors\": \"Logan River Observatory\",
+        \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber Spackman\", \"Horsburgh,
+        Jeffery S.\", \"strong, patrick\"], \"author_link\": \"/user/5340/\", \"owner\":
+        \"None\", \"abstract\": \"This dataset contains quality control level 1 (QC1)
+        data for all of the variables measured for the aquatic site onRicks Spring
+        above confluence with Logan River (RS_CONF_A). Each file contains all available
+        QC1 data for a specific variable. Files will be updated as new data become
+        available, but no more than once daily. These data have passed QA/QC procedures
+        such as sensor calibration and visual inspection and removal of obvious errors.
+        These data are approved by Technicians as the best available version of the
+        data. See published script for correction steps specific to this data series.
+        Each file header contains detailed metadata for site information, variable
+        and method information, source information, and qualifiers referenced in the
+        data. This site is currently operated as part of the Logan River Observatory.
+        Prior to 2018 this site was operated as part of the iUTAH GAMUT Network.\",
+        \"subject\": [\"GAMUT\", \"time series\", \"raw data\", \"LRO\", \"water quality\",
+        \"Logan River\", \"iUTAH\", \"Logan River Observatory\"], \"created\": \"2021-03-04T04:28:03\",
+        \"modified\": \"2021-03-31T10:07:25\", \"short_id\": \"c7296ecc6e53483587f6caa735f4e5c1\",
+        \"geo\": {\"short_id\": \"c7296ecc6e53483587f6caa735f4e5c1\", \"title\": \"Logan
+        River Observatory: Ricks Spring above confluence with Logan River Aquatic
+        Site (RS_CONF_A) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 41.840084, \"east\": -111.588715}}, {\"title\": \"Logan River Observatory:
+        Logan River at Main Street (Highway 89/91) Bridge Aquatic Site (LR_MainStreet_BA)
+        Quality Controlled Data\", \"link\": \"/resource/98788289144a48e4b5151ab87a1f8ad5/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": null, \"owner\": \"None\", \"abstract\": \"This dataset contains
+        quality control level 1 (QC1) data for all of the variables measured for the
+        aquatic site on the Logan River at Main Street (Highway 89/91) Bridge (LR_MainStreet_BA).
+        Each file contains all available QC1 data for a specific variable. Files will
+        be updated as new data become available, but no more than once daily. These
+        data have passed QA/QC procedures such as sensor calibration and visual inspection
+        and removal of obvious errors. These data are approved by Technicians as the
+        best available version of the data. See published script for correction steps
+        specific to this data series. Each file header contains detailed metadata
+        for site information, variable and method information, source information,
+        and qualifiers referenced in the data.This site is currently operated as part
+        of the Logan River Observatory. Prior to 2018 this site was operated as part
+        of the iUTAH GAMUT Network.\", \"subject\": [\"Gage height\", \"iUTAH\", \"LRO\",
+        \"Stream\", \"GAMUT\", \"Quality Controlled Level 1\", \"discharge\", \"Oxygen
+        - dissolved\", \"pH\", \"Temperature\", \"Oxygen - dissolved - transducer
+        signal\", \"Logan River at Main Street (Highway 89/91) Bridge\", \"Turbidity\",
+        \"flow\", \"time series\", \"Specific Conductance\", \"Logan River Observatory\"],
+        \"created\": \"2017-01-12T23:14:01\", \"modified\": \"2021-03-31T10:07:01\",
+        \"short_id\": \"98788289144a48e4b5151ab87a1f8ad5\", \"geo\": {\"short_id\":
+        \"98788289144a48e4b5151ab87a1f8ad5\", \"title\": \"Logan River Observatory:
+        Logan River at Main Street (Highway 89/91) Bridge Aquatic Site (LR_MainStreet_BA)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 41.721092,
+        \"east\": -111.8351}}, {\"title\": \"Logan River Observatory: Ricks Spring
+        above confluence with Logan River Aquatic Site (RS_CONF_A) Raw Data\", \"link\":
+        \"/resource/b175fe0108334828a2d34f86a927793a/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"Logan River Observatory\", \"authors\": \"Logan River Observatory\",
+        \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber Spackman\", \"Horsburgh,
+        Jeffery S.\", \"strong, patrick\"], \"author_link\": \"/user/5340/\", \"owner\":
+        \"None\", \"abstract\": \"This dataset contains raw data for all of the variables
+        measured for the aquatic site on Ricks Spring above confluence with Logan
+        River (RS_CONF_A). Each file contains a calendar year of data. The file for
+        the current year is updated on a daily basis. The data values were collected
+        by a variety of sensors at 15 minute intervals. The file header contains detailed
+        metadata for the site and the variable and method of each column. This site
+        is currently operated as part of the Logan River Observatory. Prior to 2018
+        this site was operated as part of the iUTAH GAMUT Network.\", \"subject\":
+        [\"GAMUT\", \"time series\", \"raw data\", \"LRO\", \"water quality\", \"Logan
+        River\", \"iUTAH\", \"Logan River Observatory\"], \"created\": \"2021-03-03T22:02:10\",
+        \"modified\": \"2021-03-31T10:05:19\", \"short_id\": \"b175fe0108334828a2d34f86a927793a\",
+        \"geo\": {\"short_id\": \"b175fe0108334828a2d34f86a927793a\", \"title\": \"Logan
+        River Observatory: Ricks Spring above confluence with Logan River Aquatic
+        Site (RS_CONF_A) Raw Data\", \"coverage_type\": \"point\", \"north\": 41.840084,
+        \"east\": -111.588715}}, {\"title\": \"Logan River Observatory: Logan River
+        near Tony Grove Aquatic Site (LR_TG_BA) Quality Controlled Data\", \"link\":
+        \"/resource/b93121c191a94abbb288acabba07f954/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"Logan River Observatory\", \"authors\": \"Logan River Observatory\",
+        \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber Spackman\", \"Horsburgh,
+        Jeffery S.\", \"strong, patrick\"], \"author_link\": null, \"owner\": \"None\",
+        \"abstract\": \"This dataset contains quality control level 1 (QC1) data for
+        all of the variables measured for the aquatic site on the Logan River near
+        Tony Grove (LR_TG_BA). Each file contains all available QC1 data for a specific
+        variable. Files will be updated as new data become available, but no more
+        than once daily. These data have passed QA/QC procedures such as sensor calibration
+        and visual inspection and removal of obvious errors. These data are approved
+        by Technicians as the best available version of the data. See published script
+        for correction steps specific to this data series. Each file header contains
+        detailed metadata for site information, variable and method information, source
+        information, and qualifiers referenced in the data. This site is currently
+        operated as part of the Logan River Observatory. Prior to 2018 this site was
+        operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"Gage height\",
+        \"iUTAH\", \"LRO\", \"Stream\", \"Logan River near Tony Grove\", \"GAMUT\",
+        \"Quality Controlled Level 1\", \"discharge\", \"Oxygen - dissolved\", \"pH\",
+        \"Temperature\", \"Oxygen - dissolved - transducer signal\", \"Turbidity\",
+        \"flow\", \"time series\", \"Specific Conductance\", \"Logan River Observatory\"],
+        \"created\": \"2017-01-12T22:52:45\", \"modified\": \"2021-03-31T10:04:03\",
+        \"short_id\": \"b93121c191a94abbb288acabba07f954\", \"geo\": {\"short_id\":
+        \"b93121c191a94abbb288acabba07f954\", \"title\": \"Logan River Observatory:
+        Logan River near Tony Grove Aquatic Site (LR_TG_BA) Quality Controlled Data\",
+        \"coverage_type\": \"point\", \"north\": 41.875847, \"east\": -111.56453}},
+        {\"title\": \"Logan River Observatory: Logan River at Dewitt Springs Campground
+        Aquatic Site (LR_DSC_A) Quality Controlled Data\", \"link\": \"/resource/534b3d21ef4c499f8f89df4d8880ca20/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
+        dataset contains quality control level 1 (QC1) data for all of the variables
+        measured for the aquatic site on the Logan River at Dewitt Springs Campground
+        (LR_DSC_A). Each file contains all available QC1 data for a specific variable.
+        Files will be updated as new data become available, but no more than once
+        daily. These data have passed QA/QC procedures such as sensor calibration
+        and visual inspection and removal of obvious errors. These data are approved
+        by Technicians as the best available version of the data. See published script
+        for correction steps specific to this data series. Each file header contains
+        detailed metadata for site information, variable and method information, source
+        information, and qualifiers referenced in the data. This site is currently
+        operated as part of the Logan River Observatory. Prior to 2018 this site was
+        operated as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"time
+        series\", \"raw data\", \"LRO\", \"water quality\", \"Logan River\", \"iUTAH\",
+        \"Logan River Observatory\"], \"created\": \"2021-03-04T04:55:31\", \"modified\":
+        \"2021-03-31T10:02:23\", \"short_id\": \"534b3d21ef4c499f8f89df4d8880ca20\",
+        \"geo\": {\"short_id\": \"534b3d21ef4c499f8f89df4d8880ca20\", \"title\": \"Logan
+        River Observatory: Logan River at Dewitt Springs Campground Aquatic Site (LR_DSC_A)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 41.75712,
+        \"east\": -111.7089}}, {\"title\": \"Logan River Observatory: Northwest Field
+        Canal at 1600 North Site (NWF_1600N_CNL) Raw Data\", \"link\": \"/resource/4ca26eee6b624055927034595ad3886b/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the site on
+        the Northwest Field Canal at 1600 North (NWF_1600N_CNL). Each file contains
+        a calendar year of data. The file for the current year is updated on a daily
+        basis. The data values were collected by a variety of sensors at 15 minute
+        intervals. The file header contains detailed metadata for the site and the
+        variable and method of each column. This site is currently operated as part
+        of the Logan River Observatory.\", \"subject\": [\"GAMUT\", \"time series\",
+        \"raw data\", \"LRO\", \"water quality\", \"Logan River\", \"Logan River Observatory\"],
+        \"created\": \"2021-03-04T03:43:21\", \"modified\": \"2021-03-31T10:01:59\",
+        \"short_id\": \"4ca26eee6b624055927034595ad3886b\", \"geo\": {\"short_id\":
+        \"4ca26eee6b624055927034595ad3886b\", \"title\": \"Logan River Observatory:
+        Northwest Field Canal at 1600 North Site (NWF_1600N_CNL) Raw Data\", \"coverage_type\":
+        \"point\", \"north\": 41.760956, \"east\": -111.83934}}, {\"title\": \"Logan
+        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
+        Aquatic Site (SLB_Pump_CNL) Quality Controlled Data\", \"link\": \"/resource/229a9c32ae674d8e81ec164317b8820f/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
+        dataset contains quality control level 1 (QC1) data for all of the variables
+        measured for the aquatic site on the South Logan Benson Canal at Airport Rd
+        Pumping Station (SLB_Pump_CNL). Each file contains all available QC1 data
+        for a specific variable. Files will be updated as new data become available,
+        but no more than once daily. These data have passed QA/QC procedures such
+        as sensor calibration and visual inspection and removal of obvious errors.
+        These data are approved by Technicians as the best available version of the
+        data. See published script for correction steps specific to this data series.
+        Each file header contains detailed metadata for site information, variable
+        and method information, source information, and qualifiers referenced in the
+        data. This site is currently operated as part of the Logan River Observatory.\",
+        \"subject\": [\"GAMUT\", \"time series\", \"raw data\", \"LRO\", \"water quality\",
+        \"Logan River\", \"Logan River Observatory\"], \"created\": \"2021-03-04T04:09:51\",
+        \"modified\": \"2021-03-31T10:01:36\", \"short_id\": \"229a9c32ae674d8e81ec164317b8820f\",
+        \"geo\": {\"short_id\": \"229a9c32ae674d8e81ec164317b8820f\", \"title\": \"Logan
+        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
+        Aquatic Site (SLB_Pump_CNL) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 41.7801, \"east\": -111.8663}}, {\"title\": \"Logan
+        River Observatory: Franklin Basin Climate Site (LR_FB_C) Raw Data\", \"link\":
+        \"/resource/965dc124cabc4587955e6f1f722fc33b/\", \"availability\": [\"public\"],
+        \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
+        \"author\": \"Logan River Observatory\", \"authors\": \"Logan River Observatory\",
+        \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber Spackman\", \"Horsburgh,
+        Jeffery S.\", \"strong, patrick\"], \"author_link\": null, \"owner\": \"None\",
+        \"abstract\": \"This dataset contains raw data for all of the variables measured
+        for the climate site near Franklin Basin (LR_FB_C). Each file contains a calendar
+        year of data. The file for the current year is updated on a daily basis. The
+        data values were collected by a variety of sensors at 15 minute intervals.
+        The file header contains detailed metadata for the site and the variable and
+        method of each column. This site is currently operated as part of the Logan
+        River Observatory. Prior to 2018 this site was operated as part of the iUTAH
+        GAMUT Network.\", \"subject\": [\"climate\", \"GAMUT\", \"soil\", \"iUTAH\",
+        \"snow\", \"raw data\", \"time series\", \"LRO\", \"Logan River\", \"precipitation\",
+        \"Logan River Observatory\"], \"created\": \"2016-07-22T19:29:07\", \"modified\":
+        \"2021-03-31T10:00:09\", \"short_id\": \"965dc124cabc4587955e6f1f722fc33b\",
+        \"geo\": {\"short_id\": \"965dc124cabc4587955e6f1f722fc33b\", \"title\": \"Logan
+        River Observatory: Franklin Basin Climate Site (LR_FB_C) Raw Data\", \"coverage_type\":
+        \"point\", \"north\": 41.949814, \"east\": -111.58135}}, {\"title\": \"Logan
+        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
+        Aquatic Site (SLB_Pump_CNL) Raw Data\", \"link\": \"/resource/815fe74f4b47448dbd7f32aca5c3b83c/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
+        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
+        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
+        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
+        dataset contains raw data for all of the variables measured for the aquatic
+        site at the South Logan Benson Canal at Airport Rd Pumping Station (SLB_Pump_CNL).
+        Each file contains a calendar year of data. The file for the current year
+        is updated on a daily basis. The data values were collected by a variety of
+        sensors at 15 minute intervals. The file header contains detailed metadata
+        for the site and the variable and method of each column. This site is currently
+        operated as part of the Logan River Observatory.\", \"subject\": [\"GAMUT\",
+        \"time series\", \"raw data\", \"LRO\", \"water quality\", \"Logan River\",
+        \"Logan River Observatory\"], \"created\": \"2021-03-04T03:50:24\", \"modified\":
+        \"2021-03-31T09:59:44\", \"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\",
+        \"geo\": {\"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\", \"title\": \"Logan
+        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
+        Aquatic Site (SLB_Pump_CNL) Raw Data\", \"coverage_type\": \"point\", \"north\":
+        41.7801, \"east\": -111.8663}}, {\"title\": \"Logan River Observatory: Spring
+        Creek above confluence with Logan River Aquatic Site (SC_CONF_A) Quality Controlled
+        Data\", \"link\": \"/resource/17de617207594728b336d722eb96d798/\", \"availability\":
+        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
+        Resource\", \"author\": \"Logan River Observatory\", \"authors\": \"Logan
+        River Observatory\", \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber
+        Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"], \"author_link\":
+        \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This dataset contains
+        quality control level 1 (QC1) data for all of the variables measured for the
+        aquatic site on Spring Creek above confluence with Logan River (SC_CONF_A).
+        Each file contains all available QC1 data for a specific variable. Files will
+        be updated as new data become available, but no more than once daily. These
+        data have passed QA/QC procedures such as sensor calibration and visual inspection
+        and removal of obvious errors. These data are approved by Technicians as the
+        best available version of the data. See published script for correction steps
+        specific to this data series. Each file header contains detailed metadata
+        for site information, variable and method information, source information,
+        and qualifiers referenced in the data. This site is currently operated as
+        part of the Logan River Observatory. Prior to 2018 this site was operated
+        as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"time series\",
+        \"raw data\", \"LRO\", \"water quality\", \"Logan River\", \"iUTAH\", \"Logan
+        River Observatory\"], \"created\": \"2021-03-04T04:15:42\", \"modified\":
+        \"2021-03-31T09:59:22\", \"short_id\": \"17de617207594728b336d722eb96d798\",
+        \"geo\": {\"short_id\": \"17de617207594728b336d722eb96d798\", \"title\": \"Logan
+        River Observatory: Spring Creek above confluence with Logan River Aquatic
+        Site (SC_CONF_A) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 41.706055, \"east\": -111.847305}}]", "geodata": "[{\"short_id\":
+        \"5057577e8573433d8045b59db91b2550\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: 1300 East Aquatic (RB_1300E_A) Quality Controlled Data\",
+        \"coverage_type\": \"point\", \"north\": 40.744995, \"east\": -111.85444},
+        {\"short_id\": \"252980b3bff94a1fa2a2ce1de24323d2\", \"title\": \"Wasatch
+        Environmental Observatory Red Butte Network: Raw Data at Fort Douglas Storm
+        Drain (RB_FortD_SD)\", \"coverage_type\": \"point\", \"north\": 40.75901,
+        \"east\": -111.83144}, {\"short_id\": \"6445418c7c0e426d8cb1568d296c02d1\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Above Red
+        Butte Reservoir Climate (RB_ARBR_C) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.780567, \"east\": -111.80722}, {\"short_id\": \"74dc57ed714e4cd3882edc16d50e197a\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Knowlton Fork Climate (RB_KF_C)\", \"coverage_type\": \"point\", \"north\":
+        40.810123, \"east\": -111.76695}, {\"short_id\": \"916041be57be47a1b19c63f328fb086c\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        Above Red Butte Reservoir Climate Site (RB_ARBR_C)\", \"coverage_type\": \"point\",
+        \"north\": 40.780567, \"east\": -111.80722}, {\"short_id\": \"c3ac533a5fe648abaa00473d9bbbf507\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Dentistry Building Storm Drain (RB_Dent_SD)\", \"coverage_type\": \"point\",
+        \"north\": 40.757988, \"east\": -111.832085}, {\"short_id\": \"e3a4958fcb6d4807b272d956185f8a83\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Cottams Grove Basic Aquatic (RB_CG_BA)\", \"coverage_type\": \"point\",
+        \"north\": 40.763958, \"east\": -111.828285}, {\"short_id\": \"1846b79a648a4088aad987cc7241656f\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Red Butte Creek near 900 W (1300 South) Basic Aquatic Site (RB_900W_BA)\",
+        \"coverage_type\": \"point\", \"north\": 40.7416, \"east\": -111.9176}, {\"short_id\":
+        \"45189d152d78400b99bf636588a7bf55\", \"title\": \"Wasatch Environmental Observatory
+        Red Butte Network: Raw Data at Red Butte Creek near Foothill Drive Advanced
+        Aquatic (RB_FD_AA)\", \"coverage_type\": \"point\", \"north\": 40.757225,
+        \"east\": -111.833725}, {\"short_id\": \"4659632bae8a440698b1c6b0f4d3558a\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Cottam''s
+        Grove Basic Aquatic (RB_CG_BA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.763958, \"east\": -111.828285}, {\"short_id\": \"b78304af040f41afaf2a5a3cd73eaa35\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at GIRF Storm Drain (RB_GIRF_SD)\", \"coverage_type\": \"point\", \"north\":
+        40.760914, \"east\": -111.8297}, {\"short_id\": \"058d173af80a4784b471d29aa9ad7257\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Lower Knowlton Fork Aquatic (RB_LKF_A)\", \"coverage_type\": \"point\",
+        \"north\": 40.80555, \"east\": -111.76546}, {\"short_id\": \"bb680a794080450ab7148f0f2e61e9d5\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Connor Road Storm Drain (RB_CR_SD)\", \"coverage_type\": \"point\", \"north\":
+        40.762524, \"east\": -111.82844}, {\"short_id\": \"cde532b5d39141db9c2b22122774afae\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network:  Knowlton
+        Fork Climate (RB_KF_C) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 40.810123, \"east\": -111.76695}, {\"short_id\": \"40655b4fc21142d090a5a4b835c14220\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Red Butte Gate Basic Aquatic Site (RB_RBG_BA)\", \"coverage_type\": \"point\",
+        \"north\": 40.774227, \"east\": -111.817024}, {\"short_id\": \"bb41efc853134d0a90fa1da0041367f5\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Lower Knowlton
+        Fork Aquatic (RB_LKF_A) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 40.80555, \"east\": -111.76546}, {\"short_id\": \"c0acde2d26a14a0a8a9000304a1b685a\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Red Butte
+        Gate Basic Aquatic (RB_RBG_BA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.774227, \"east\": -111.817024}, {\"short_id\": \"e5935762e9054fc49570f02d1a28ed8a\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Green Infrastructure
+        Climate (RB_GIRF_C) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 40.7608, \"east\": -111.830475}, {\"short_id\": \"9392dbf30acc4133959ae77103ffd5c2\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: 900 W (1300
+        South) Basic Aquatic (RB_900W_BA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.7416, \"east\": -111.9176}, {\"short_id\": \"aff4e6dfc09a4070ac15a6ec0741fd02\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Todd''s
+        Meadow Climate (RB_TM_C)\", \"coverage_type\": \"point\", \"north\": 40.789055,
+        \"east\": -111.79642}, {\"short_id\": \"79ae0f0efe2447fe9a5ab5c15427b2d8\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Todds Meadow
+        Climate (RB_TM_C) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 40.789055, \"east\": -111.79642}, {\"short_id\": \"47244f7407e14529944fe38333fe7612\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Foothill
+        Drive Advanced Aquatic (RB_FD_AA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.757225, \"east\": -111.833725}, {\"short_id\": \"da03b8e6edf240b483eb84ee256a17d3\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Dentistry
+        Building Storm Drain (RB_Dent_SD) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.757988, \"east\": -111.832085}, {\"short_id\": \"f83c4a6ddaec4085bd152dd261a1a89c\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Above Red
+        Butte Reservoir Advanced Aquatic (RB_ARBR_AA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 40.779602, \"east\": -111.80667}, {\"short_id\": \"e2043ae155514391b6d7f04af226f221\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Above Red Butte Reservoir Advanced Aquatic (RB_ARBR_AA)\", \"coverage_type\":
+        \"point\", \"north\": 40.779602, \"east\": -111.80667}, {\"short_id\": \"4f7ce821b0a54cac9ced1edd423e2c06\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Green Infrastructure Climate (RB_GIRF_C)\", \"coverage_type\": \"point\",
+        \"north\": 40.7608, \"east\": -111.830475}, {\"short_id\": \"de0968f18b034e9c8ad0bbc91e593c83\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Red Butte Creek at 1300 East Aquatic (RB_1300E_A)\", \"coverage_type\":
+        \"point\", \"north\": 40.744995, \"east\": -111.85444}, {\"short_id\": \"96310f82dd5247ba8201955750093923\",
+        \"title\": \"Logan River Observatory: Golf Course Climate Site (LR_GC_C) Raw
+        Data\", \"coverage_type\": \"point\", \"north\": 41.705643, \"east\": -111.85427},
+        {\"short_id\": \"460f2d0089af46bab89ec073710bf93a\", \"title\": \"Logan River
+        Observatory: Dewitt Springs above confluence with Logan River Aquatic Site
+        (DS_CONF_A) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        41.759434, \"east\": -111.70775}, {\"short_id\": \"229b0bf891f44ebca5a8e4db0778c9b1\",
+        \"title\": \"Logan River Observatory: Beaver Creek above confluence with Logan
+        River Aquatic Site (BC_CONF_A) Raw Data\", \"coverage_type\": \"point\", \"north\":
+        41.93055, \"east\": -111.5619}, {\"short_id\": \"c7296ecc6e53483587f6caa735f4e5c1\",
+        \"title\": \"Logan River Observatory: Ricks Spring above confluence with Logan
+        River Aquatic Site (RS_CONF_A) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 41.840084, \"east\": -111.588715}, {\"short_id\": \"98788289144a48e4b5151ab87a1f8ad5\",
+        \"title\": \"Logan River Observatory: Logan River at Main Street (Highway
+        89/91) Bridge Aquatic Site (LR_MainStreet_BA) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 41.721092, \"east\": -111.8351}, {\"short_id\": \"b175fe0108334828a2d34f86a927793a\",
+        \"title\": \"Logan River Observatory: Ricks Spring above confluence with Logan
+        River Aquatic Site (RS_CONF_A) Raw Data\", \"coverage_type\": \"point\", \"north\":
+        41.840084, \"east\": -111.588715}, {\"short_id\": \"b93121c191a94abbb288acabba07f954\",
+        \"title\": \"Logan River Observatory: Logan River near Tony Grove Aquatic
+        Site (LR_TG_BA) Quality Controlled Data\", \"coverage_type\": \"point\", \"north\":
+        41.875847, \"east\": -111.56453}, {\"short_id\": \"534b3d21ef4c499f8f89df4d8880ca20\",
+        \"title\": \"Logan River Observatory: Logan River at Dewitt Springs Campground
+        Aquatic Site (LR_DSC_A) Quality Controlled Data\", \"coverage_type\": \"point\",
+        \"north\": 41.75712, \"east\": -111.7089}, {\"short_id\": \"4ca26eee6b624055927034595ad3886b\",
+        \"title\": \"Logan River Observatory: Northwest Field Canal at 1600 North
+        Site (NWF_1600N_CNL) Raw Data\", \"coverage_type\": \"point\", \"north\":
+        41.760956, \"east\": -111.83934}, {\"short_id\": \"229a9c32ae674d8e81ec164317b8820f\",
+        \"title\": \"Logan River Observatory: South Logan Benson Canal at Airport
+        Rd Pumping Station Aquatic Site (SLB_Pump_CNL) Quality Controlled Data\",
+        \"coverage_type\": \"point\", \"north\": 41.7801, \"east\": -111.8663}, {\"short_id\":
+        \"965dc124cabc4587955e6f1f722fc33b\", \"title\": \"Logan River Observatory:
+        Franklin Basin Climate Site (LR_FB_C) Raw Data\", \"coverage_type\": \"point\",
+        \"north\": 41.949814, \"east\": -111.58135}, {\"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\",
+        \"title\": \"Logan River Observatory: South Logan Benson Canal at Airport
+        Rd Pumping Station Aquatic Site (SLB_Pump_CNL) Raw Data\", \"coverage_type\":
+        \"point\", \"north\": 41.7801, \"east\": -111.8663}, {\"short_id\": \"17de617207594728b336d722eb96d798\",
+        \"title\": \"Logan River Observatory: Spring Creek above confluence with Logan
+        River Aquatic Site (SC_CONF_A) Quality Controlled Data\", \"coverage_type\":
+        \"point\", \"north\": 41.706055, \"east\": -111.847305}]", "rescount": 4877,
+        "pagecount": 122, "perpage": 40, "filterdata": "[]", "time": 7.340312004089355e-05}'
+  recorded_at: 2021-03-31 15:21:59 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

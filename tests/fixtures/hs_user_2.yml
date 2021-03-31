@@ -1,0 +1,65 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/user/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer <<oauth_key>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:14 GMT
+      content-type: application/json
+      content-length: '255'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"username":"jsinghm","email":"justin@justinsingh.me","first_name":"Justin","id":8409,"last_name":"Singh-Mohudpur","organization":"University
+        of California, Santa Barbara","state":"California","country":"US","user_type":"University
+        Undergraduate Student"}'
+  recorded_at: 2021-03-31 15:22:12 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/user/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+      Authorization: Bearer <<oauth_key>>
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:14 GMT
+      content-type: application/json
+      content-length: '255'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"username":"jsinghm","email":"justin@justinsingh.me","first_name":"Justin","id":8409,"last_name":"Singh-Mohudpur","organization":"University
+        of California, Santa Barbara","state":"California","country":"US","user_type":"University
+        Undergraduate Student"}'
+  recorded_at: 2021-03-31 15:22:12 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

@@ -1,6 +1,6 @@
 Package: HSClientR
 Title: A HydroShare API client for R
-Version: 0.3.0.9000
+Version: 0.3.1.9000
 Authors@R: 
     person(given = "Justin",
            family = "Singh-Mohudpur",
@@ -13,7 +13,8 @@ BugReports: https://github.com/program--/HSClientR/issues
 License: MIT + file LICENSE
 Suggests: 
     testthat (>= 3.0.0),
-    covr
+    covr,
+    vcr
 Config/testthat/edition: 3
 Encoding: UTF-8
 LazyData: true
@@ -31,6 +32,7 @@ Imports:
     stringr,
     tibble,
     tidyr,
+    tidyselect,
     urltools,
     xml2
 RdMacros: lifecycle

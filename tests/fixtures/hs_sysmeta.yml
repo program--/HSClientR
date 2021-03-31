@@ -1,0 +1,81 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/sysmeta/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:11 GMT
+      content-type: application/json
+      content-length: '1794'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"resource_type":"CompositeResource","resource_id":"6092c8a62fac45be97a09bfd0b0bf726","resource_title":"NHDPlus
+        Value Added Attributes - no geometries","abstract":"These files contain a
+        curated set NHDPlusV2 flowline and ''Value Added Attributes'' in tabular form
+        for easier attribute based analysis and query. They were taken from national
+        seamless geodatabase provided by the EPA. Utilities for access have been built
+        into the USGS-nhdplusTools package and the parquet file is intended to support
+        Python users directly.\r\n\r\n``` r\r\ninstall.package(nhdplusTools)\r\nlibrary(nhdplusTools)\r\n\r\nget_vaa(\"slope\")\r\n\r\n    comid      slope\r\n1
+        8318793 0.06083397\r\n2 8318787 0.09534391\r\n3 8318775 0.11273792\r\n4 8318785
+        0.15142342\r\n5 8318789 0.16246142\r\n6 8318801 0.10504926\r\n```\r\n\r\nRoughness
+        estimates have been added following the details in the README.md below.","authors":["Johnson,
+        J Michael"],"creator":"Johnson, J Michael","doi":null,"public":true,"discoverable":true,"shareable":true,"immutable":false,"published":false,"date_created":"2020-11-11T01:48:27.902391Z","date_last_updated":"2021-02-26T19:50:19.543097Z","bag_url":"http://www.hydroshare.org/django_irods/rest_download/bags/6092c8a62fac45be97a09bfd0b0bf726.zip?url_download=False&zipped=False&aggregation=False","coverages":[{"type":"box","value":{"projection":"WGS
+        84 EPSG:4326","units":"Decimal degrees","northlimit":48.795,"eastlimit":-66.2047,"southlimit":24.6706,"westlimit":-125.6188}}],"science_metadata_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/scimeta/","resource_map_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/map/","resource_url":"http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726/","content_types":[]}'
+  recorded_at: 2021-03-31 15:22:09 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/sysmeta/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:11 GMT
+      content-type: application/json
+      content-length: '1794'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"resource_type":"CompositeResource","resource_id":"6092c8a62fac45be97a09bfd0b0bf726","resource_title":"NHDPlus
+        Value Added Attributes - no geometries","abstract":"These files contain a
+        curated set NHDPlusV2 flowline and ''Value Added Attributes'' in tabular form
+        for easier attribute based analysis and query. They were taken from national
+        seamless geodatabase provided by the EPA. Utilities for access have been built
+        into the USGS-nhdplusTools package and the parquet file is intended to support
+        Python users directly.\r\n\r\n``` r\r\ninstall.package(nhdplusTools)\r\nlibrary(nhdplusTools)\r\n\r\nget_vaa(\"slope\")\r\n\r\n    comid      slope\r\n1
+        8318793 0.06083397\r\n2 8318787 0.09534391\r\n3 8318775 0.11273792\r\n4 8318785
+        0.15142342\r\n5 8318789 0.16246142\r\n6 8318801 0.10504926\r\n```\r\n\r\nRoughness
+        estimates have been added following the details in the README.md below.","authors":["Johnson,
+        J Michael"],"creator":"Johnson, J Michael","doi":null,"public":true,"discoverable":true,"shareable":true,"immutable":false,"published":false,"date_created":"2020-11-11T01:48:27.902391Z","date_last_updated":"2021-02-26T19:50:19.543097Z","bag_url":"http://www.hydroshare.org/django_irods/rest_download/bags/6092c8a62fac45be97a09bfd0b0bf726.zip?url_download=False&zipped=False&aggregation=False","coverages":[{"type":"box","value":{"projection":"WGS
+        84 EPSG:4326","units":"Decimal degrees","northlimit":48.795,"eastlimit":-66.2047,"southlimit":24.6706,"westlimit":-125.6188}}],"science_metadata_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/scimeta/","resource_map_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/map/","resource_url":"http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726/","content_types":[]}'
+  recorded_at: 2021-03-31 15:22:09 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

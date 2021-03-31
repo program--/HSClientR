@@ -6,8 +6,9 @@
 #' @details
 #' ## Main `tibble`
 #' The returned `tibble` contains the following columns:
+#' - `id`: The resource's unique HydroShare ID.
 #' - `title`: The title of the resource.
-#' - `link`: A link to the corresponding resource.
+#' - `url`: A url to the corresponding resource.
 #' - `author`: The primary author of the resource.
 #' - `abstract`: The abstract of the resource.
 #' - `metadata`: Metadata `tibble` associated with the resource. (see below)
@@ -40,6 +41,7 @@ hs_discover <- function() {
                 tibble::as_tibble()
 
     response %>%
+        dplyr::rowwise() %>%
         dplyr::mutate(
             link         = paste0("https://hydroshare.org", .data$link),
             availability = paste(.data$availability, collapse = ", "),
@@ -55,6 +57,7 @@ hs_discover <- function() {
             created      = as.Date(.data$created, "%Y-%m-%dT%H:%M:%S"),
             modified     = as.Date(.data$modified, "%Y-%m-%dT%H:%M:%S")
         ) %>%
+        dplyr::ungroup() %>%
         dplyr::select(-.data$availabilityurl, -.data$geo) %>%
         tidyr::nest(
             metadata = c(
@@ -68,5 +71,7 @@ hs_discover <- function() {
                 .data$availability,
                 .data$type
             )
-        )
+        ) %>%
+        dplyr::rename(id = .data$short_id, url = .data$link) %>%
+        dplyr::relocate(.data$id)
 }

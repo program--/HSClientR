@@ -4,7 +4,7 @@
 #' @export
 hs_user_details <- function(user_identifier) {
     if (missing(user_identifier)) {
-        stop("(hs_user_details) user_identifer required.")
+        rlang::abort("(hs_user_details) user_identifer required.")
     }
 
     request <- hsapi_request(
@@ -16,6 +16,10 @@ hs_user_details <- function(user_identifier) {
     )
 
     httr::stop_for_status(request)
+
+    if ("xml_document" %in% class(httr::content(request))) {
+        rlang::abort("(hs_user_details) Please authenticate first :)")
+    }
 
     content <- httr::content(request) %>%
                lapply(FUN = function(attribute) {

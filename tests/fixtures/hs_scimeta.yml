@@ -1,0 +1,221 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/django_irods/rest_download/6092c8a62fac45be97a09bfd0b0bf726/data/resourcemetadata.xml
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:07 GMT
+      content-type: application/xml
+      content-length: '3509'
+      connection: keep-alive
+      content-disposition: attachment; filename="resourcemetadata.xml"
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <rdf:RDF
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:hsterms="https://www.hydroshare.org/terms/"
+          xmlns:dcterms="http://purl.org/dc/terms/"
+          xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        >
+          <hsterms:CompositeResource rdf:about="http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726">
+            <dc:identifier>
+              <rdf:Description>
+                <hsterms:hydroShareIdentifier rdf:resource="http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726"/>
+              </rdf:Description>
+            </dc:identifier>
+            <dcterms:bibliographicCitation>Johnson, J. M. (2021). NHDPlus Value Added Attributes - no geometries, HydroShare, http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726</dcterms:bibliographicCitation>
+            <dc:rights>
+              <rdf:Description>
+                <hsterms:rightsStatement>This resource is shared under the Creative Commons Attribution CC BY.</hsterms:rightsStatement>
+                <hsterms:URL rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+              </rdf:Description>
+            </dc:rights>
+            <dc:subject>nhdplus</dc:subject>
+            <dc:creator>
+              <rdf:Description>
+                <hsterms:name>Johnson, J Michael</hsterms:name>
+                <hsterms:email>mikecp11@gmail.com</hsterms:email>
+                <hsterms:organization>UCSB</hsterms:organization>
+                <hsterms:description>/user/454/</hsterms:description>
+                <hsterms:creatorOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hsterms:creatorOrder>
+              </rdf:Description>
+            </dc:creator>
+            <dc:title>NHDPlus Value Added Attributes - no geometries</dc:title>
+            <dc:language>eng</dc:language>
+            <dc:coverage>
+              <dcterms:box>
+                <rdf:value>projection=WGS 84 EPSG:4326; units=Decimal degrees; northlimit=48.795; eastlimit=-66.2047; southlimit=24.6706; westlimit=-125.6188</rdf:value>
+              </dcterms:box>
+            </dc:coverage>
+            <dc:subject>vaa</dc:subject>
+            <dc:subject>roughness</dc:subject>
+            <dc:type>
+              <rdf:Description rdf:about="http://www.hydroshare.org/terms/CompositeResource">
+                <rdfs:isDefinedBy rdf:resource="https://www.hydroshare.org/terms/"/>
+                <rdfs:label>Composite Resource</rdfs:label>
+              </rdf:Description>
+            </dc:type>
+            <dc:description>
+              <rdf:Description>
+                <dcterms:abstract>These files contain a curated set NHDPlusV2 flowline and 'Value Added Attributes' in tabular form for easier attribute based analysis and query. They were taken from national seamless geodatabase provided by the EPA. Utilities for access have been built into the USGS-nhdplusTools package and the parquet file is intended to support Python users directly.&#13;
+        &#13;
+        ``` r&#13;
+        install.package(nhdplusTools)&#13;
+        library(nhdplusTools)&#13;
+        &#13;
+        get_vaa("slope")&#13;
+        &#13;
+            comid      slope&#13;
+        1 8318793 0.06083397&#13;
+        2 8318787 0.09534391&#13;
+        3 8318775 0.11273792&#13;
+        4 8318785 0.15142342&#13;
+        5 8318789 0.16246142&#13;
+        6 8318801 0.10504926&#13;
+        ```&#13;
+        &#13;
+        Roughness estimates have been added following the details in the README.md below.</dcterms:abstract>
+              </rdf:Description>
+            </dc:description>
+            <dc:date>
+              <dcterms:modified>
+                <rdf:value>2021-02-26T19:50:19.543097+00:00</rdf:value>
+              </dcterms:modified>
+            </dc:date>
+            <dc:date>
+              <dcterms:created>
+                <rdf:value>2020-11-11T01:48:27.902391+00:00</rdf:value>
+              </dcterms:created>
+            </dc:date>
+          </hsterms:CompositeResource>
+        </rdf:RDF>
+  recorded_at: 2021-03-31 15:22:07 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/django_irods/rest_download/6092c8a62fac45be97a09bfd0b0bf726/data/resourcemetadata.xml
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:09 GMT
+      content-type: application/xml
+      content-length: '3509'
+      connection: keep-alive
+      content-disposition: attachment; filename="resourcemetadata.xml"
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: |
+        <?xml version="1.0" encoding="utf-8"?>
+        <rdf:RDF
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:hsterms="https://www.hydroshare.org/terms/"
+          xmlns:dcterms="http://purl.org/dc/terms/"
+          xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        >
+          <hsterms:CompositeResource rdf:about="http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726">
+            <dc:identifier>
+              <rdf:Description>
+                <hsterms:hydroShareIdentifier rdf:resource="http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726"/>
+              </rdf:Description>
+            </dc:identifier>
+            <dcterms:bibliographicCitation>Johnson, J. M. (2021). NHDPlus Value Added Attributes - no geometries, HydroShare, http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726</dcterms:bibliographicCitation>
+            <dc:rights>
+              <rdf:Description>
+                <hsterms:rightsStatement>This resource is shared under the Creative Commons Attribution CC BY.</hsterms:rightsStatement>
+                <hsterms:URL rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+              </rdf:Description>
+            </dc:rights>
+            <dc:subject>nhdplus</dc:subject>
+            <dc:creator>
+              <rdf:Description>
+                <hsterms:name>Johnson, J Michael</hsterms:name>
+                <hsterms:email>mikecp11@gmail.com</hsterms:email>
+                <hsterms:organization>UCSB</hsterms:organization>
+                <hsterms:description>/user/454/</hsterms:description>
+                <hsterms:creatorOrder rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</hsterms:creatorOrder>
+              </rdf:Description>
+            </dc:creator>
+            <dc:title>NHDPlus Value Added Attributes - no geometries</dc:title>
+            <dc:language>eng</dc:language>
+            <dc:coverage>
+              <dcterms:box>
+                <rdf:value>projection=WGS 84 EPSG:4326; units=Decimal degrees; northlimit=48.795; eastlimit=-66.2047; southlimit=24.6706; westlimit=-125.6188</rdf:value>
+              </dcterms:box>
+            </dc:coverage>
+            <dc:subject>vaa</dc:subject>
+            <dc:subject>roughness</dc:subject>
+            <dc:type>
+              <rdf:Description rdf:about="http://www.hydroshare.org/terms/CompositeResource">
+                <rdfs:isDefinedBy rdf:resource="https://www.hydroshare.org/terms/"/>
+                <rdfs:label>Composite Resource</rdfs:label>
+              </rdf:Description>
+            </dc:type>
+            <dc:description>
+              <rdf:Description>
+                <dcterms:abstract>These files contain a curated set NHDPlusV2 flowline and 'Value Added Attributes' in tabular form for easier attribute based analysis and query. They were taken from national seamless geodatabase provided by the EPA. Utilities for access have been built into the USGS-nhdplusTools package and the parquet file is intended to support Python users directly.&#13;
+        &#13;
+        ``` r&#13;
+        install.package(nhdplusTools)&#13;
+        library(nhdplusTools)&#13;
+        &#13;
+        get_vaa("slope")&#13;
+        &#13;
+            comid      slope&#13;
+        1 8318793 0.06083397&#13;
+        2 8318787 0.09534391&#13;
+        3 8318775 0.11273792&#13;
+        4 8318785 0.15142342&#13;
+        5 8318789 0.16246142&#13;
+        6 8318801 0.10504926&#13;
+        ```&#13;
+        &#13;
+        Roughness estimates have been added following the details in the README.md below.</dcterms:abstract>
+              </rdf:Description>
+            </dc:description>
+            <dc:date>
+              <dcterms:modified>
+                <rdf:value>2021-02-26T19:50:19.543097+00:00</rdf:value>
+              </dcterms:modified>
+            </dc:date>
+            <dc:date>
+              <dcterms:created>
+                <rdf:value>2020-11-11T01:48:27.902391+00:00</rdf:value>
+              </dcterms:created>
+            </dc:date>
+          </hsterms:CompositeResource>
+        </rdf:RDF>
+  recorded_at: 2021-03-31 15:22:07 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

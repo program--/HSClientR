@@ -4,7 +4,7 @@
 \alias{hs_files}
 \title{Get Resource Files}
 \usage{
-hs_files(id, page = NULL, count = NULL)
+hs_files(id, page = NULL, count = NULL, ...)
 }
 \arguments{
 \item{id}{Resource ID}
@@ -12,6 +12,8 @@ hs_files(id, page = NULL, count = NULL)
 \item{page}{Page of results to return}
 
 \item{count}{Number of files to return per page}
+
+\item{...}{Unused}
 }
 \value{
 A \link[tibble:tibble-package]{tibble}.

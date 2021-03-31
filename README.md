@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Travis build
 status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
 [![Codecov test
@@ -18,7 +18,7 @@ coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.sv
 HSClientR is an API wrapper for
 [HydroShare](https://www.hydroshare.org). Using HSClientR, you can
 access resources from HydroShare directly in your R environment, either
-by the package functions or the developmental
+by the package functions or the in-development
 [`R6 Class`](https://r6.r-lib.org/reference/R6Class.html).
 
 ## Installation
@@ -30,19 +30,30 @@ You can install the developmental version of HSClientR with:
 remotes::install_github("program--/HSClientR")
 ```
 
+## Documentation
+
+- [Package Website](https://hsclientr.justinsingh.me)
+- [HydroShare API](https://www.hydroshare.org/hsapi/)
+
 ## Example Using Package Functions
 
 This is a basic example which shows you how to access a resource. We’ll
 access the resource [Hydrologic Terrain Analysis Using Web Based
 Tools](https://www.hydroshare.org/resource/e1d4f2aff7d84f79b901595f6ea48368/),
-as well as some additional functionality:
+as well as some additional functionality.
+
+### Authenticating with HydroShare
 
 ``` r
-library(HSClientR)
-
 # To set auth headers
 hs_auth(set_headers = TRUE)
+```
 
+This function will begin an [OAuth 2.0](https://oauth.net/2/) dance between your R session and the
+HydroShare API. This is only needed if you are utilizing `hs_user()`/`hs_userDetails()` or any of the
+`DELETE`, `POST`, and `PUT` functions. Most of the `GET` functions are publicly accessible.
+
+``` r
 # Search for resources
 hs_resource(
     text = "Hydrologic Terrain Analysis Using Web Based Tools",
@@ -68,11 +79,16 @@ hs_resource(
 #> 4 66fd9… Materia… Tarbo… "Material… ""          Worksho… public       Presentatio…
 #> 5 d752e… The Mod… Tarbo… "Model My… ""          present… public       Presentatio…
 #> # … with 2 more variables: metadata <list>, geodata <list>
+```
 
-# Another way of finding resources is via the Discover API.
-# This is equivalent to accessing the "Discover" page directly
-# on the HydroShare website. It returns the first 40 results.
+Another way of finding resources is via the Discover API.
+This is equivalent to accessing the "Discover" page directly
+on the HydroShare website. It returns the first 40 results.
 
+> It is preferred to use `hs_resource()` or any of the other `hs_*` functions,
+> as they have better support/flexibility in contrast to `hs_discover()`.
+
+``` r
 hs_discover()
 
 #> # A tibble: 40 x 6
@@ -89,9 +105,13 @@ hs_discover()
 #>  9 Wasatch Envir… https://hydr… University … "This dataset co… 6445418c7… <tibble…
 #> 10 Wasatch Envir… https://hydr… University … "This dataset co… 74dc57ed7… <tibble…
 #> # … with 30 more rows
+```
 
-# You can also call hs_resource() with no parameters to do basic pagination searches.
-# This is usually preferred over hs_discover().
+You can also call hs_resource() with no parameters to do basic pagination searches.
+
+> This is usually preferred over hs_discover().
+
+``` r
 hs_resource()
 
 #> $.next
@@ -115,8 +135,11 @@ hs_resource()
 #>  9 74704… 03_Cl… Gish, … "Aggrega… ""          cbf, mm… public       Geographic F…
 #> 10 737cf… 03_Mo… Gisond… "Second … ""          osi, mo… public       Geographic F…
 #> # … with 90 more rows, and 2 more variables: metadata <list>, geodata <list>
+```
 
-# You can also find resources by HS alphanumeric IDs:
+You can also find resources by HydroShare alphanumeric IDs:
+
+``` r
 hs_resource(id = "e1d4f2aff7d84f79b901595f6ea48368")
 
 #> # A tibble: 1 x 19
@@ -128,6 +151,9 @@ hs_resource(id = "e1d4f2aff7d84f79b901595f6ea48368")
 #> #   science_metadata_url <chr>, resource_map_url <chr>, resource_url <chr>,
 #> #   content_types <list>
 ```
+
+For more details on using `hs_resource()`, refer to the
+[documentation site](https://hsclientr.justinsingh.me/reference/hs_resource.html).
 
 ## Example Using R6 HydroShare Client Class
 
@@ -154,7 +180,7 @@ hs_client$print()
 #> Please call $authenticate() on this object to get
 #> OAuth2 authentication set up with HydroShare! :)
 
-# Begin authentication
+# Begin authentication (hs_auth)
 hs_client$authenticate()
 
 # OAuth2 Dance will begin and a web browser
@@ -163,7 +189,7 @@ hs_client$authenticate()
 # sent back to a local httpuv web server for
 # your R session.
 
-# Search for a resource
+# Search for a resource (hs_resource)
 hs_client$query(text = "NHDPlus VAA")
 
 #> # A tibble: 2 x 18

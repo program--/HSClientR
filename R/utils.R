@@ -1,20 +1,4 @@
-#' Pipe operator
-#'
-#' See \code{magrittr::\link[magrittr:pipe]{\%>\%}} for details.
-#'
-#' @name %>%
-#' @rdname pipe
-#' @keywords internal
-#' @export
-#' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
-NULL
-
-## usethis namespace: start
-#' @importFrom tibble tibble
-## usethis namespace: end
-NULL
-
+# nocov start
 #' @title Helper for [httr::handle][httr::handle].
 #' @keywords internal
 #' @export
@@ -207,6 +191,7 @@ handle_ssl <- function(expr) {
     tryCatch(
         expr = eval(quoexpr, quoenv),
         error = function(cond) {
+            print(cond$message)
             if ("ssl" %in% strsplit(tolower(cond$message), " ")[[1]]) {
                 rlang::inform(
                     paste(
@@ -235,7 +220,7 @@ handle_ssl <- function(expr) {
                 # Set cURL to fix cert chain
                 httr::set_config(config = httr::config(cainfo = cafile))
             } else {
-                rlang::abort(cond$message)
+                rlang::abort(cond)
             }
         }
     )
@@ -244,3 +229,4 @@ handle_ssl <- function(expr) {
     eval(quoexpr, quoenv)
 }
 # nolint end
+# nocov end

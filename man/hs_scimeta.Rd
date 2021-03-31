@@ -4,10 +4,12 @@
 \alias{hs_scimeta}
 \title{Get Resource Science Metadata}
 \usage{
-hs_scimeta(id)
+hs_scimeta(id, ...)
 }
 \arguments{
 \item{id}{Resource ID}
+
+\item{...}{Unused}
 }
 \value{
 A \link[tibble:tibble-package]{tibble}.

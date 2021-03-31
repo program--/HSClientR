@@ -1,0 +1,59 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/1361509511e44adfba814f6950c6e742/folders/code/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:10 GMT
+      content-type: application/json
+      content-length: '197'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, PUT, DELETE
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"resource_id":"1361509511e44adfba814f6950c6e742","path":"code","files":["1_download_soilgrids_sandSiltClay.py","2_convert_sandSiltClay_to_soilclass.py","3_extract_soilclass_mode.py"],"folders":[]}'
+  recorded_at: 2021-03-31 15:22:08 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/1361509511e44adfba814f6950c6e742/folders/code/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:10 GMT
+      content-type: application/json
+      content-length: '197'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, PUT, DELETE
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"resource_id":"1361509511e44adfba814f6950c6e742","path":"code","files":["1_download_soilgrids_sandSiltClay.py","2_convert_sandSiltClay_to_soilclass.py","3_extract_soilclass_mode.py"],"folders":[]}'
+  recorded_at: 2021-03-31 15:22:08 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

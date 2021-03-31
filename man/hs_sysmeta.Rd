@@ -4,10 +4,12 @@
 \alias{hs_sysmeta}
 \title{Get Resource System Metadata by ID}
 \usage{
-hs_sysmeta(id)
+hs_sysmeta(id, ...)
 }
 \arguments{
 \item{id}{Alphanumeric HydroShare Resource ID}
+
+\item{...}{Unused}
 }
 \value{
 A \link[tibble:tibble-package]{tibble}.

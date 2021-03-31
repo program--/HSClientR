@@ -5,3 +5,4 @@
 .DS_Store
 cran-comments.md
 .httr-oauth
+tests/testthat/.httr-oauth

@@ -182,6 +182,7 @@
 #' `sources`  | Nested `tibble` of resource source(s)
 #' `metadata` | Nested `tibble` with additional resource metadata
 #'
+#' @importFrom magrittr %>%
 #' @export
 # nolint end
 hs_resource <- function(...) {
@@ -261,10 +262,15 @@ hs_content_types <- function() {
 #'
 #' @importFrom stringr str_extract_all
 #' @importFrom stringr str_trim
+#' @importFrom magrittr extract
+#' @importFrom rlang .data
 #' @export
 # nolint end
 hs_search <- function(page = NULL, count = NULL,
                       text = NULL, author = NULL, ...) {
+    # Prevents R CMD Check note about non-standard
+    # evaluation with magrittr pipes
+    . <- NULL
 
     request <- hsapi_request(
         path = "resource/search",
@@ -306,23 +312,47 @@ hs_search <- function(page = NULL, count = NULL,
         dplyr::bind_rows()
 
     split_text <-
-        stringr::str_extract_all(
-            tidy_content$text,
-            pattern = "(?<=\\n)(.*?)(?=\\n)"
+        lapply(
+            X = tidy_content$text,
+            FUN = function(res_text) {
+                split_string <-
+                    stringr::str_split(res_text, "\n")[[1]] %>%
+                    magrittr::extract(which(. != "" & . != " ")) %>%
+                    stringr::str_trim() %>%
+                    stringr::str_split("  ") %>%
+                    unlist() %>%
+                    stringr::str_trim() %>%
+                    magrittr::extract(1:3)
+
+                if (nchar(split_string[1]) == 32) {
+                    c(
+                        id = split_string[1],
+                        doi = NA,
+                        title = split_string[2]
+                    )
+                } else if (stringr::str_detect(split_string[1], "doi")) {
+                    temp <- stringr::str_split_fixed(split_string[1], " ", 3)
+                    c(
+                        id    = temp[, 1],
+                        doi   = temp[, 2],
+                        title = temp[, 3]
+                    )
+                }
+            }
         )
 
     tidier_content <-
         dplyr::mutate(
             tidy_content,
-            id    = stringr::str_trim(lapply(split_text, `[[`, 1)),
-            doi   = stringr::str_trim(lapply(split_text, `[[`, 2)),
-            title = stringr::str_trim(lapply(split_text, `[[`, 3))
+            id    = stringr::str_trim(lapply(split_text, `[[`, "id")),
+            doi   = stringr::str_trim(lapply(split_text, `[[`, "doi")),
+            title = stringr::str_trim(lapply(split_text, `[[`, "title"))
         ) %>%
         dplyr::select(-.data$text) %>%
         dplyr::relocate(.data$id, .data$title) %>%
         tidyr::nest(
             metadata = c(
-                .data$doi,
+                # .data$doi,
                 .data$created,
                 .data$modified,
                 .data$start_date,
@@ -376,11 +406,13 @@ hs_types <- function() {
     content
 }
 
+# nocov start
 #' @title Access Resource Permissions
 #' @param id Resource ID
+#' @param ... Unused
 #' @return A [tibble][tibble::tibble-package].
 #' @export
-hs_access <- function(id) {
+hs_access <- function(id, ...) {
     if (missing(id)) rlang::abort("(hs_access) id required.")
 
     request <- hsapi_request(
@@ -403,21 +435,23 @@ hs_access <- function(id) {
         grantor   = handle_null(content$grantor)
     )
 }
+# nocov end
 
 #' @title Get Resource Files
 #' @param id Resource ID
 #' @param page Page of results to return
 #' @param count Number of files to return per page
+#' @param ... Unused
 #' @return A [tibble][tibble::tibble-package].
 #' @export
-hs_files <- function(id, page = NULL, count = NULL) {
+hs_files <- function(id, page = NULL, count = NULL, ...) {
     if (missing(id)) rlang::abort("(hs_files) id required.")
 
     request <- hsapi_request(
         path = paste0(
             "resource/",
             id,
-            "/sysmeta"
+            "/files/"
         ),
         query = list(
             page = page,
@@ -456,9 +490,13 @@ hs_files <- function(id, page = NULL, count = NULL) {
 #' @title Get Resource Folder
 #' @param id Resource ID
 #' @param pathname Path to folder in resource's contents
+#' @param ... Unused
 #' @return A [tibble][tibble::tibble-package].
+#' @importFrom rlang .data
+#' @importFrom tidyr nest unpack
+#' @importFrom tidyselect everything
 #' @export
-hs_folder <- function(id, pathname) {
+hs_folder <- function(id, pathname, ...) {
     if (missing(id) | missing(pathname)) {
         rlang::abort(
             "(hs_folder) Both id and pathname are required."
@@ -469,7 +507,7 @@ hs_folder <- function(id, pathname) {
         path = paste0(
             "resource/",
             id,
-            "folders",
+            "/folders/",
             pathname
         )
     )
@@ -478,122 +516,152 @@ hs_folder <- function(id, pathname) {
 
     content <- httr::content(request)
 
-    files <- unlist(content$files)
-    folders <- unlist(content$folders)
-    folder_contents <-
-        dplyr::bind_rows(
-            tibble::tibble(
-                item = handle_null(files),
-                type = "file"
-            ),
-            tibble::tibble(
-                item = handle_null(folders),
-                type = "folder"
-            )
-        )
+    files <- tibble::tibble(
+        item = unlist(content$files),
+        type = "files"
+    )
 
-    response <- tibble::tibble(
-        resource_id = content$resource_id,
-        path = content$path
-    ) %>%
-        tidyr::nest(contents = folder_contents)
+    folders <- tibble::tibble(
+        item = unlist(content$folders),
+        type = "folder"
+    )
+
+    file_col <- suppressWarnings(is.null(files$item))
+    fold_col <- suppressWarnings(is.null(folders$item))
+
+    if (file_col & fold_col) {
+        return(NA)
+    }
+
+    folder_contents <-
+        if (!(file_col | fold_col)) {
+            dplyr::bind_rows(files, folders)
+        } else if (fold_col) {
+            files
+        } else {
+            folders
+        }
+
+    response <-
+        tibble::tibble(
+            resource_id = content$resource_id,
+            path = content$path,
+            folder_contents = folder_contents
+        ) %>%
+        tidyr::nest(contents = .data$folder_contents)
+
+    response$contents <-
+        lapply(response$contents,
+               tidyr::unpack,
+               tidyselect::everything())
 
     response
 }
 
 #' @title Get Resource Science Metadata
 #' @param id Resource ID
+#' @param ... Unused
 #' @return A [tibble][tibble::tibble-package].
-#' @importFrom xml2 read_xml
+#' @importFrom xml2 read_xml as_list
+#' @importFrom tidyselect everything
 #' @export
-hs_scimeta <- function(id) {
+hs_scimeta <- function(id, ...) {
     if (missing(id)) rlang::abort("(hs_scimeta) id required.")
 
     request <- hsapi_request(
         path = paste0(
             "resource/",
             id,
-            "/scimeta"
+            "/scimeta/"
         )
     )
 
     httr::stop_for_status(request)
 
-    content <- httr::content(request, as = "raw")
-
-    xml <- xml2::read_xml(content)
-
-    res <- xml$RDF[[1]]
-
+    content   <- httr::content(request, as = "raw")
+    xml       <- xml2::read_xml(content)
+    res       <- xml2::as_list(xml)$RDF[[1]]
     res_title <- res$title[[1]]
     res_cite  <- res$bibliographicCitation[[1]]
-    res_lang  <- res$language
-    res_type  <- paste(
-        unlist(res$type$Description$label),
-        collapse = ", "
-    )
-    res_subj  <- paste(
-        unlist(res[which(names[res] == "subject")]),
-        collapse = ", "
-    )
-    res_id    <- attr(
-        res$identifier$Description$hydroShareIdentifier,
-        which = "resource"
-    )
+    res_lang  <- res$language[[1]]
+    res_type  <- paste(unlist(res$type$Description$label),
+                       collapse = ", ")
+    res_subj  <- paste(unlist(res[which(names(res) == "subject")]),
+                       collapse = ", ")
+    res_id    <- attr(res$identifier$Description$hydroShareIdentifier,
+                      which = "resource")
     mod_date  <- res[which(names(res) == "date")][[1]]$modified$value
     cre_date  <- res[which(names(res) == "date")][[2]]$created$value
+    creators  <- res[which(names(res) == "creator")] %>%
+                 lapply(FUN = function(item) {
+                     unlist(item$Description)
+                 }) %>%
+                 dplyr::bind_rows()
 
-    creators <- res[which(names(res) == "creator")] %>%
-                lapply(FUN = function(item) {
-                    unlist(item$Description)
-                }) %>%
-                dplyr::bind_rows()
-
-    sources  <- res[which(names(res == "source"))] %>%
-                lapply(FUN = function(item) {
-                    attr(
-                        item$Description$isDerivedFrom,
-                        which = "resource"
-                     )
-                }) %>%
-                unlist() %>%
-                unname() %>%
-                tibble::as_tibble() %>%
-                dplyr::rename(sources = .data$value)
-
-    metadata <- tibble::tibble(
-        languages = res_lang,
-        types = res_type,
-        subjects = res_subj,
-        modified = mod_date,
-        created = cre_date
-    )
+    metadata <- tibble::tibble(languages = res_lang,
+                               types = res_type,
+                               subjects = res_subj,
+                               modified = mod_date,
+                               created = cre_date)
 
     response <-
         tibble::tibble(
             id = res_id,
             title = res_title,
-            citation = res_cite
+            citation = res_cite,
+            creators = creators,
+            metadata = metadata
         ) %>%
         tidyr::nest(
             creators = creators,
-            sources = sources,
             metadata = metadata
         )
+
+    response$creators <- lapply(response$creators,
+                                tidyr::unpack,
+                                dplyr::everything())
+
+    response$metadata <- lapply(response$metadata,
+                                tidyr::unpack,
+                                dplyr::everything())
+
+    if (any(names(res) == "source")) {
+        sources  <- res[which(names(res) == "source")] %>%
+                    lapply(FUN = function(item) {
+                        attr(
+                            item$Description$isDerivedFrom,
+                            which = "resource"
+                        )
+                    }) %>%
+                    unlist() %>%
+                    unname() %>%
+                    tibble::as_tibble() %>%
+                    dplyr::rename(sources = .data$value)
+
+        response <- dplyr::mutate(sources = sources) %>%
+                    tidyr::nest(sources = sources)
+
+        response$sources <- lapply(response$sources,
+                                   tidyr::unpack,
+                                   dplyr::everything())
+    }
+
+    response
 }
 
 #' @title Get Resource System Metadata by ID
 #' @param id Alphanumeric HydroShare Resource ID
+#' @param ... Unused
 #' @return A [tibble][tibble::tibble-package].
 #' @export
-hs_sysmeta <- function(id) {
+hs_sysmeta <- function(id, ...) {
     if (missing(id)) rlang::abort("(hs_sysmeta) id required.")
 
     request <- hsapi_request(
         path = paste0(
             "resource/",
             id,
-            "/sysmeta"
+            "/sysmeta/"
         )
     )
 
@@ -621,7 +689,7 @@ hs_sysmeta <- function(id) {
             science_metadata_url = handle_null(item$science_metadata_url),
             resource_map_url     = handle_null(item$resource_map_url),
             resource_url         = handle_null(item$resource_url),
-            content_types        = handle_null(item$content_types)
+            content_types        = handle_null(item$content_types, TRUE)
         ) %>%
         dplyr::bind_rows()
 

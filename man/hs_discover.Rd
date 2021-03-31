@@ -19,8 +19,9 @@ Query the HydroShare Discover Page
 
 The returned \code{tibble} contains the following columns:
 \itemize{
+\item \code{id}: The resource's unique HydroShare ID.
 \item \code{title}: The title of the resource.
-\item \code{link}: A link to the corresponding resource.
+\item \code{url}: A url to the corresponding resource.
 \item \code{author}: The primary author of the resource.
 \item \code{abstract}: The abstract of the resource.
 \item \code{metadata}: Metadata \code{tibble} associated with the resource. (see below)

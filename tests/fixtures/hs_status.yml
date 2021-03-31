@@ -1,0 +1,620 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:13 GMT
+      content-type: application/json; charset=utf-8
+      content-length: '47473'
+      connection: keep-alive
+      vary: Accept, Cookie, Authorization, Origin, Accept-Language
+      allow: GET, HEAD, OPTIONS
+      expires: Wed, 31 Mar 2021 15:32:13 GMT
+      cache-control: max-age=0, no-cache, no-store, must-revalidate
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"swagger": "2.0", "info": {"title": "Hydroshare API", "description":
+        "Hydroshare Rest API", "termsOfService": "https://help.hydroshare.org/about-hydroshare/policies/terms-of-use/",
+        "contact": {"email": "help@cuahsi.org"}, "version": "v1"}, "host": "www.hydroshare.org",
+        "schemes": ["https"], "basePath": "/", "consumes": ["application/json"], "produces":
+        ["application/json"], "securityDefinitions": {"Basic": {"type": "basic"}},
+        "security": [{"Basic": []}], "paths": {"/discoverapi/": {"get": {"operationId":
+        "discoverapi_list", "description": "Primary endpoint for retrieving resources
+        via the index\nValues should never be empty string or python None, instead
+        return string \"None\" with str() call\n\"availability\": list value, js will
+        parse JSON as Array\n\"availabilityurl\": single value, pass a string to REST
+        client\n\"type\": single value, pass a string to REST client\n\"author\":
+        single value, pass a string to REST client first author\n\"creator: authors,\n        The
+        reason for the weird name is the DataOne standard. The metadata was designed
+        to be compliant\n        with DataOne standards. These standards do not contain
+        an author field. Instead, the creator field\n        represents authors.\n\"contributor\":
+        list value, js will parse JSON as Array\n\"owner\": list value, js will parse
+        JSON as Array\n\"subject\": list value, js will parse JSON as Array\n\"coverage_type\":
+        list point, period, ...", "parameters": [], "responses": {"200": {"description":
+        ""}}, "tags": ["discoverapi"]}, "parameters": []}, "/hsapi/resource/": {"get":
+        {"operationId": "hsapi_resource_list", "description": "List resources", "parameters":
+        [{"name": "page", "in": "query", "description": "A page number within the
+        paginated result set.", "required": false, "type": "integer"}, {"name": "count",
+        "in": "query", "description": "Number of results to return per page.", "required":
+        false, "type": "integer"}, {"name": "creator", "in": "query", "description":
+        "The first author (name or email)", "required": false, "type": "string", "minLength":
+        1}, {"name": "author", "in": "query", "description": "Comma separated list
+        of authors (name or email)", "required": false, "type": "string", "minLength":
+        1}, {"name": "group", "in": "query", "description": "A group name (requires
+        edit_permissions=True)", "required": false, "type": "string", "minLength":
+        1}, {"name": "user", "in": "query", "description": "Viewable by user (name
+        or email)", "required": false, "type": "string", "minLength": 1}, {"name":
+        "owner", "in": "query", "description": "Owned by user (name or email)", "required":
+        false, "type": "string", "minLength": 1}, {"name": "from_date", "in": "query",
+        "description": "to get a list of resources created on or after this date",
+        "required": false, "type": "string", "format": "date"}, {"name": "to_date",
+        "in": "query", "description": "to get a list of resources created on or before
+        this date", "required": false, "type": "string", "format": "date"}, {"name":
+        "subject", "in": "query", "description": "Comma separated list of subjects",
+        "required": false, "type": "string", "minLength": 1}, {"name": "full_text_search",
+        "in": "query", "description": "get a list of resources with this text", "required":
+        false, "type": "string", "minLength": 1}, {"name": "edit_permission", "in":
+        "query", "description": "filter by edit permissions of user/group/owner",
+        "required": false, "type": "boolean", "default": false}, {"name": "published",
+        "in": "query", "description": "filter by published resources", "required":
+        false, "type": "boolean", "default": false}, {"name": "type", "in": "query",
+        "description": "to get a list of resources of the specified resource types",
+        "required": false, "type": "array", "items": {"type": "string", "enum": ["GenericResource",
+        "RasterResource", "RefTimeSeriesResource", "TimeSeriesResource", "NetcdfResource",
+        "ModelProgramResource", "ModelInstanceResource", "ToolResource", "SWATModelInstanceResource",
+        "GeographicFeatureResource", "ScriptResource", "CollectionResource", "MODFLOWModelInstanceResource",
+        "CompositeResource"]}, "collectionFormat": "multi"}, {"name": "coverage_type",
+        "in": "query", "description": "to get a list of resources that fall within
+        the specified spatial coverage boundary", "required": false, "type": "string",
+        "enum": ["box", "point"]}, {"name": "north", "in": "query", "description":
+        "north coordinate of spatial coverage. This parameter is required if *coverage_type*
+        has been specified", "required": false, "type": "string", "minLength": 1},
+        {"name": "south", "in": "query", "description": "south coordinate of spatial
+        coverage. This parameter is required if *coverage_type* has been specified
+        with a value of box", "required": false, "type": "string", "minLength": 1},
+        {"name": "east", "in": "query", "description": "east coordinate of spatial
+        coverage. This parameter is required if *coverage_type* has been specified",
+        "required": false, "type": "string", "minLength": 1}, {"name": "west", "in":
+        "query", "description": "west coordinate of spatial coverage. This parameter
+        is required if *coverage_type* has been specified with a value of box", "required":
+        false, "type": "string", "minLength": 1}, {"name": "include_obsolete", "in":
+        "query", "description": "Include repleaced resources", "required": false,
+        "type": "boolean", "default": false}], "responses": {"200": {"description":
+        "", "schema": {"required": ["count", "results"], "type": "object", "properties":
+        {"count": {"type": "integer"}, "next": {"type": "string", "format": "uri",
+        "x-nullable": true}, "previous": {"type": "string", "format": "uri", "x-nullable":
+        true}, "results": {"type": "array", "items": {"$ref": "#/definitions/ResourceListItem"}}}}}},
+        "tags": ["hsapi"]}, "post": {"operationId": "hsapi_resource_create", "description":
+        "Create a resource", "parameters": [{"name": "data", "in": "body", "required":
+        true, "schema": {"$ref": "#/definitions/ResourceCreateRequestValidator"}}],
+        "responses": {"201": {"description": "", "schema": {"$ref": "#/definitions/ResourceCreated"}}},
+        "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/accessRules/{id}/":
+        {"put": {"operationId": "hsapi_resource_accessRules_update", "description":
+        "Update access rules", "parameters": [], "responses": {"200": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/content_types/": {"get": {"operationId":
+        "hsapi_resource_content_types_list", "description": "List Content Types",
+        "parameters": [], "responses": {"200": {"description": "", "schema": {"$ref":
+        "#/definitions/ContentTypes"}}}, "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/data-store-add-reference/":
+        {"post": {"operationId": "hsapi_resource_data-store-add-reference_create",
+        "description": "", "parameters": [], "responses": {"201": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/data_store_edit_reference_url/":
+        {"post": {"operationId": "hsapi_resource_data_store_edit_reference_url_create",
+        "description": "", "parameters": [], "responses": {"201": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/search": {"get":
+        {"operationId": "hsapi_resource_search_list", "description": "Search HydroShare
+        Resources using solr conventions.We use haystack for queries so you can use
+        all of the parameters described here in combination with field lookups https://django-haystack.readthedocs.io/en/latest/searchqueryset_api.html?highlight=lookups#id1",
+        "parameters": [{"name": "page", "in": "query", "description": "A page number
+        within the paginated result set.", "required": false, "type": "integer"},
+        {"name": "count", "in": "query", "description": "Number of results to return
+        per page.", "required": false, "type": "integer"}, {"name": "text", "in":
+        "query", "description": "Search across all Resource Fields", "required": false,
+        "type": "string", "minLength": 1}, {"name": "author", "in": "query", "description":
+        "Search by author", "required": false, "type": "string", "minLength": 1},
+        {"name": "contributor", "in": "query", "description": "Search by contributor",
+        "required": false, "type": "array", "items": {"type": "string"}}, {"name":
+        "subject", "in": "query", "description": "Search within subject keywords",
+        "required": false, "type": "array", "items": {"type": "string"}}, {"name":
+        "abstract", "in": "query", "description": "Search within the abstract", "required":
+        false, "type": "string", "minLength": 1}, {"name": "resource_type", "in":
+        "query", "description": "Search by resource type", "required": false, "type":
+        "string", "minLength": 1}, {"name": "content_type", "in": "query", "description":
+        "Search by content type", "required": false, "type": "array", "items": {"type":
+        "string"}}, {"name": "coverage_type", "in": "query", "description": "Search
+        by coverage type (point, box, period)", "required": false, "type": "array",
+        "items": {"type": "string"}}, {"name": "availability", "in": "query", "description":
+        "Search by availability (discoverable, public, published)", "required": false,
+        "type": "array", "items": {"type": "string"}}, {"name": "created", "in": "query",
+        "description": "Search by created date", "required": false, "type": "string",
+        "format": "date"}, {"name": "modified", "in": "query", "description": "Search
+        by modified date", "required": false, "type": "string", "format": "date"},
+        {"name": "start_date", "in": "query", "description": "Search by start date",
+        "required": false, "type": "string", "format": "date"}, {"name": "end_date",
+        "in": "query", "description": "Search by end date", "required": false, "type":
+        "string", "format": "date"}, {"name": "east", "in": "query", "description":
+        "Search by location or box center east longitude", "required": false, "type":
+        "number"}, {"name": "north", "in": "query", "description": "Search by location
+        or box center north latitude", "required": false, "type": "number"}, {"name":
+        "eastlimit", "in": "query", "description": "Search by east limit longitude",
+        "required": false, "type": "number"}, {"name": "westlimit", "in": "query",
+        "description": "Search by west limit longitude", "required": false, "type":
+        "number"}, {"name": "northlimit", "in": "query", "description": "Search by
+        north limit latitude", "required": false, "type": "number"}, {"name": "southlimit",
+        "in": "query", "description": "Search by south limit latitude", "required":
+        false, "type": "number"}], "responses": {"200": {"description": "", "schema":
+        {"required": ["count", "results"], "type": "object", "properties": {"count":
+        {"type": "integer"}, "next": {"type": "string", "format": "uri", "x-nullable":
+        true}, "previous": {"type": "string", "format": "uri", "x-nullable": true},
+        "results": {"type": "array", "items": {"$ref": "#/definitions/DiscoveryResource"}}}}}},
+        "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/types/": {"get": {"operationId":
+        "hsapi_resource_types_list", "description": "List Resource Types", "parameters":
+        [], "responses": {"200": {"description": "", "schema": {"$ref": "#/definitions/ResourceTypes"}}},
+        "tags": ["hsapi"]}, "parameters": []}, "/hsapi/resource/{id}/": {"get": {"operationId":
+        "hsapi_resource_read", "description": "Get a resource in zipped BagIt format",
+        "parameters": [], "responses": {"200": {"description": "", "schema": {"$ref":
+        "#/definitions/TaskStatus"}}}, "tags": ["hsapi"]}, "put": {"operationId":
+        "hsapi_resource_update", "description": "Not Implemented", "parameters": [],
+        "responses": {"200": {"description": ""}}, "tags": ["hsapi"]}, "delete": {"operationId":
+        "hsapi_resource_delete", "description": "", "parameters": [], "responses":
+        {"204": {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name":
+        "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{id}/access/":
+        {"get": {"operationId": "hsapi_resource_access_read", "summary": "Read, update,
+        or delete access permission for a resource", "description": "REST URL: hsapi/resource/{pk}/access\nHTTP
+        method: GET\n:return: (on success): JSON representation of resource access
+        with ''groups'' and ''users'' keys.\n\nREST URL: hsapi/resource/{pk}/access?(user_id=#|group_id=#)\nHTTP
+        method: DELETE\n\n:type int\n:param user_id: user ID to remove\n:type int\n:param
+        group_id: group ID to remove\n:return: (on success): Success or Error JSON
+        object\n\nREST URL: hsapi/resource/{pk}/access\nHTTP method: PUT\n:return:
+        (on success): Success or Error JSON object\n\n:type int\n:param user_id: user
+        ID to remove\n:type int\n:param group_id: group ID to remove\n:type PrivilegeCode
+        int\n:param privilege: PrivilegeCode to specifiy access level\n:return: (on
+        success): Success or Error JSON objectit", "parameters": [], "responses":
+        {"200": {"description": "", "schema": {"$ref": "#/definitions/UserResourcePrivilege"}}},
+        "tags": ["hsapi"]}, "put": {"operationId": "hsapi_resource_access_update",
+        "summary": "Read, update, or delete access permission for a resource", "description":
+        "REST URL: hsapi/resource/{pk}/access\nHTTP method: GET\n:return: (on success):
+        JSON representation of resource access with ''groups'' and ''users'' keys.\n\nREST
+        URL: hsapi/resource/{pk}/access?(user_id=#|group_id=#)\nHTTP method: DELETE\n\n:type
+        int\n:param user_id: user ID to remove\n:type int\n:param group_id: group
+        ID to remove\n:return: (on success): Success or Error JSON object\n\nREST
+        URL: hsapi/resource/{pk}/access\nHTTP method: PUT\n:return: (on success):
+        Success or Error JSON object\n\n:type int\n:param user_id: user ID to remove\n:type
+        int\n:param group_id: group ID to remove\n:type PrivilegeCode int\n:param
+        privilege: PrivilegeCode to specifiy access level\n:return: (on success):
+        Success or Error JSON objectit", "parameters": [{"name": "data", "in": "body",
+        "required": true, "schema": {"$ref": "#/definitions/UserResourcePrivilege"}}],
+        "responses": {"200": {"description": "", "schema": {"$ref": "#/definitions/UserResourcePrivilege"}}},
+        "tags": ["hsapi"]}, "delete": {"operationId": "hsapi_resource_access_delete",
+        "summary": "Read, update, or delete access permission for a resource", "description":
+        "REST URL: hsapi/resource/{pk}/access\nHTTP method: GET\n:return: (on success):
+        JSON representation of resource access with ''groups'' and ''users'' keys.\n\nREST
+        URL: hsapi/resource/{pk}/access?(user_id=#|group_id=#)\nHTTP method: DELETE\n\n:type
+        int\n:param user_id: user ID to remove\n:type int\n:param group_id: group
+        ID to remove\n:return: (on success): Success or Error JSON object\n\nREST
+        URL: hsapi/resource/{pk}/access\nHTTP method: PUT\n:return: (on success):
+        Success or Error JSON object\n\n:type int\n:param user_id: user ID to remove\n:type
+        int\n:param group_id: group ID to remove\n:type PrivilegeCode int\n:param
+        privilege: PrivilegeCode to specifiy access level\n:return: (on success):
+        Success or Error JSON objectit", "parameters": [], "responses": {"204": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/copy/": {"post": {"operationId":
+        "hsapi_resource_copy_create", "description": "", "parameters": [], "responses":
+        {"201": {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name":
+        "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{id}/file_list/":
+        {"get": {"operationId": "hsapi_resource_file_list_list", "description": "Get
+        a listing of files within a resource.\n:param request:\n:param pk: Primary
+        key of the resource (i.e. resource short ID)\n:return:", "parameters": [{"name":
+        "page", "in": "query", "description": "A page number within the paginated
+        result set.", "required": false, "type": "integer"}, {"name": "count", "in":
+        "query", "description": "Number of results to return per page.", "required":
+        false, "type": "integer"}], "responses": {"200": {"description": "", "schema":
+        {"required": ["count", "results"], "type": "object", "properties": {"count":
+        {"type": "integer"}, "next": {"type": "string", "format": "uri", "x-nullable":
+        true}, "previous": {"type": "string", "format": "uri", "x-nullable": true},
+        "results": {"type": "array", "items": {"$ref": "#/definitions/ResourceFile"}}}}}},
+        "tags": ["hsapi"]}, "post": {"operationId": "hsapi_resource_file_list_create",
+        "description": "Add a file to a resource.\n:param request:\n:param pk: Primary
+        key of the resource (i.e. resource short ID)\n:return:", "parameters": [{"name":
+        "data", "in": "body", "required": true, "schema": {"$ref": "#/definitions/ResourceFile"}}],
+        "responses": {"201": {"description": "", "schema": {"$ref": "#/definitions/ResourceFile"}}},
+        "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/files/": {"get": {"operationId":
+        "hsapi_resource_files_list", "description": "Get a listing of files within
+        a resource.\n:param request:\n:param pk: Primary key of the resource (i.e.
+        resource short ID)\n:return:", "parameters": [{"name": "page", "in": "query",
+        "description": "A page number within the paginated result set.", "required":
+        false, "type": "integer"}, {"name": "count", "in": "query", "description":
+        "Number of results to return per page.", "required": false, "type": "integer"}],
+        "responses": {"200": {"description": "", "schema": {"required": ["count",
+        "results"], "type": "object", "properties": {"count": {"type": "integer"},
+        "next": {"type": "string", "format": "uri", "x-nullable": true}, "previous":
+        {"type": "string", "format": "uri", "x-nullable": true}, "results": {"type":
+        "array", "items": {"$ref": "#/definitions/ResourceFile"}}}}}}, "tags": ["hsapi"]},
+        "post": {"operationId": "hsapi_resource_files_create", "description": "Add
+        a file to a resource.\n:param request:\n:param pk: Primary key of the resource
+        (i.e. resource short ID)\n:return:", "parameters": [{"name": "data", "in":
+        "body", "required": true, "schema": {"$ref": "#/definitions/ResourceFile"}}],
+        "responses": {"201": {"description": "", "schema": {"$ref": "#/definitions/ResourceFile"}}},
+        "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/files/metadata/{pathname}/":
+        {"get": {"operationId": "hsapi_resource_files_metadata_read", "summary": "Get
+        a resource file''s metadata.", "description": "## Parameters\n* `id` - alphanumeric
+        uuid of the resource, i.e. cde01b3898c94cdab78a2318330cf795\n* `pathname`
+        - The pathname of the file\nto get these\n\n## Returns\n```\n{\n    \"keywords\":
+        [\n        \"keyword1\",\n        \"keyword2\"\n    ],\n    \"spatial_coverage\":
+        {\n        \"units\": \"Decimal degrees\",\n        \"east\": -84.0465,\n        \"north\":
+        49.6791,\n        \"name\": \"12232\",\n        \"projection\": \"WGS 84 EPSG:4326\"\n    },\n    \"extra_metadata\":
+        {\n        \"extended1\": \"one\"\n    },\n    \"temporal_coverage\": {\n        \"start\":
+        \"2018-02-22\",\n        \"end\": \"2018-02-24\"\n    },\n    \"title\": \"File
+        Metadata Title\",\n    \"logical_file\": {}\n}\n```", "parameters": [], "responses":
+        {"200": {"description": "", "schema": {"$ref": "#/definitions/FileMetaData"}}},
+        "tags": ["hsapi"]}, "put": {"operationId": "hsapi_resource_files_metadata_update",
+        "summary": "Update a resource file''s metadata", "description": "Accepts application/json
+        encoding.\n\n## Parameters\n* `id` - alphanumeric uuid of the resource, i.e.
+        cde01b3898c94cdab78a2318330cf795\n* `pathname` - The pathname of the file\n*
+        `data` - see the \"returns\" section for formatting\n\n## Returns\n```\n{\n    \"keywords\":
+        [\n        \"keyword1\",\n        \"keyword2\"\n    ],\n    \"spatial_coverage\":
+        {\n        \"units\": \"Decimal degrees\",\n        \"east\": -84.0465,\n        \"north\":
+        49.6791,\n        \"name\": \"12232\",\n        \"projection\": \"WGS 84 EPSG:4326\"\n    },\n    \"extra_metadata\":
+        {\n        \"extended1\": \"one\"\n    },\n    \"temporal_coverage\": {\n        \"start\":
+        \"2018-02-22\",\n        \"end\": \"2018-02-24\"\n    },\n    \"title\": \"File
+        Metadata Title\"\n}\n```", "parameters": [{"name": "data", "in": "body", "required":
+        true, "schema": {"$ref": "#/definitions/FileMetaData"}}], "responses": {"200":
+        {"description": "", "schema": {"$ref": "#/definitions/FileMetaData"}}}, "tags":
+        ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required": true,
+        "type": "string"}, {"name": "pathname", "in": "path", "required": true, "type":
+        "string"}]}, "/hsapi/resource/{id}/files/{pathname}/": {"get": {"operationId":
+        "hsapi_resource_files_read", "summary": "Retrieve, add, update or delete a
+        resource file", "description": "REST URL: hsapi/resource/{pk}/files/{filename}\nHTTP
+        method: GET\n\n:type pk: str\n:type filename: str\n:param pk: resource id\n:param
+        filename: name of the file to retrieve/download\n:return: resource file data\n:rtype:
+        file data bytes\n\nREST URL: POST hsapi/resource/{pk}/files/", "parameters":
+        [], "responses": {"200": {"description": ""}}, "consumes": ["multipart/form-data"],
+        "tags": ["hsapi"]}, "post": {"operationId": "hsapi_resource_files_create",
+        "description": "Add a file to a resource.\n:param request:\n:param pk: Primary
+        key of the resource (i.e. resource short ID)\n:param pathname: the path to
+        the containing folder in the folder hierarchy\n:return:\n\nLeaving out pathname
+        in the URI calls a different class function in ResourceFileListCreate\nthat
+        stores in the root directory instead.", "parameters": [{"name": "file", "in":
+        "formData", "required": true, "type": "file"}], "responses": {"201": {"description":
+        "", "schema": {"$ref": "#/definitions/ResourceFileValidator"}}}, "consumes":
+        ["multipart/form-data"], "tags": ["hsapi"]}, "delete": {"operationId": "hsapi_resource_files_delete",
+        "summary": "Retrieve, add, update or delete a resource file", "description":
+        "REST URL: hsapi/resource/{pk}/files/{filename}\nHTTP method: GET\n\n:type
+        pk: str\n:type filename: str\n:param pk: resource id\n:param filename: name
+        of the file to retrieve/download\n:return: resource file data\n:rtype: file
+        data bytes\n\nREST URL: POST hsapi/resource/{pk}/files/", "parameters": [],
+        "responses": {"204": {"description": ""}}, "consumes": ["multipart/form-data"],
+        "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}, {"name": "pathname", "in": "path", "required": true,
+        "type": "string"}]}, "/hsapi/resource/{id}/flag/": {"post": {"operationId":
+        "hsapi_resource_flag_create", "description": "", "parameters": [], "responses":
+        {"201": {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name":
+        "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{id}/folders/{pathname}/":
+        {"get": {"operationId": "hsapi_resource_folders_read", "description": "list
+        a given folder", "parameters": [], "responses": {"200": {"description": ""}},
+        "tags": ["hsapi"]}, "put": {"operationId": "hsapi_resource_folders_update",
+        "description": "create a given folder if not present and allowed", "parameters":
+        [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]}, "delete":
+        {"operationId": "hsapi_resource_folders_delete", "description": "Delete a
+        folder.", "parameters": [], "responses": {"204": {"description": ""}}, "tags":
+        ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required": true,
+        "type": "string"}, {"name": "pathname", "in": "path", "required": true, "type":
+        "string"}]}, "/hsapi/resource/{id}/functions/move-or-rename/": {"post": {"operationId":
+        "hsapi_resource_functions_move-or-rename_create", "description": "", "parameters":
+        [], "responses": {"201": {"description": ""}}, "tags": ["hsapi"]}, "parameters":
+        [{"name": "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{id}/functions/set-file-type/{file_path}/{hs_file_type}/":
+        {"post": {"operationId": "hsapi_resource_functions_set-file-type_create",
+        "summary": "Set file type as specified by *hs_file_type* using the file given
+        by *file_path*", "description": ":param request: an instance of HttpRequest
+        object\n:param pk: id of the composite resource in which this file type needs
+        to be set\n:param file_path: relative file path of the file which needs to
+        be set to the specified file\ntype. If the absolute file path is [resource-id]/data/contents/some-folder/some-file.txt
+        then\nfile_path needs to be set as: some-folder/some-file.txt\n:param hs_file_type:
+        type of file to be set (e.g, NetCDF, GeoRaster, GeoFeature etc)\n:return:",
+        "parameters": [], "responses": {"201": {"description": ""}}, "tags": ["hsapi"]},
+        "parameters": [{"name": "file_path", "in": "path", "required": true, "type":
+        "string"}, {"name": "hs_file_type", "in": "path", "required": true, "type":
+        "string"}, {"name": "id", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/resource/{id}/functions/unzip/{pathname}/": {"post": {"operationId":
+        "hsapi_resource_functions_unzip_create", "summary": "Public version of data_store_folder_unzip,
+        incorporating path variables", "description": ":param request:\n:param pk:\n:param
+        pathname:\n:return HttpResponse:", "parameters": [], "responses": {"201":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in":
+        "path", "required": true, "type": "string"}, {"name": "pathname", "in": "path",
+        "required": true, "type": "string"}]}, "/hsapi/resource/{id}/functions/zip/":
+        {"post": {"operationId": "hsapi_resource_functions_zip_create", "description":
+        "", "parameters": [], "responses": {"201": {"description": ""}}, "tags": ["hsapi"]},
+        "parameters": [{"name": "id", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/resource/{id}/ingest_metadata/": {"post": {"operationId": "hsapi_resource_ingest_metadata_create",
+        "description": "", "parameters": [], "responses": {"201": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/map/": {"get": {"operationId":
+        "hsapi_resource_map_list", "summary": "Retrieve resource map", "description":
+        "REST URL: hsapi/resource/{pk}/map\nHTTP method: GET\n\n:type pk: str\n:param
+        pk: id of the resource\n:return: resource map as XML document\n:rtype: str\n:raises:",
+        "parameters": [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]},
+        "parameters": [{"name": "id", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/resource/{id}/scimeta/": {"get": {"operationId": "hsapi_resource_scimeta_list",
+        "summary": "Retrieve resource science metadata", "description": "REST URL:
+        hsapi/scimeta/{pk}\nHTTP method: GET\n\n:type pk: str\n:param pk: id of the
+        resource\n:return: science metadata as XML document\n:rtype: str\n:raises:",
+        "parameters": [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]},
+        "put": {"operationId": "hsapi_resource_scimeta_update", "summary": "Retrieve
+        resource science metadata", "description": "REST URL: hsapi/scimeta/{pk}\nHTTP
+        method: GET\n\n:type pk: str\n:param pk: id of the resource\n:return: science
+        metadata as XML document\n:rtype: str\n:raises:", "parameters": [], "responses":
+        {"200": {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name":
+        "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{id}/scimeta/custom/":
+        {"get": {"operationId": "hsapi_resource_scimeta_custom_list", "description":
+        "", "parameters": [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]},
+        "post": {"operationId": "hsapi_resource_scimeta_custom_create", "description":
+        "", "parameters": [], "responses": {"201": {"description": ""}}, "tags": ["hsapi"]},
+        "parameters": [{"name": "id", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/resource/{id}/scimeta/elements/": {"get": {"operationId": "hsapi_resource_scimeta_elements_read",
+        "summary": "Retrieve resource science (Dublin Core) metadata", "description":
+        "REST URL: /hsapi/resource/{pk}/scimeta/elements/\nHTTP method: GET\n\n:type
+        pk: str\n:param pk: id of the resource\n:return: resource science metadata
+        as JSON document\n:rtype: str\n:raises:", "parameters": [], "responses": {"200":
+        {"description": "", "schema": {"$ref": "#/definitions/CoreMetaData"}}}, "tags":
+        ["hsapi"]}, "put": {"operationId": "hsapi_resource_scimeta_elements_update",
+        "summary": "Retrieve resource science (Dublin Core) metadata", "description":
+        "REST URL: /hsapi/resource/{pk}/scimeta/elements/\nHTTP method: GET\n\n:type
+        pk: str\n:param pk: id of the resource\n:return: resource science metadata
+        as JSON document\n:rtype: str\n:raises:", "parameters": [{"name": "data",
+        "in": "body", "required": true, "schema": {"$ref": "#/definitions/CoreMetaData"}}],
+        "responses": {"200": {"description": "", "schema": {"$ref": "#/definitions/CoreMetaData"}}},
+        "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/share/{privilege}/group/{group_id}/":
+        {"post": {"operationId": "hsapi_resource_share_group_create", "description":
+        "Set group privileges of a resource", "parameters": [], "responses": {"201":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "group_id",
+        "in": "path", "required": true, "type": "string"}, {"name": "id", "in": "path",
+        "required": true, "type": "string"}, {"name": "privilege", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/share/{privilege}/user/{user_id}/":
+        {"post": {"operationId": "hsapi_resource_share_user_create", "description":
+        "Set user privileges of a resource", "parameters": [], "responses": {"201":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in":
+        "path", "required": true, "type": "string"}, {"name": "privilege", "in": "path",
+        "required": true, "type": "string"}, {"name": "user_id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/sysmeta/": {"get": {"operationId":
+        "hsapi_resource_sysmeta_list", "description": "Get resource system metadata,
+        as well as URLs to the bag and science metadata", "parameters": [], "responses":
+        {"200": {"description": "", "schema": {"$ref": "#/definitions/ResourceListItem"}}},
+        "tags": ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/resource/{id}/ticket/bag/": {"get": {"operationId":
+        "hsapi_resource_ticket_bag_list", "summary": "create a ticket for a bag",
+        "description": ":param pk: key of resource for which to issue ticket\n:param
+        pathname: path for which to issue ticket. If empty, whole data directory is
+        assumed.", "parameters": [], "responses": {"200": {"description": ""}}, "tags":
+        ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required": true,
+        "type": "string"}]}, "/hsapi/resource/{id}/ticket/{op}/{pathname}/": {"get":
+        {"operationId": "hsapi_resource_ticket_read", "summary": "create a ticket
+        for a specific file or folder", "description": ":param pk: key of resource
+        for which to issue ticket\n:param op: operation: ''read'' or ''write''\n:param
+        pathname: path for which to issue ticket. If empty, whole data directory is
+        assumed.", "parameters": [], "responses": {"200": {"description": ""}}, "tags":
+        ["hsapi"]}, "parameters": [{"name": "id", "in": "path", "required": true,
+        "type": "string"}, {"name": "op", "in": "path", "required": true, "type":
+        "string"}, {"name": "pathname", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/resource/{id}/ticket/{ticket}/": {"get": {"operationId": "hsapi_resource_ticket_read",
+        "description": "list a ticket", "parameters": [], "responses": {"200": {"description":
+        ""}}, "tags": ["hsapi"]}, "delete": {"operationId": "hsapi_resource_ticket_delete",
+        "description": "Delete a ticket.", "parameters": [], "responses": {"204":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in":
+        "path", "required": true, "type": "string"}, {"name": "ticket", "in": "path",
+        "required": true, "type": "string"}]}, "/hsapi/resource/{id}/version/": {"post":
+        {"operationId": "hsapi_resource_version_create", "description": "", "parameters":
+        [], "responses": {"201": {"description": ""}}, "tags": ["hsapi"]}, "parameters":
+        [{"name": "id", "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{resource_id}/functions/delete-file-type/{hs_file_type}/{file_path}/":
+        {"delete": {"operationId": "hsapi_resource_functions_delete-file-type_delete",
+        "description": "Deletes all files associated with an aggregation and all the
+        associated metadata.", "parameters": [], "responses": {"204": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "file_path", "in": "path",
+        "required": true, "type": "string"}, {"name": "hs_file_type", "in": "path",
+        "required": true, "type": "string"}, {"name": "resource_id", "in": "path",
+        "required": true, "type": "string"}]}, "/hsapi/resource/{resource_id}/functions/remove-file-type/{hs_file_type}/{file_path}/":
+        {"post": {"operationId": "hsapi_resource_functions_remove-file-type_create",
+        "description": "Deletes an instance of a specific file type (aggregation)
+        and all the associated metadata.\nHowever, it doesn''t delete resource files
+        associated with the aggregation.", "parameters": [], "responses": {"201":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "file_path",
+        "in": "path", "required": true, "type": "string"}, {"name": "hs_file_type",
+        "in": "path", "required": true, "type": "string"}, {"name": "resource_id",
+        "in": "path", "required": true, "type": "string"}]}, "/hsapi/resource/{resource_id}/{hs_file_type}/{file_path}/functions/move-file-type/{tgt_path}":
+        {"post": {"operationId": "hsapi_resource_functions_move-file-type_create",
+        "description": "moves all files associated with an aggregation and all the
+        associated metadata.", "parameters": [], "responses": {"201": {"description":
+        ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "file_path", "in": "path",
+        "required": true, "type": "string"}, {"name": "hs_file_type", "in": "path",
+        "required": true, "type": "string"}, {"name": "resource_id", "in": "path",
+        "required": true, "type": "string"}, {"name": "tgt_path", "in": "path", "required":
+        true, "type": "string"}]}, "/hsapi/scimeta/{id}/": {"get": {"operationId":
+        "hsapi_scimeta_read", "summary": "Retrieve resource science metadata", "description":
+        "REST URL: hsapi/scimeta/{pk}\nHTTP method: GET\n\n:type pk: str\n:param pk:
+        id of the resource\n:return: science metadata as XML document\n:rtype: str\n:raises:",
+        "parameters": [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]},
+        "put": {"operationId": "hsapi_scimeta_update", "summary": "Retrieve resource
+        science metadata", "description": "REST URL: hsapi/scimeta/{pk}\nHTTP method:
+        GET\n\n:type pk: str\n:param pk: id of the resource\n:return: science metadata
+        as XML document\n:rtype: str\n:raises:", "parameters": [], "responses": {"200":
+        {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name": "id", "in":
+        "path", "required": true, "type": "string"}]}, "/hsapi/taskstatus/{task_id}/":
+        {"get": {"operationId": "hsapi_taskstatus_read", "description": "", "parameters":
+        [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]}, "parameters":
+        [{"name": "task_id", "in": "path", "required": true, "type": "string"}]},
+        "/hsapi/user/": {"get": {"operationId": "hsapi_user_list", "description":
+        "", "parameters": [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]},
+        "parameters": []}, "/hsapi/userDetails/{user_identifier}/": {"get": {"operationId":
+        "hsapi_userDetails_read", "description": "", "parameters": [], "responses":
+        {"200": {"description": ""}}, "tags": ["hsapi"]}, "parameters": [{"name":
+        "user_identifier", "in": "path", "required": true, "type": "string"}]}, "/hsapi/userInfo/":
+        {"get": {"operationId": "hsapi_userInfo_list", "description": "", "parameters":
+        [], "responses": {"200": {"description": ""}}, "tags": ["hsapi"]}, "parameters":
+        []}}, "definitions": {"ResourceListItem": {"required": ["resource_type", "resource_title",
+        "resource_id", "abstract", "authors", "creator", "doi", "date_created", "date_last_updated",
+        "public", "discoverable", "shareable", "immutable", "published", "bag_url",
+        "science_metadata_url", "resource_map_url", "resource_url"], "type": "object",
+        "properties": {"resource_type": {"title": "Resource type", "type": "string",
+        "maxLength": 100, "minLength": 1}, "resource_title": {"title": "Resource title",
+        "type": "string", "maxLength": 200, "minLength": 1}, "resource_id": {"title":
+        "Resource id", "type": "string", "maxLength": 100, "minLength": 1}, "abstract":
+        {"title": "Abstract", "type": "string", "minLength": 1}, "authors": {"type":
+        "array", "items": {"type": "string"}}, "creator": {"title": "Creator", "type":
+        "string", "maxLength": 100, "minLength": 1}, "doi": {"title": "Doi", "type":
+        "string", "maxLength": 200, "minLength": 1}, "date_created": {"title": "Date
+        created", "type": "string", "format": "date-time"}, "date_last_updated": {"title":
+        "Date last updated", "type": "string", "format": "date-time"}, "public": {"title":
+        "Public", "type": "boolean"}, "discoverable": {"title": "Discoverable", "type":
+        "boolean"}, "shareable": {"title": "Shareable", "type": "boolean"}, "coverages":
+        {"title": "Coverages", "type": "object"}, "immutable": {"title": "Immutable",
+        "type": "boolean"}, "published": {"title": "Published", "type": "boolean"},
+        "bag_url": {"title": "Bag url", "type": "string", "format": "uri", "minLength":
+        1}, "science_metadata_url": {"title": "Science metadata url", "type": "string",
+        "format": "uri", "minLength": 1}, "resource_map_url": {"title": "Resource
+        map url", "type": "string", "format": "uri", "minLength": 1}, "resource_url":
+        {"title": "Resource url", "type": "string", "format": "uri", "minLength":
+        1}}}, "ResourceCreateRequestValidator": {"type": "object", "properties": {"title":
+        {"title": "Title", "type": "string", "minLength": 1}, "metadata": {"title":
+        "Metadata", "type": "string", "minLength": 1}, "extra_metadata": {"title":
+        "Extra metadata", "type": "string", "minLength": 1}, "edit_users": {"title":
+        "Edit users", "type": "string", "minLength": 1}, "edit_groups": {"title":
+        "Edit groups", "type": "string", "minLength": 1}, "view_users": {"title":
+        "View users", "type": "string", "minLength": 1}, "view_groups": {"title":
+        "View groups", "type": "string", "minLength": 1}, "keywords": {"type": "array",
+        "items": {"type": "string", "minLength": 1}}, "abstract": {"title": "Abstract",
+        "type": "string", "minLength": 1}, "resource_type": {"title": "Resource type",
+        "type": "string", "enum": ["GenericResource", "RasterResource", "RefTimeSeriesResource",
+        "TimeSeriesResource", "NetcdfResource", "ModelProgramResource", "ModelInstanceResource",
+        "ToolResource", "SWATModelInstanceResource", "GeographicFeatureResource",
+        "ScriptResource", "CollectionResource", "MODFLOWModelInstanceResource", "CompositeResource"],
+        "default": "CompositeResource"}}}, "ResourceCreated": {"required": ["resource_type",
+        "resource_id", "message"], "type": "object", "properties": {"resource_type":
+        {"title": "Resource type", "type": "string", "maxLength": 100, "minLength":
+        1}, "resource_id": {"title": "Resource id", "type": "string", "maxLength":
+        100, "minLength": 1}, "message": {"title": "Message", "type": "string", "minLength":
+        1}}}, "ContentTypes": {"required": ["content_type"], "type": "object", "properties":
+        {"content_type": {"title": "Content type", "description": "list of content
+        types", "type": "string", "maxLength": 100, "minLength": 1}}}, "DiscoveryResource":
+        {"required": ["text", "author", "abstract", "contributor", "subject", "availability",
+        "modified", "coverage_type", "east", "northlimit", "eastlimit", "southlimit",
+        "westlimit", "start_date", "end_date"], "type": "object", "properties": {"text":
+        {"title": "Text", "type": "string", "minLength": 1}, "author": {"title": "Author",
+        "type": "string", "minLength": 1}, "abstract": {"title": "Abstract", "type":
+        "string", "minLength": 1}, "contributor": {"type": "array", "items": {"type":
+        "string"}}, "subject": {"type": "array", "items": {"type": "string"}}, "availability":
+        {"type": "array", "items": {"type": "string"}}, "created": {"title": "Created",
+        "type": "string", "format": "date-time", "readOnly": true}, "modified": {"title":
+        "Modified", "type": "string", "format": "date-time"}, "coverage_type": {"type":
+        "array", "items": {"type": "string"}}, "east": {"title": "East", "type": "number"},
+        "northlimit": {"title": "Northlimit", "type": "number"}, "eastlimit": {"title":
+        "Eastlimit", "type": "number"}, "southlimit": {"title": "Southlimit", "type":
+        "number"}, "westlimit": {"title": "Westlimit", "type": "number"}, "start_date":
+        {"title": "Start date", "type": "string", "format": "date"}, "end_date": {"title":
+        "End date", "type": "string", "format": "date"}, "resource_type": {"title":
+        "Resource type", "type": "string", "maxLength": 50, "minLength": 1}, "content_type":
+        {"type": "array", "items": {"type": "string"}, "x-nullable": true}}}, "ResourceTypes":
+        {"required": ["resource_type"], "type": "object", "properties": {"resource_type":
+        {"title": "Resource type", "description": "list of resource types", "type":
+        "string", "maxLength": 100, "minLength": 1}}}, "TaskStatus": {"required":
+        ["bag_status", "task_id"], "type": "object", "properties": {"bag_status":
+        {"title": "Bag status", "description": "Status of task, i.e. \"Not Ready\"
+        ", "type": "string", "minLength": 1}, "task_id": {"title": "Task id", "description":
+        "The task id to be used to check task status", "type": "string", "minLength":
+        1}}}, "UserResourcePrivilege": {"required": ["privilege"], "type": "object",
+        "properties": {"id": {"title": "ID", "type": "integer", "readOnly": true},
+        "privilege": {"title": "Privilege", "type": "string"}, "user": {"title": "User",
+        "description": "user to be granted privilege", "type": "integer", "readOnly":
+        true}, "resource": {"title": "Resource", "description": "resource to which
+        privilege applies", "type": "string", "readOnly": true}, "grantor": {"title":
+        "Grantor", "description": "grantor of privilege", "type": "integer", "readOnly":
+        true}}}, "ResourceFile": {"required": ["file_name", "url", "size", "content_type",
+        "logical_file_type", "modified_time", "checksum"], "type": "object", "properties":
+        {"file_name": {"title": "File name", "description": "The filename, including
+        the path", "type": "string", "maxLength": 200, "minLength": 1}, "url": {"title":
+        "Url", "description": "The url to download the file", "type": "string", "format":
+        "uri", "minLength": 1}, "size": {"title": "Size", "description": "The size
+        of the file", "type": "integer"}, "content_type": {"title": "Content type",
+        "description": "The content type of the file", "type": "string", "maxLength":
+        255, "minLength": 1}, "logical_file_type": {"title": "Logical file type",
+        "type": "string", "maxLength": 255, "minLength": 1}, "modified_time": {"title":
+        "Modified time", "type": "string", "format": "date-time"}, "checksum": {"title":
+        "Checksum", "type": "string", "maxLength": 100, "minLength": 1}}}, "FileMetaData":
+        {"type": "object", "properties": {"title": {"title": "Title", "type": "string",
+        "minLength": 1}, "keywords": {"title": "Keywords", "type": "string"}, "spatial_coverage":
+        {"title": "Spatial coverage", "type": "string"}, "extra_metadata": {"title":
+        "Extra metadata", "type": "string"}, "temporal_coverage": {"title": "Temporal
+        coverage", "type": "string"}, "logical_file": {"title": "Logical file", "type":
+        "string"}}}, "ResourceFileValidator": {"type": "object", "properties": {"file":
+        {"title": "File", "type": "string", "readOnly": true, "format": "uri"}}},
+        "Creator": {"required": ["name"], "type": "object", "properties": {"name":
+        {"title": "Name", "type": "string", "minLength": 1}, "description": {"title":
+        "Description", "type": "string", "format": "uri", "minLength": 1}, "organization":
+        {"title": "Organization", "type": "string", "minLength": 1}, "email": {"title":
+        "Email", "type": "string", "format": "email", "minLength": 1}, "address":
+        {"title": "Address", "type": "string", "minLength": 1}, "phone": {"title":
+        "Phone", "type": "string", "minLength": 1}, "homepage": {"title": "Homepage",
+        "type": "string", "format": "uri", "minLength": 1}, "identifiers": {"title":
+        "Identifiers", "type": "object", "additionalProperties": {"type": "string",
+        "minLength": 1}}, "order": {"title": "Order", "type": "integer"}}}, "Party":
+        {"required": ["name"], "type": "object", "properties": {"name": {"title":
+        "Name", "type": "string", "minLength": 1}, "description": {"title": "Description",
+        "type": "string", "format": "uri", "minLength": 1}, "organization": {"title":
+        "Organization", "type": "string", "minLength": 1}, "email": {"title": "Email",
+        "type": "string", "format": "email", "minLength": 1}, "address": {"title":
+        "Address", "type": "string", "minLength": 1}, "phone": {"title": "Phone",
+        "type": "string", "minLength": 1}, "homepage": {"title": "Homepage", "type":
+        "string", "format": "uri", "minLength": 1}, "identifiers": {"title": "Identifiers",
+        "type": "object", "additionalProperties": {"type": "string", "minLength":
+        1}}}}, "Coverage": {"type": "object", "properties": {"type": {"title": "Type",
+        "type": "string", "minLength": 1}, "value": {"title": "Value", "type": "string",
+        "readOnly": true}}}, "Date": {"type": "object", "properties": {"type": {"title":
+        "Type", "type": "string", "minLength": 1}, "start_date": {"title": "Start
+        date", "type": "string", "format": "date-time"}, "end_date": {"title": "End
+        date", "type": "string", "format": "date-time"}}}, "Format": {"type": "object",
+        "properties": {"value": {"title": "Value", "type": "string", "minLength":
+        1}}}, "FundingAgency": {"required": ["agency_name"], "type": "object", "properties":
+        {"agency_name": {"title": "Agency name", "type": "string", "minLength": 1},
+        "award_title": {"title": "Award title", "type": "string", "minLength": 1},
+        "award_number": {"title": "Award number", "type": "string", "minLength": 1},
+        "agency_url": {"title": "Agency url", "type": "string", "format": "uri", "minLength":
+        1}}}, "Identifier": {"type": "object", "properties": {"name": {"title": "Name",
+        "type": "string", "minLength": 1}, "url": {"title": "Url", "type": "string",
+        "format": "uri", "minLength": 1}}}, "Source": {"type": "object", "properties":
+        {"derived_from": {"title": "Derived from", "type": "string", "minLength":
+        1}}}, "Subject": {"type": "object", "properties": {"value": {"title": "Value",
+        "type": "string", "minLength": 1}}}, "Relation": {"type": "object", "properties":
+        {"type": {"title": "Type", "type": "string", "minLength": 1}, "value": {"title":
+        "Value", "type": "string", "minLength": 1}}}, "CoreMetaData": {"type": "object",
+        "properties": {"title": {"title": "Title", "type": "string", "minLength":
+        1}, "creators": {"type": "array", "items": {"$ref": "#/definitions/Creator"}},
+        "contributors": {"type": "array", "items": {"$ref": "#/definitions/Party"}},
+        "coverages": {"type": "array", "items": {"$ref": "#/definitions/Coverage"}},
+        "dates": {"type": "array", "items": {"$ref": "#/definitions/Date"}}, "description":
+        {"title": "Description", "type": "string", "minLength": 1}, "formats": {"type":
+        "array", "items": {"$ref": "#/definitions/Format"}}, "funding_agencies": {"type":
+        "array", "items": {"$ref": "#/definitions/FundingAgency"}}, "identifiers":
+        {"type": "array", "items": {"$ref": "#/definitions/Identifier"}}, "language":
+        {"title": "Language", "type": "string", "minLength": 1}, "rights": {"title":
+        "Rights", "type": "string", "minLength": 1}, "type": {"title": "Type", "type":
+        "string", "minLength": 1}, "publisher": {"title": "Publisher", "type": "string",
+        "minLength": 1}, "sources": {"type": "array", "items": {"$ref": "#/definitions/Source"}},
+        "subjects": {"type": "array", "items": {"$ref": "#/definitions/Subject"}},
+        "relations": {"type": "array", "items": {"$ref": "#/definitions/Relation"}}}}}}'
+  recorded_at: 2021-03-31 15:22:11 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

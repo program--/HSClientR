@@ -4,10 +4,12 @@
 \alias{hs_access}
 \title{Access Resource Permissions}
 \usage{
-hs_access(id)
+hs_access(id, ...)
 }
 \arguments{
 \item{id}{Resource ID}
+
+\item{...}{Unused}
 }
 \value{
 A \link[tibble:tibble-package]{tibble}.

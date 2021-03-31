@@ -1,0 +1,59 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/user/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:13 GMT
+      content-type: application/json
+      content-length: '89'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"title":"None","organization":"None","state":"None","country":"None","user_type":"None"}'
+  recorded_at: 2021-03-31 15:22:12 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/user/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:14 GMT
+      content-type: application/json
+      content-length: '89'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"title":"None","organization":"None","state":"None","country":"None","user_type":"None"}'
+  recorded_at: 2021-03-31 15:22:12 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0

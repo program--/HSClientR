@@ -1,0 +1,59 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/content_types/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:12 GMT
+      content-type: application/json
+      content-length: '280'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '[{"content_type":"GenericLogicalFile"},{"content_type":"GeoRasterLogicalFile"},{"content_type":"NetCDFLogicalFile"},{"content_type":"GeoFeatureLogicalFile"},{"content_type":"RefTimeseriesLogicalFile"},{"content_type":"TimeSeriesLogicalFile"},{"content_type":"FileSetLogicalFile"}]'
+  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
+- request:
+    method: get
+    uri: https://www.hydroshare.org/hsapi/resource/content_types/
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: 200
+      category: Success
+      reason: OK
+      message: 'Success: (200) OK'
+    headers:
+      server: nginx/1.11.13
+      date: Wed, 31 Mar 2021 15:22:12 GMT
+      content-type: application/json
+      content-length: '280'
+      connection: keep-alive
+      vary: Accept, Origin, Accept-Language, Cookie
+      allow: GET, HEAD, OPTIONS
+      content-language: en
+    body:
+      encoding: UTF-8
+      file: no
+      string: '[{"content_type":"GenericLogicalFile"},{"content_type":"GeoRasterLogicalFile"},{"content_type":"NetCDFLogicalFile"},{"content_type":"GeoFeatureLogicalFile"},{"content_type":"RefTimeseriesLogicalFile"},{"content_type":"TimeSeriesLogicalFile"},{"content_type":"FileSetLogicalFile"}]'
+  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_with: vcr/0.6.0, webmockr/0.8.0
