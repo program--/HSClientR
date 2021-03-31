@@ -225,6 +225,6 @@ hs_client$print()
 
 ## Meta
 
-* Please [report any issues or bugs](https://github.com/program--/HSClientR/issues)
+* Please [report any issues or bugs](https://github.com/program--/HSClientR/issues).
 * License: MIT
 * Please note that this package is released with a [Contributor Code of Conduct](https://hsclientr.justinsingh.me/code_of_conduct). By contributing to this project, you agree to abide by its terms.

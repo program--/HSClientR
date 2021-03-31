@@ -11,3 +11,4 @@
 ^\.travis\.yml$
 ^\.httr-oauth$
 ^tests/testthat/\.httr-oauth$
+^codemeta\.json$
