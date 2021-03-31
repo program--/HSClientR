@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Helper for httr::handle. — hsapi • HSClientR</title>
+<title>Changelog • HSClientR</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,8 +46,7 @@
 
 
 
-<meta property="og:title" content="Helper for httr::handle. — hsapi" />
-<meta property="og:description" content="Helper for httr::handle." />
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="https://github.com/program--/HSClientR/logo.png" />
 
 
@@ -67,7 +66,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-topic">
+    <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -120,25 +119,59 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Helper for <a href='https://httr.r-lib.org/reference/handle.html'>httr::handle</a>.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/program--/HSClientR/blob/master/R/utils.R'><code>R/utils.R</code></a></small>
-    <div class="hidden name"><code>hsapi.Rd</code></div>
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/program--/HSClientR/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div class="ref-description">
-    <p>Helper for <a href='https://httr.r-lib.org/reference/handle.html'>httr::handle</a>.</p>
-    </div>
-
-    <pre class="usage"><span class='fu'>hsapi</span><span class='op'>(</span><span class='op'>)</span></pre>
-
-
-
+    <div id="hsclientr-031-2021-03-31" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.1">
+<a href="#hsclientr-031-2021-03-31" class="anchor"></a>HSClientR 0.3.1 (2021-03-31)</h1>
+<div id="minor-improvements" class="section level3">
+<h3 class="hasAnchor">
+<a href="#minor-improvements" class="anchor"></a>MINOR IMPROVEMENTS</h3>
+<ul>
+<li>Updated package lifecycle to <em>Maturing</em>.</li>
+<li>Updated <code>README</code> to make examples easier to read through.</li>
+<li>Began work on tests! Aiming for 85% coverage at least.</li>
+</ul>
+</div>
+<div id="bug-fixes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bug-fixes" class="anchor"></a>BUG FIXES</h3>
+<ul>
+<li>Fixed API response parsing issues for <code><a href="../reference/hs_search.html">hs_search()</a></code>, <code><a href="../reference/hs_scimeta.html">hs_scimeta()</a></code>, <code><a href="../reference/hs_folder.html">hs_folder()</a></code>, and a few other functions.</li>
+</ul>
+</div>
+</div>
+    <div id="hsclientr-030-2021-03-17" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.0">
+<a href="#hsclientr-030-2021-03-17" class="anchor"></a>HSClientR 0.3.0 (2021-03-17)</h1>
+<div id="new-features" class="section level3">
+<h3 class="hasAnchor">
+<a href="#new-features" class="anchor"></a>NEW FEATURES</h3>
+<ul>
+<li>
+<code><a href="../reference/hs_resource.html">hs_resource()</a></code> functionality revised. Now serves as a unified interface to <code><a href="../reference/hs_search.html">hs_search()</a></code>, <code><a href="../reference/hs_files.html">hs_files()</a></code>, <code><a href="../reference/hs_folder.html">hs_folder()</a></code>, <code><a href="../reference/hs_scimeta.html">hs_scimeta()</a></code>, and <code><a href="../reference/hs_sysmeta.html">hs_sysmeta()</a></code>. <em>These original functions are still usable.</em>
+</li>
+<li>Started work on <code>hs_download()</code> which will allow the user to quickly download HydroShare resource files and directly load them into R (if possible).</li>
+</ul>
+</div>
+<div id="bug-fixes-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#bug-fixes-1" class="anchor"></a>BUG FIXES</h3>
+<ul>
+<li>Added <code><a href="../reference/handle_ssl.html">handle_ssl()</a></code> which evaluates an API call and checks for cURL errors regarding SSL certificates. If an error is returned, the function attempts to fix it by downloading the HydroShare CA certificate and setting the cURL option <code>CURLOPT_CAPATH</code> to the path to the CA certificate.</li>
+</ul>
+</div>
+</div>
   </div>
+
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
     </nav>
   </div>
+
 </div>
 
 
