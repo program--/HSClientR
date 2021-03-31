@@ -115,7 +115,7 @@ handle_null <- function(content, is_list = FALSE) {
 handle_params <- function(...) {
     # Handle if multiple unique parameters
     # are passed but are set to FALSE
-    params <- list(...)[!sapply(X = list(...), FUN = rlang::is_false)]
+    params <- list(...)[!vapply(X = list(...), FUN = rlang::is_false)]
     passed_params <- names(params)
 
     # Check if too many unique parameters were passed

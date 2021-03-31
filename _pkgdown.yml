@@ -4,9 +4,11 @@ template:
   params:
     bootswatch: cosmo
 reference:
-  - title: R6 HydroShare Client
+  - title: Overview of HSClientR
     contents:
       - '`HSClientR-package`'
+  - title: R6 HydroShare Client
+    contents:
       - '`HSClient`'
   - title: HydroShare API Status
     contents:
@@ -41,6 +43,9 @@ navbar:
   left:
     - icon: fa-home
       href: index.html
-    - icon: fa-file-code-o
+    - icon: fa-file-code
       text: "References"
       href: reference/index.html
+    - icon: fa-clipboard-list
+      text: "Changelog"
+      href: news/index.html

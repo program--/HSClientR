@@ -4,14 +4,14 @@
 # HSClientR - A [HydroShare](https://www.hydroshare.org) API Client for R <a href='https://github.com/program--/HSClientR'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
-
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Travis build
-status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
-[![Codecov test
-coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Travis build status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
+[![Codecov test coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
 [![R-CMD-check](https://github.com/program--/HSClientR/workflows/R-CMD-check/badge.svg)](https://github.com/program--/HSClientR/actions)
+[![lint](https://github.com/program--/HSClientR/workflows/lint/badge.svg)](https://github.com/program--/HSClientR/actions)
+[![test-coverage](https://github.com/program--/HSClientR/workflows/test-coverage/badge.svg)](https://github.com/program--/HSClientR/actions)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4773/badge)](https://bestpractices.coreinfrastructure.org/projects/4773)
+
 <!-- [![CRAN status](https://www.r-pkg.org/badges/version/HSClientR)](https://CRAN.R-project.org/package=HSClientR) -->
 <!-- badges: end -->
 
@@ -222,3 +222,9 @@ hs_client$print()
 #>  NHDPlus Value Added Attributes - no geometries  
 #>  These files contain a curated set ...
 ```
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/program--/HSClientR/issues)
+* License: MIT
+* Please note that this package is released with a [Contributor Code of Conduct](https://hsclientr.justinsingh.me/code_of_conduct). By contributing to this project, you agree to abide by its terms.
