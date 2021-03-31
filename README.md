@@ -8,7 +8,6 @@
 [![Travis build status](https://travis-ci.com/program--/HSClientR.svg?branch=master)](https://travis-ci.com/program--/HSClientR)
 [![Codecov test coverage](https://codecov.io/gh/program--/HSClientR/branch/master/graph/badge.svg)](https://codecov.io/gh/program--/HSClientR)
 [![R-CMD-check](https://github.com/program--/HSClientR/workflows/R-CMD-check/badge.svg)](https://github.com/program--/HSClientR/actions)
-[![lint](https://github.com/program--/HSClientR/workflows/lint/badge.svg)](https://github.com/program--/HSClientR/actions)
 [![test-coverage](https://github.com/program--/HSClientR/workflows/test-coverage/badge.svg)](https://github.com/program--/HSClientR/actions)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4773/badge)](https://bestpractices.coreinfrastructure.org/projects/4773)
 
