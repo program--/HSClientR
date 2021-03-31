@@ -15,7 +15,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:11 GMT
+      date: Wed, 31 Mar 2021 17:34:10 GMT
       content-type: application/json
       content-length: '1794'
       connection: keep-alive
@@ -37,7 +37,7 @@ http_interactions:
         estimates have been added following the details in the README.md below.","authors":["Johnson,
         J Michael"],"creator":"Johnson, J Michael","doi":null,"public":true,"discoverable":true,"shareable":true,"immutable":false,"published":false,"date_created":"2020-11-11T01:48:27.902391Z","date_last_updated":"2021-02-26T19:50:19.543097Z","bag_url":"http://www.hydroshare.org/django_irods/rest_download/bags/6092c8a62fac45be97a09bfd0b0bf726.zip?url_download=False&zipped=False&aggregation=False","coverages":[{"type":"box","value":{"projection":"WGS
         84 EPSG:4326","units":"Decimal degrees","northlimit":48.795,"eastlimit":-66.2047,"southlimit":24.6706,"westlimit":-125.6188}}],"science_metadata_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/scimeta/","resource_map_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/map/","resource_url":"http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726/","content_types":[]}'
-  recorded_at: 2021-03-31 15:22:09 GMT
+  recorded_at: 2021-03-31 17:34:09 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0
 - request:
     method: get
@@ -55,7 +55,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:11 GMT
+      date: Wed, 31 Mar 2021 17:34:11 GMT
       content-type: application/json
       content-length: '1794'
       connection: keep-alive
@@ -77,5 +77,5 @@ http_interactions:
         estimates have been added following the details in the README.md below.","authors":["Johnson,
         J Michael"],"creator":"Johnson, J Michael","doi":null,"public":true,"discoverable":true,"shareable":true,"immutable":false,"published":false,"date_created":"2020-11-11T01:48:27.902391Z","date_last_updated":"2021-02-26T19:50:19.543097Z","bag_url":"http://www.hydroshare.org/django_irods/rest_download/bags/6092c8a62fac45be97a09bfd0b0bf726.zip?url_download=False&zipped=False&aggregation=False","coverages":[{"type":"box","value":{"projection":"WGS
         84 EPSG:4326","units":"Decimal degrees","northlimit":48.795,"eastlimit":-66.2047,"southlimit":24.6706,"westlimit":-125.6188}}],"science_metadata_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/scimeta/","resource_map_url":"http://www.hydroshare.org/hsapi/resource/6092c8a62fac45be97a09bfd0b0bf726/map/","resource_url":"http://www.hydroshare.org/resource/6092c8a62fac45be97a09bfd0b0bf726/","content_types":[]}'
-  recorded_at: 2021-03-31 15:22:09 GMT
+  recorded_at: 2021-03-31 17:34:09 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

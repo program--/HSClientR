@@ -6,3 +6,4 @@
 cran-comments.md
 .httr-oauth
 tests/testthat/.httr-oauth
+tests/testthat/vcr.log

@@ -7,9 +7,11 @@ vcr::use_cassette("hs_user_1", {
 })
 
 vcr::use_cassette("hs_user_2", {
-    hs_auth(set_header = TRUE)
-    me <- hs_user()
     test_that("hs_user() returns a tibble", {
+        skip_on_cran()
+        skip_on_ci()
+        hs_auth(set_header = TRUE)
+        me <- hs_user()
         expect_true(tibble::is_tibble(me))
         expect_identical(
             names(me),
@@ -20,6 +22,10 @@ vcr::use_cassette("hs_user_2", {
     })
 
     test_that("hs_user() returns own user information", {
+        skip_on_cran()
+        skip_on_ci()
+        hs_auth(set_header = TRUE)
+        me <- hs_user()
         expect_identical(me$username, "jsinghm")
         expect_identical(me$email, "justin@justinsingh.me")
         expect_identical(me$first_name, "Justin")

@@ -15,9 +15,9 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:00 GMT
+      date: Wed, 31 Mar 2021 17:32:45 GMT
       content-type: application/json
-      content-length: '86921'
+      content-length: '85248'
       connection: keep-alive
       vary: Accept, Origin, Accept-Language, Cookie
       allow: GET, HEAD, OPTIONS
@@ -26,8 +26,35 @@ http_interactions:
     body:
       encoding: UTF-8
       file: no
-      string: '{"resources": "[{\"title\": \"Wasatch Environmental Observatory Red
-        Butte Network: 1300 East Aquatic (RB_1300E_A) Quality Controlled Data\", \"link\":
+      string: '{"resources": "[{\"title\": \"Multidimensional test\", \"link\": \"/resource/1b1d7857933043378531a65f83073e8a/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Composite Resource\", \"author\": \"Tarboton, Dave Demo\", \"authors\":
+        [\"Tarboton, Dave Demo\", \"Gichamo, Tseganeh Z.\"], \"contributor\": \"None\",
+        \"author_link\": \"/user/62/\", \"owner\": [\"Tarboton, Dave\"], \"abstract\":
+        \"This is the model simulation of snow water equivalent in Logan River watershed
+        from 2008 to 2009. The model used is the Utah Energy Balance model which is
+        a snowmelt model. The simulation result is used as the input data for SAC-SMA
+        model to simulate the stream flow of the watershed.\", \"subject\": [\"Snow
+        water equivalent\", \"UEB\", \"Logan River\"], \"created\": \"2021-03-31T17:17:49\",
+        \"modified\": \"2021-03-31T17:19:21\", \"short_id\": \"1b1d7857933043378531a65f83073e8a\",
+        \"geo\": {\"short_id\": \"1b1d7857933043378531a65f83073e8a\", \"title\": \"Multidimensional
+        test\", \"coverage_type\": \"box\", \"north\": 41.911205, \"east\": -111.6135,
+        \"northlimit\": 42.11917, \"southlimit\": 41.70324, \"eastlimit\": -111.42823,
+        \"westlimit\": -111.798775}}, {\"title\": \"OPeNDAP\", \"link\": \"/resource/70070fa1b382496e85ca44894683b15d/\",
+        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
+        \"type\": \"Web App Resource\", \"author\": \"Tarboton, David\", \"authors\":
+        [\"Tarboton, David\", \"Calloway, Chris\"], \"contributor\": \"None\", \"author_link\":
+        \"/user/2/\", \"owner\": [\"Yi, Hong\", \"Gan, Tian\", \"Tarboton, David\",
+        \"Calloway, Chris\", \"HydroShare\"], \"abstract\": \"This is the web app
+        connector for the OPeNDAP service for content aggregations within Composite
+        resources in HydroShare. The OPeNDAP service is available only for the \\\"Public\\\"
+        composite resources. Due to current Hyrax deployment limitations this does
+        not work for large NetCDF files. Exact upper limit unknown, but has been tested
+        up to 200 MB successfully.\", \"subject\": [\"NetCDF\", \"Multidimensional
+        Space-time Data\", \"OPeNDAP\"], \"created\": \"2021-03-31T14:31:04\", \"modified\":
+        \"2021-03-31T15:00:14\", \"short_id\": \"70070fa1b382496e85ca44894683b15d\",
+        \"geo\": \"\"}, {\"title\": \"Wasatch Environmental Observatory Red Butte
+        Network: 1300 East Aquatic (RB_1300E_A) Quality Controlled Data\", \"link\":
         \"/resource/5057577e8573433d8045b59db91b2550/\", \"availability\": [\"public\"],
         \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite Resource\",
         \"author\": \"University of Utah  -- Wasatch Environmental Observatory\",
@@ -945,61 +972,17 @@ http_interactions:
         \"2021-03-31T10:00:09\", \"short_id\": \"965dc124cabc4587955e6f1f722fc33b\",
         \"geo\": {\"short_id\": \"965dc124cabc4587955e6f1f722fc33b\", \"title\": \"Logan
         River Observatory: Franklin Basin Climate Site (LR_FB_C) Raw Data\", \"coverage_type\":
-        \"point\", \"north\": 41.949814, \"east\": -111.58135}}, {\"title\": \"Logan
-        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
-        Aquatic Site (SLB_Pump_CNL) Raw Data\", \"link\": \"/resource/815fe74f4b47448dbd7f32aca5c3b83c/\",
-        \"availability\": [\"public\"], \"availabilityurl\": \"/static/img/public.png\",
-        \"type\": \"Composite Resource\", \"author\": \"Logan River Observatory\",
-        \"authors\": \"Logan River Observatory\", \"contributor\": [\"Neilson, Bethany\",
-        \"Jones, Amber Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"],
-        \"author_link\": \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This
-        dataset contains raw data for all of the variables measured for the aquatic
-        site at the South Logan Benson Canal at Airport Rd Pumping Station (SLB_Pump_CNL).
-        Each file contains a calendar year of data. The file for the current year
-        is updated on a daily basis. The data values were collected by a variety of
-        sensors at 15 minute intervals. The file header contains detailed metadata
-        for the site and the variable and method of each column. This site is currently
-        operated as part of the Logan River Observatory.\", \"subject\": [\"GAMUT\",
-        \"time series\", \"raw data\", \"LRO\", \"water quality\", \"Logan River\",
-        \"Logan River Observatory\"], \"created\": \"2021-03-04T03:50:24\", \"modified\":
-        \"2021-03-31T09:59:44\", \"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\",
-        \"geo\": {\"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\", \"title\": \"Logan
-        River Observatory: South Logan Benson Canal at Airport Rd Pumping Station
-        Aquatic Site (SLB_Pump_CNL) Raw Data\", \"coverage_type\": \"point\", \"north\":
-        41.7801, \"east\": -111.8663}}, {\"title\": \"Logan River Observatory: Spring
-        Creek above confluence with Logan River Aquatic Site (SC_CONF_A) Quality Controlled
-        Data\", \"link\": \"/resource/17de617207594728b336d722eb96d798/\", \"availability\":
-        [\"public\"], \"availabilityurl\": \"/static/img/public.png\", \"type\": \"Composite
-        Resource\", \"author\": \"Logan River Observatory\", \"authors\": \"Logan
-        River Observatory\", \"contributor\": [\"Neilson, Bethany\", \"Jones, Amber
-        Spackman\", \"Horsburgh, Jeffery S.\", \"strong, patrick\"], \"author_link\":
-        \"/user/5340/\", \"owner\": \"None\", \"abstract\": \"This dataset contains
-        quality control level 1 (QC1) data for all of the variables measured for the
-        aquatic site on Spring Creek above confluence with Logan River (SC_CONF_A).
-        Each file contains all available QC1 data for a specific variable. Files will
-        be updated as new data become available, but no more than once daily. These
-        data have passed QA/QC procedures such as sensor calibration and visual inspection
-        and removal of obvious errors. These data are approved by Technicians as the
-        best available version of the data. See published script for correction steps
-        specific to this data series. Each file header contains detailed metadata
-        for site information, variable and method information, source information,
-        and qualifiers referenced in the data. This site is currently operated as
-        part of the Logan River Observatory. Prior to 2018 this site was operated
-        as part of the iUTAH GAMUT Network.\", \"subject\": [\"GAMUT\", \"time series\",
-        \"raw data\", \"LRO\", \"water quality\", \"Logan River\", \"iUTAH\", \"Logan
-        River Observatory\"], \"created\": \"2021-03-04T04:15:42\", \"modified\":
-        \"2021-03-31T09:59:22\", \"short_id\": \"17de617207594728b336d722eb96d798\",
-        \"geo\": {\"short_id\": \"17de617207594728b336d722eb96d798\", \"title\": \"Logan
-        River Observatory: Spring Creek above confluence with Logan River Aquatic
-        Site (SC_CONF_A) Quality Controlled Data\", \"coverage_type\": \"point\",
-        \"north\": 41.706055, \"east\": -111.847305}}]", "geodata": "[{\"short_id\":
-        \"5057577e8573433d8045b59db91b2550\", \"title\": \"Wasatch Environmental Observatory
-        Red Butte Network: 1300 East Aquatic (RB_1300E_A) Quality Controlled Data\",
-        \"coverage_type\": \"point\", \"north\": 40.744995, \"east\": -111.85444},
-        {\"short_id\": \"252980b3bff94a1fa2a2ce1de24323d2\", \"title\": \"Wasatch
-        Environmental Observatory Red Butte Network: Raw Data at Fort Douglas Storm
-        Drain (RB_FortD_SD)\", \"coverage_type\": \"point\", \"north\": 40.75901,
-        \"east\": -111.83144}, {\"short_id\": \"6445418c7c0e426d8cb1568d296c02d1\",
+        \"point\", \"north\": 41.949814, \"east\": -111.58135}}]", "geodata": "[{\"short_id\":
+        \"1b1d7857933043378531a65f83073e8a\", \"title\": \"Multidimensional test\",
+        \"coverage_type\": \"box\", \"north\": 41.911205, \"east\": -111.6135, \"northlimit\":
+        42.11917, \"southlimit\": 41.70324, \"eastlimit\": -111.42823, \"westlimit\":
+        -111.798775}, {\"short_id\": \"5057577e8573433d8045b59db91b2550\", \"title\":
+        \"Wasatch Environmental Observatory Red Butte Network: 1300 East Aquatic (RB_1300E_A)
+        Quality Controlled Data\", \"coverage_type\": \"point\", \"north\": 40.744995,
+        \"east\": -111.85444}, {\"short_id\": \"252980b3bff94a1fa2a2ce1de24323d2\",
+        \"title\": \"Wasatch Environmental Observatory Red Butte Network: Raw Data
+        at Fort Douglas Storm Drain (RB_FortD_SD)\", \"coverage_type\": \"point\",
+        \"north\": 40.75901, \"east\": -111.83144}, {\"short_id\": \"6445418c7c0e426d8cb1568d296c02d1\",
         \"title\": \"Wasatch Environmental Observatory Red Butte Network: Above Red
         Butte Reservoir Climate (RB_ARBR_C) Quality Controlled Data\", \"coverage_type\":
         \"point\", \"north\": 40.780567, \"east\": -111.80722}, {\"short_id\": \"74dc57ed714e4cd3882edc16d50e197a\",
@@ -1108,13 +1091,7 @@ http_interactions:
         \"coverage_type\": \"point\", \"north\": 41.7801, \"east\": -111.8663}, {\"short_id\":
         \"965dc124cabc4587955e6f1f722fc33b\", \"title\": \"Logan River Observatory:
         Franklin Basin Climate Site (LR_FB_C) Raw Data\", \"coverage_type\": \"point\",
-        \"north\": 41.949814, \"east\": -111.58135}, {\"short_id\": \"815fe74f4b47448dbd7f32aca5c3b83c\",
-        \"title\": \"Logan River Observatory: South Logan Benson Canal at Airport
-        Rd Pumping Station Aquatic Site (SLB_Pump_CNL) Raw Data\", \"coverage_type\":
-        \"point\", \"north\": 41.7801, \"east\": -111.8663}, {\"short_id\": \"17de617207594728b336d722eb96d798\",
-        \"title\": \"Logan River Observatory: Spring Creek above confluence with Logan
-        River Aquatic Site (SC_CONF_A) Quality Controlled Data\", \"coverage_type\":
-        \"point\", \"north\": 41.706055, \"east\": -111.847305}]", "rescount": 4877,
-        "pagecount": 122, "perpage": 40, "filterdata": "[]", "time": 7.340312004089355e-05}'
-  recorded_at: 2021-03-31 15:21:59 GMT
+        \"north\": 41.949814, \"east\": -111.58135}]", "rescount": 4879, "pagecount":
+        122, "perpage": 40, "filterdata": "[]", "time": 6.713247299194336e-05}'
+  recorded_at: 2021-03-31 17:32:43 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

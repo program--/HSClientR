@@ -13,11 +13,15 @@ vcr::use_cassette("hs_user_details_2", {
 })
 
 vcr::use_cassette("hs_user_details_3", {
+
     httr::reset_config()
-    hs_auth(set_header = TRUE)
-    userdet <- hs_user_details(8409)
 
     test_that("hs_user_details() returns correctly", {
+        skip_on_cran()
+        skip_on_ci()
+        hs_auth(set_header = TRUE)
+        userdet <- hs_user_details(8409)
+
         expect_true(tibble::is_tibble(userdet))
 
         expect_identical(

@@ -15,7 +15,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:12 GMT
+      date: Wed, 31 Mar 2021 17:32:46 GMT
       content-type: application/json
       content-length: '280'
       connection: keep-alive
@@ -26,7 +26,7 @@ http_interactions:
       encoding: UTF-8
       file: no
       string: '[{"content_type":"GenericLogicalFile"},{"content_type":"GeoRasterLogicalFile"},{"content_type":"NetCDFLogicalFile"},{"content_type":"GeoFeatureLogicalFile"},{"content_type":"RefTimeseriesLogicalFile"},{"content_type":"TimeSeriesLogicalFile"},{"content_type":"FileSetLogicalFile"}]'
-  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_at: 2021-03-31 17:32:45 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0
 - request:
     method: get
@@ -44,7 +44,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:12 GMT
+      date: Wed, 31 Mar 2021 17:32:47 GMT
       content-type: application/json
       content-length: '280'
       connection: keep-alive
@@ -55,5 +55,5 @@ http_interactions:
       encoding: UTF-8
       file: no
       string: '[{"content_type":"GenericLogicalFile"},{"content_type":"GeoRasterLogicalFile"},{"content_type":"NetCDFLogicalFile"},{"content_type":"GeoFeatureLogicalFile"},{"content_type":"RefTimeseriesLogicalFile"},{"content_type":"TimeSeriesLogicalFile"},{"content_type":"FileSetLogicalFile"}]'
-  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_at: 2021-03-31 17:32:45 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

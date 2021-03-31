@@ -15,7 +15,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:11 GMT
+      date: Wed, 31 Mar 2021 17:32:46 GMT
       content-type: application/json
       content-length: '557'
       connection: keep-alive
@@ -26,7 +26,7 @@ http_interactions:
       encoding: UTF-8
       file: no
       string: '[{"resource_type":"GenericResource"},{"resource_type":"RasterResource"},{"resource_type":"RefTimeSeriesResource"},{"resource_type":"TimeSeriesResource"},{"resource_type":"NetcdfResource"},{"resource_type":"ModelProgramResource"},{"resource_type":"ModelInstanceResource"},{"resource_type":"ToolResource"},{"resource_type":"SWATModelInstanceResource"},{"resource_type":"GeographicFeatureResource"},{"resource_type":"ScriptResource"},{"resource_type":"CollectionResource"},{"resource_type":"MODFLOWModelInstanceResource"},{"resource_type":"CompositeResource"}]'
-  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_at: 2021-03-31 17:32:44 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0
 - request:
     method: get
@@ -44,7 +44,7 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:12 GMT
+      date: Wed, 31 Mar 2021 17:32:46 GMT
       content-type: application/json
       content-length: '557'
       connection: keep-alive
@@ -55,5 +55,5 @@ http_interactions:
       encoding: UTF-8
       file: no
       string: '[{"resource_type":"GenericResource"},{"resource_type":"RasterResource"},{"resource_type":"RefTimeSeriesResource"},{"resource_type":"TimeSeriesResource"},{"resource_type":"NetcdfResource"},{"resource_type":"ModelProgramResource"},{"resource_type":"ModelInstanceResource"},{"resource_type":"ToolResource"},{"resource_type":"SWATModelInstanceResource"},{"resource_type":"GeographicFeatureResource"},{"resource_type":"ScriptResource"},{"resource_type":"CollectionResource"},{"resource_type":"MODFLOWModelInstanceResource"},{"resource_type":"CompositeResource"}]'
-  recorded_at: 2021-03-31 15:22:10 GMT
+  recorded_at: 2021-03-31 17:32:44 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

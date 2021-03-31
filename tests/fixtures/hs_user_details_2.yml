@@ -15,14 +15,14 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:15 GMT
+      date: Wed, 31 Mar 2021 17:32:49 GMT
       content-type: text/html; charset=utf-8
       content-length: '41155'
       connection: keep-alive
       vary: Cookie, Origin, Accept-Language
       content-language: en
       set-cookie: csrftoken=t0d9tWm0zOR9LqzN7bDPro3U45qBRXjQ15yPWByqeSTOEH9VJLHGSEiL7dm9195P;
-        expires=Wed, 30-Mar-2022 15:22:15 GMT; Max-Age=31449600; Path=/
+        expires=Wed, 30-Mar-2022 17:32:49 GMT; Max-Age=31449600; Path=/
     body:
       encoding: UTF-8
       file: no
@@ -101,7 +101,7 @@ http_interactions:
         \               var inplaceManager = $(\".inplaceedit\").inplaceeditform(options);\n
         \               \n                    inplaceManager.enable();\n                \n\n
         \       });\n    })(jQuery);\n    </script>\n    <script type=\"text/javascript\">\n
-        \   var csrf_token = \"cWibu6NlvyZzcQg7q2Qn2nbIDRAN0e7AK1DRXLZLaC1e57Qf2CUetDqzGZwlaqTz\";\n</script>\n
+        \   var csrf_token = \"65BXlxWEiX6VMfXp96StLG8sqvza5aPaEaWDOc84X18AFwxxLGWkcWnjtDvIfmB9\";\n</script>\n
         \   \n\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/inplaceedit_structure.css\"
         />\n\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/inplaceedit_style.css\"
         />\n\n\n\n\n\n\n<script type=\"text/javascript\">\n    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var
@@ -415,7 +415,7 @@ http_interactions:
         \       <div class=\"col-xs-12\">\n            <h2 class=\"page-title\">Sign
         In</h2>\n        </div>\n        <div class=\"col-xs-12 col-sm-6\">\n            <form
         class=\"account-form space-bottom\" method=\"post\">\n                <input
-        type='hidden' name='csrfmiddlewaretoken' value='cWibu6NlvyZzcQg7q2Qn2nbIDRAN0e7AK1DRXLZLaC1e57Qf2CUetDqzGZwlaqTz'
+        type='hidden' name='csrfmiddlewaretoken' value='65BXlxWEiX6VMfXp96StLG8sqvza5aPaEaWDOc84X18AFwxxLGWkcWnjtDvIfmB9'
         />\n\n                \n\n                <fieldset>\n                    <div
         class=\"row\">\n                        \n\n\n    <fieldset class=\"form-group
         form-group-checkbox input_id_username \n         col-md-12\">\n\n        \n
@@ -525,7 +525,7 @@ http_interactions:
         of Privacy</a> | <a href=\"/sitemap/\">Site Map</a>\n                        </p>\n
         \                   \n                </div>\n            </div>\n        </div>\n
         \   </div>\n</footer>\n\n</body>\n</html>\n"
-  recorded_at: 2021-03-31 15:22:13 GMT
+  recorded_at: 2021-03-31 17:32:48 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0
 - request:
     method: get
@@ -543,14 +543,14 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:15 GMT
+      date: Wed, 31 Mar 2021 17:32:50 GMT
       content-type: text/html; charset=utf-8
       content-length: '41155'
       connection: keep-alive
       vary: Cookie, Origin, Accept-Language
       content-language: en
       set-cookie: csrftoken=t0d9tWm0zOR9LqzN7bDPro3U45qBRXjQ15yPWByqeSTOEH9VJLHGSEiL7dm9195P;
-        expires=Wed, 30-Mar-2022 15:22:15 GMT; Max-Age=31449600; Path=/
+        expires=Wed, 30-Mar-2022 17:32:50 GMT; Max-Age=31449600; Path=/
     body:
       encoding: UTF-8
       file: no
@@ -629,7 +629,7 @@ http_interactions:
         \               var inplaceManager = $(\".inplaceedit\").inplaceeditform(options);\n
         \               \n                    inplaceManager.enable();\n                \n\n
         \       });\n    })(jQuery);\n    </script>\n    <script type=\"text/javascript\">\n
-        \   var csrf_token = \"sn3y0hUOJGwYPxrQc1ZSJnY2KrWSsDk00soetW6eoKyDIO1YOB3JaDdTNzSqCP6Z\";\n</script>\n
+        \   var csrf_token = \"BbQVYf1u3VsiS11bJ865qovCGeOXbINq9gbBrUdUIZuXLiBjlIaWREKtJmKvlUzp\";\n</script>\n
         \   \n\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/inplaceedit_structure.css\"
         />\n\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/static/css/inplaceedit_style.css\"
         />\n\n\n\n\n\n\n<script type=\"text/javascript\">\n    window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var
@@ -943,7 +943,7 @@ http_interactions:
         \       <div class=\"col-xs-12\">\n            <h2 class=\"page-title\">Sign
         In</h2>\n        </div>\n        <div class=\"col-xs-12 col-sm-6\">\n            <form
         class=\"account-form space-bottom\" method=\"post\">\n                <input
-        type='hidden' name='csrfmiddlewaretoken' value='sn3y0hUOJGwYPxrQc1ZSJnY2KrWSsDk00soetW6eoKyDIO1YOB3JaDdTNzSqCP6Z'
+        type='hidden' name='csrfmiddlewaretoken' value='BbQVYf1u3VsiS11bJ865qovCGeOXbINq9gbBrUdUIZuXLiBjlIaWREKtJmKvlUzp'
         />\n\n                \n\n                <fieldset>\n                    <div
         class=\"row\">\n                        \n\n\n    <fieldset class=\"form-group
         form-group-checkbox input_id_username \n         col-md-12\">\n\n        \n
@@ -1053,5 +1053,5 @@ http_interactions:
         of Privacy</a> | <a href=\"/sitemap/\">Site Map</a>\n                        </p>\n
         \                   \n                </div>\n            </div>\n        </div>\n
         \   </div>\n</footer>\n\n</body>\n</html>\n"
-  recorded_at: 2021-03-31 15:22:13 GMT
+  recorded_at: 2021-03-31 17:32:48 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0

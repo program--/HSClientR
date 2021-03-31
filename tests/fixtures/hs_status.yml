@@ -15,13 +15,13 @@ http_interactions:
       message: 'Success: (200) OK'
     headers:
       server: nginx/1.11.13
-      date: Wed, 31 Mar 2021 15:22:13 GMT
+      date: Wed, 31 Mar 2021 17:32:47 GMT
       content-type: application/json; charset=utf-8
       content-length: '47473'
       connection: keep-alive
       vary: Accept, Cookie, Authorization, Origin, Accept-Language
       allow: GET, HEAD, OPTIONS
-      expires: Wed, 31 Mar 2021 15:32:13 GMT
+      expires: Wed, 31 Mar 2021 17:42:47 GMT
       cache-control: max-age=0, no-cache, no-store, must-revalidate
       content-language: en
     body:
@@ -616,5 +616,5 @@ http_interactions:
         "minLength": 1}, "sources": {"type": "array", "items": {"$ref": "#/definitions/Source"}},
         "subjects": {"type": "array", "items": {"$ref": "#/definitions/Subject"}},
         "relations": {"type": "array", "items": {"$ref": "#/definitions/Relation"}}}}}}'
-  recorded_at: 2021-03-31 15:22:11 GMT
+  recorded_at: 2021-03-31 17:32:46 GMT
   recorded_with: vcr/0.6.0, webmockr/0.8.0
